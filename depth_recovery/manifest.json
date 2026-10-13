@@ -1,0 +1,266 @@
+[
+  {
+    "file": "neural_depth_5.3.onnx",
+    "sha256": "aea0bfbb8448e0982813e97b5a55e7d7bf5ed9043a4a72162207e8b9102de85c",
+    "nodes": 373,
+    "initializers": 103,
+    "initializer_elements": 7432802,
+    "initializer_bytes": 29731320,
+    "operators": {
+      "Unsqueeze": 27,
+      "Reshape": 7,
+      "Transpose": 2,
+      "Squeeze": 2,
+      "Conv": 77,
+      "Relu": 59,
+      "MaxPool": 2,
+      "Add": 22,
+      "Resize": 18,
+      "build_gwc_volume": 1,
+      "LeakyRelu": 12,
+      "Concat": 32,
+      "Shape": 24,
+      "Gather": 31,
+      "Cast": 9,
+      "ConvTranspose": 3,
+      "Softmax": 2,
+      "Neg": 1,
+      "LogSoftmax": 1,
+      "Mul": 9,
+      "ReduceSum": 2,
+      "Tile": 1,
+      "Clip": 4,
+      "Slice": 12,
+      "Div": 6,
+      "build_offset_volume": 3,
+      "Sigmoid": 3,
+      "ConstantOfShape": 1
+    },
+    "inputs": [
+      {
+        "name": "left",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      },
+      {
+        "name": "right",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "disparity",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "disparity_right",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "confidence",
+        "type": "FLOAT, batch_sizex1xout_heightxout_width"
+      }
+    ],
+    "validation": "PASS (structure; custom sl operators are not schema-checked)",
+    "weights_roundtrip": "PASS: every dtype, shape, and byte matches"
+  },
+  {
+    "file": "neural_depth_5.4.onnx",
+    "sha256": "c197a4f67274267790cd252f2d9cceeceb3eeb9b6307f6a47e2d0f1d2731ed50",
+    "nodes": 514,
+    "initializers": 192,
+    "initializer_elements": 7503939,
+    "initializer_bytes": 30015169,
+    "operators": {
+      "Unsqueeze": 27,
+      "QuantizeLinear": 66,
+      "Reshape": 7,
+      "DequantizeLinear": 66,
+      "Transpose": 2,
+      "Squeeze": 2,
+      "Conv": 79,
+      "Relu": 59,
+      "BatchNormalization": 20,
+      "MaxPool": 2,
+      "Add": 25,
+      "Resize": 18,
+      "CensusXnorCostVolume": 1,
+      "LeakyRelu": 12,
+      "Concat": 32,
+      "Shape": 24,
+      "Gather": 28,
+      "Cast": 6,
+      "ConvTranspose": 3,
+      "Softmax": 1,
+      "LogSoftmax": 1,
+      "Mul": 5,
+      "ReduceSum": 2,
+      "Neg": 1,
+      "Clip": 1,
+      "Tile": 1,
+      "Slice": 12,
+      "Sigmoid": 4,
+      "Div": 3,
+      "build_offset_volume": 3,
+      "ConstantOfShape": 1
+    },
+    "inputs": [
+      {
+        "name": "left",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      },
+      {
+        "name": "right",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "disparity",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "disparity_right",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "confidence",
+        "type": "FLOAT, batch_sizexSigmoidconfidence_dim_1xout_heightxout_width"
+      }
+    ],
+    "validation": "No Op registered for CensusXnorCostVolume with domain_version of 16\n\n==> Context: Bad node spec for node. Name: xb77785d2e81d66 OpType: CensusXnorCostVolume\nPASS after assigning CensusXnorCostVolume to sl in memory only; semantics untested.",
+    "weights_roundtrip": "PASS: every dtype, shape, and byte matches"
+  },
+  {
+    "file": "neural_depth_5.6.onnx",
+    "sha256": "df809781271f1834192ccd2576c4be6c3ff30272dc8b1ab5f3b29586d519d4e8",
+    "nodes": 518,
+    "initializers": 192,
+    "initializer_elements": 7503939,
+    "initializer_bytes": 15007821,
+    "operators": {
+      "Unsqueeze": 27,
+      "QuantizeLinear": 66,
+      "Reshape": 7,
+      "DequantizeLinear": 66,
+      "Transpose": 2,
+      "Squeeze": 2,
+      "Conv": 79,
+      "Relu": 59,
+      "BatchNormalization": 20,
+      "MaxPool": 2,
+      "Add": 25,
+      "Resize": 18,
+      "CensusXnorCostVolume": 1,
+      "Cast": 10,
+      "LeakyRelu": 12,
+      "Concat": 32,
+      "Shape": 24,
+      "Gather": 28,
+      "ConvTranspose": 3,
+      "Softmax": 1,
+      "LogSoftmax": 1,
+      "Mul": 5,
+      "ReduceSum": 2,
+      "Neg": 1,
+      "Clip": 1,
+      "Tile": 1,
+      "Slice": 12,
+      "Sigmoid": 4,
+      "Div": 3,
+      "build_offset_volume": 3,
+      "ConstantOfShape": 1
+    },
+    "inputs": [
+      {
+        "name": "left",
+        "type": "FLOAT16, batch_sizex3xheightxwidth"
+      },
+      {
+        "name": "right",
+        "type": "FLOAT16, batch_sizex3xheightxwidth"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "disparity",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "disparity_right",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "confidence",
+        "type": "FLOAT, batch_sizexSigmoidconfidence_dim_1xout_heightxout_width"
+      }
+    ],
+    "validation": "No Op registered for CensusXnorCostVolume with domain_version of 19\n\n==> Context: Bad node spec for node. Name: x04a15a5be2f6d4 OpType: CensusXnorCostVolume\nPASS after assigning CensusXnorCostVolume to sl in memory only; semantics untested.",
+    "weights_roundtrip": "PASS: every dtype, shape, and byte matches"
+  },
+  {
+    "file": "neural_depth_light_5.3.onnx",
+    "sha256": "64b76352a45a1aade609c2237c68c22d4a2ce03c7bac1bd602bbe413a2b050de",
+    "nodes": 326,
+    "initializers": 126,
+    "initializer_elements": 2318800,
+    "initializer_bytes": 9275324,
+    "operators": {
+      "Unsqueeze": 23,
+      "Reshape": 19,
+      "Transpose": 2,
+      "Squeeze": 2,
+      "Conv": 60,
+      "Shape": 31,
+      "Relu": 50,
+      "MaxPool": 2,
+      "Slice": 15,
+      "Gather": 23,
+      "LeakyRelu": 4,
+      "Cast": 6,
+      "Concat": 20,
+      "Add": 17,
+      "ReduceL2": 2,
+      "Clip": 5,
+      "Expand": 2,
+      "Div": 6,
+      "build_gwc_volume": 1,
+      "Resize": 12,
+      "Softmax": 2,
+      "Neg": 1,
+      "LogSoftmax": 1,
+      "Mul": 10,
+      "ReduceSum": 2,
+      "Tile": 1,
+      "build_offset_volume": 2,
+      "BatchNormalization": 2,
+      "Sigmoid": 2,
+      "ConstantOfShape": 1
+    },
+    "inputs": [
+      {
+        "name": "left",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      },
+      {
+        "name": "right",
+        "type": "FLOAT, batch_sizex3xheightxwidth"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "disparity",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "disparity_right",
+        "type": "FLOAT, batch_sizexReludisparity_dim_1xout_heightxout_width"
+      },
+      {
+        "name": "confidence",
+        "type": "FLOAT, batch_sizex1xout_heightxout_width"
+      }
+    ],
+    "validation": "PASS (structure; custom sl operators are not schema-checked)",
+    "weights_roundtrip": "PASS: every dtype, shape, and byte matches"
+  }
+]

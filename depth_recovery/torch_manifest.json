@@ -1,0 +1,34 @@
+[
+  {
+    "model": "neural_depth_5.3.onnx",
+    "checkpoint": "neural_depth_5.3.pt",
+    "sha256": "2d201df1eba0d04942b437241bfc85c01cfb7cc94f53ba5734f9e7f6ce590420",
+    "nodes": 373,
+    "learnable_parameter_elements": 7432743,
+    "checkpoint_roundtrip": "PASS"
+  },
+  {
+    "model": "neural_depth_5.4.onnx",
+    "checkpoint": "neural_depth_5.4.pt",
+    "sha256": "336a43c13f498be14be4dc01e9af2ddf2391dfffcbd9f97bc6067c7e252a7b71",
+    "nodes": 514,
+    "learnable_parameter_elements": 7500263,
+    "checkpoint_roundtrip": "PASS"
+  },
+  {
+    "model": "neural_depth_5.6.onnx",
+    "checkpoint": "neural_depth_5.6.pt",
+    "sha256": "604c8cf9acd88e69b2a696d21ba0cbe8350589a13d6889e65ebdca255e9243e2",
+    "nodes": 518,
+    "learnable_parameter_elements": 7500263,
+    "checkpoint_roundtrip": "PASS"
+  },
+  {
+    "model": "neural_depth_light_5.3.onnx",
+    "checkpoint": "neural_depth_light_5.3.pt",
+    "sha256": "315f08c870827c2928db0d969ac7db822a6cfa13daa6a4fcd4997c162192d27d",
+    "nodes": 326,
+    "learnable_parameter_elements": 2318608,
+    "checkpoint_roundtrip": "PASS"
+  }
+]

@@ -1,0 +1,2 @@
+left,right,disparity
+left/train_000001.png,right/train_000001.png,disparity/train_000001.npy

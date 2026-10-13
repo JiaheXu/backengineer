@@ -1,0 +1,65 @@
+Why depth 5.4/5.6 PTH versus ONNX comparisons fail — 2026-10-13
+
+OBSERVED CAUSAL CHAIN
+The weights are exact (conversion_diagnostic.json). Both PyTorch inference runs
+before and after strict PTH loading produce identical outputs for both models.
+Their discrepancy against the ONNX reference originates in execution arithmetic.
+
+Reproduce from /usr/local/zed:
+  PYTHONPATH=/usr/local/zed python3 \
+    backengineer/depth_recovery/pth_onnx_comparison/diagnostics/trace_parity.py
+
+This diagnostic exposes EVERY intermediate tensor in standard ONNX segments
+and disables ORT graph optimization so fusions cannot hide intermediate values.
+PyTorch uses the converted PTH checkpoint. Both get the same input/im0.png and
+input/im1.png, explicitly resized to 256x512. This diagnostic instrumentation
+changes ORT optimization and precision/fusion opportunities. Its final errors
+are not identical to the original optimized comparison, especially in FP16;
+original saved comparison.json files retain the original measured errors.
+Full per-node summaries: neural_depth_5.4.trace.json / neural_depth_5.6.trace.json.
+
+5.4
+First nonexact node: index80 Conv, max difference 2.86102294921875e-6.
+First differing quantizer: index109, one of 131072 INT8 values changes by one.
+Concrete activation: PyTorch 0.1157747954, ONNX 0.1157753468;
+scale 0.0771834105. Their ratios lie on opposite sides of rounding boundary1.5,
+so quantization returns1 versus2. Input difference is only about5.51e-7.
+At Census node196, left/right feature signs differ at13/32 locations, producing
+376 changed cost-volume values and maximum difference0.125.
+The original comparison's final maximum disparity error is0.73698997498.
+
+5.6
+First nonexact node: index80 Conv, maximum FP16 difference0.00390625.
+First differing quantizer: index92, 600 of524288 INT8 values change by one.
+Concrete activation: PyTorch4.5703125, ONNX4.56640625;
+scale0.128662109375. Quantization returns36 versus35.
+At Census node196, left/right signs differ at2308/2229 locations, producing
+56224 changed cost-volume values and maximum difference0.625.
+The original comparison's final maximum disparity error is2.609375.
+FP16 and backend fusion/accumulation make this model more sensitive than5.4.
+
+CONTROLLED OPERATOR CHECKS
+Replayed the first differing QuantizeLinear and the Census operator in NumPy
+using identical PyTorch-side inputs. Both match their corresponding PyTorch
+outputs exactly, for both models. The observed first quantizer/Census differences
+therefore arise from their already different inputs, rather than differing
+rounding/sign formulas in those operator implementations on this probe.
+Standard convolutions use different CPU kernels/reduction ordering; tiny FLOAT
+or larger FP16 rounding differences feed discontinuous integer/sign decisions.
+Following convolution, refinement and offset-volume stages amplify those
+changed cost-volume values. This is a concrete traced mechanism, not evidence
+that the overall discrepancy is harmless or within parity tolerance.
+
+WHY THE REGRESSION SUITE PASSED
+The full-reference tests use another synthetic stereo pair at128x256. The FLOAT
+5.4 tolerance assertion passes there. The5.6 full-reference test checks shapes
+and finiteness but intentionally does not assert tight end-to-end equality.
+Standard-node tests use boundary injection or same-input isolated checks, so
+those cannot establish independent full-network equality on arbitrary images.
+Thus30 passing tests did not establish5.4/5.6 parity on the saved256x512 pair.
+
+LIMITS
+No tolerance was loosened and no graph weights were changed. SDK/TensorRT CUDA
+was not run; this analysis cannot determine which CPU output is closer to SDK
+inference. Complete numerical alignment of all standard kernels/fusions and
+custom boundaries remains unachieved. No fix is claimed by this diagnostic.

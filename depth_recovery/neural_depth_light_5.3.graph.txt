@@ -1,0 +1,1629 @@
+0000 x06a5d2f1077a14: ai.onnx::Unsqueeze
+  inputs: ['left', 'xaa6861449a8642']
+  outputs: ['xb8cfda1118f5fb']
+  attributes: []
+
+0001 x69cf09f7d432be: ai.onnx::Unsqueeze
+  inputs: ['right', 'xaa6861449a8642']
+  outputs: ['xdee8a6385600de']
+  attributes: []
+
+0002 x6fc23903eaf054: ai.onnx::Reshape
+  inputs: ['xb8cfda1118f5fb', 'x00060b3df39762']
+  outputs: ['x3afa15d918fdc5']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0003 x425ba491db1ee0: ai.onnx::Reshape
+  inputs: ['xdee8a6385600de', 'x00060b3df39762']
+  outputs: ['x803ebae8ca536c']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0004 xe9e90e8ce8d16b: ai.onnx::Reshape
+  inputs: ['x3afa15d918fdc5', 'x69410978a0d7b6']
+  outputs: ['x9cdf8b7d7ce1b7']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0005 x6d4631fc038e23: ai.onnx::Reshape
+  inputs: ['x803ebae8ca536c', 'x69410978a0d7b6']
+  outputs: ['x5a51541c8fc595']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0006 x8cb5363dabf7a2: ai.onnx::Transpose
+  inputs: ['x9cdf8b7d7ce1b7']
+  outputs: ['x5f4fa4ed555188']
+  attributes: [{"name": "perm", "ints": ["0", "1", "3", "5", "2", "4"], "type": "INTS"}]
+
+0007 x74f1e2645db843: ai.onnx::Transpose
+  inputs: ['x5a51541c8fc595']
+  outputs: ['xd6899f52259c09']
+  attributes: [{"name": "perm", "ints": ["0", "1", "3", "5", "2", "4"], "type": "INTS"}]
+
+0008 x26e965178802f4: ai.onnx::Reshape
+  inputs: ['x5f4fa4ed555188', 'x35e7ecdf5f744b']
+  outputs: ['x14fe4bf9233e48']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0009 x49b50e5306706f: ai.onnx::Reshape
+  inputs: ['xd6899f52259c09', 'x35e7ecdf5f744b']
+  outputs: ['x4564e88a3d9604']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0010 x08f809f5bc42c3: ai.onnx::Squeeze
+  inputs: ['x14fe4bf9233e48', 'xb4ad77867d90b9']
+  outputs: ['x80c04fb1724025']
+  attributes: []
+
+0011 x90082ad1b658a5: ai.onnx::Squeeze
+  inputs: ['x4564e88a3d9604', 'xb4ad77867d90b9']
+  outputs: ['x23da6575bb007d']
+  attributes: []
+
+0012 x4b90a43b3b3b30: ai.onnx::Conv
+  inputs: ['x80c04fb1724025', 'x45fb897db43bd2', 'x55459ec4e9e4f0']
+  outputs: ['x5b8de9e87a5212']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["7", "7"], "type": "INTS"}, {"name": "pads", "ints": ["3", "3", "3", "3"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0013 x8d9d6d01fbb68e: ai.onnx::Conv
+  inputs: ['x23da6575bb007d', 'x45fb897db43bd2', 'x55459ec4e9e4f0']
+  outputs: ['x9a577a29450573']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["7", "7"], "type": "INTS"}, {"name": "pads", "ints": ["3", "3", "3", "3"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0014 x88ee4f582bad42: ai.onnx::Conv
+  inputs: ['x80c04fb1724025', 'xebfb96578a0153', 'x5a1a3bdae5130f']
+  outputs: ['x94b238df6830bb']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0015 x35f096f131767a: ai.onnx::Shape
+  inputs: ['x5b8de9e87a5212']
+  outputs: ['x98d05b87137f49']
+  attributes: []
+
+0016 x12e7b5b099b441: ai.onnx::Shape
+  inputs: ['x9a577a29450573']
+  outputs: ['xc701f386c0ecea']
+  attributes: []
+
+0017 xa0383f2282aad4: ai.onnx::Relu
+  inputs: ['x94b238df6830bb']
+  outputs: ['x2e1229e412238d']
+  attributes: []
+
+0018 xb02e90c00a05f7: ai.onnx::Reshape
+  inputs: ['x5b8de9e87a5212', 'x98d05b87137f49']
+  outputs: ['x62b071cd797184']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0019 x84e5b48a2f6dec: ai.onnx::Reshape
+  inputs: ['x9a577a29450573', 'xc701f386c0ecea']
+  outputs: ['x09bb8b1d09f6ae']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0020 x330da2f5122535: ai.onnx::Conv
+  inputs: ['x2e1229e412238d', 'x12cb920aa40118', 'x3acb65524b1b31']
+  outputs: ['xe119a75924e8a1']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0021 xfc24bef668be9b: ai.onnx::Relu
+  inputs: ['x62b071cd797184']
+  outputs: ['x508b1105c82f8b']
+  attributes: []
+
+0022 x046221ae0b18ce: ai.onnx::Relu
+  inputs: ['x09bb8b1d09f6ae']
+  outputs: ['xaad12107511697']
+  attributes: []
+
+0023 x4630651ee93eae: ai.onnx::Shape
+  inputs: ['x508b1105c82f8b']
+  outputs: ['x30867aa142624d']
+  attributes: []
+
+0024 x82d25e502ee557: ai.onnx::Shape
+  inputs: ['xaad12107511697']
+  outputs: ['xf42b6bee8be297']
+  attributes: []
+
+0025 x7e5a81fdb70c65: ai.onnx::Reshape
+  inputs: ['x508b1105c82f8b', 'x30867aa142624d']
+  outputs: ['x67381d14d9d453']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0026 xa1f32dd0e58152: ai.onnx::Reshape
+  inputs: ['xaad12107511697', 'xf42b6bee8be297']
+  outputs: ['x2145ca2fe6e3f8']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0027 x0b3ddf137fa447: ai.onnx::MaxPool
+  inputs: ['x67381d14d9d453']
+  outputs: ['x5fece94a735881']
+  attributes: [{"name": "ceil_mode", "i": "0", "type": "INT"}, {"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0028 xc9cb4f41258c9e: ai.onnx::Slice
+  inputs: ['x67381d14d9d453', 'xb7201b1efe918b', 'xaa1deabec5e294', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x6140bf237931ae']
+  attributes: []
+
+0029 x93dad2241e5bc8: ai.onnx::MaxPool
+  inputs: ['x2145ca2fe6e3f8']
+  outputs: ['xa40cb5cd0dbea6']
+  attributes: [{"name": "ceil_mode", "i": "0", "type": "INT"}, {"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0030 x1e747328eebcd2: ai.onnx::Shape
+  inputs: ['x67381d14d9d453']
+  outputs: ['x4b83312cd362a6']
+  attributes: []
+
+0031 x59fa078696066b: ai.onnx::Slice
+  inputs: ['x67381d14d9d453', 'xaa1deabec5e294', 'x503b446d13f169', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x85644f8577a831']
+  attributes: []
+
+0032 x0cf57e982857e5: ai.onnx::Slice
+  inputs: ['x2145ca2fe6e3f8', 'xaa1deabec5e294', 'x503b446d13f169', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x32cd98ccdbc550']
+  attributes: []
+
+0033 x4d5762423684bf: ai.onnx::Shape
+  inputs: ['x5fece94a735881']
+  outputs: ['x22703f3ac4a47e']
+  attributes: []
+
+0034 x05cc828d688a3c: ai.onnx::Conv
+  inputs: ['x6140bf237931ae', 'x3afe92e5d9be04', 'xb06019ab3f2ddb']
+  outputs: ['x13b31fce7f0197']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0035 xef1fb3f8e44e05: ai.onnx::Shape
+  inputs: ['xa40cb5cd0dbea6']
+  outputs: ['x8d4650ca0dcd4a']
+  attributes: []
+
+0036 x23a6d65e4799ea: ai.onnx::Gather
+  inputs: ['x4b83312cd362a6', 'xb8ffba9e5455f1']
+  outputs: ['x31de672c8ab6de']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0037 xf4c16602188b2b: ai.onnx::Gather
+  inputs: ['x4b83312cd362a6', 'x11b4d3befc6c8e']
+  outputs: ['xaab3524bb1c1e3']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0038 x3259f8ee1bb8eb: ai.onnx::Reshape
+  inputs: ['x5fece94a735881', 'x22703f3ac4a47e']
+  outputs: ['x1fc969f196fb0b']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0039 xb6f2a87edf326b: ai.onnx::LeakyRelu
+  inputs: ['x13b31fce7f0197']
+  outputs: ['x7aabb47fdc6538']
+  attributes: [{"name": "alpha", "f": 0.1, "type": "FLOAT"}]
+
+0040 x8e2661b2a8c480: ai.onnx::Reshape
+  inputs: ['xa40cb5cd0dbea6', 'x8d4650ca0dcd4a']
+  outputs: ['x8d46a9a874c08d']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0041 x012ff55cbd8a1c: ai.onnx::Unsqueeze
+  inputs: ['x31de672c8ab6de', 'xb7201b1efe918b']
+  outputs: ['xe9e5a53e855ea1']
+  attributes: []
+
+0042 x9d2f45db303320: ai.onnx::Unsqueeze
+  inputs: ['xaab3524bb1c1e3', 'xb7201b1efe918b']
+  outputs: ['x4f58162aa6e5ed']
+  attributes: []
+
+0043 x6fbb3881e20ab6: ai.onnx::Cast
+  inputs: ['x31de672c8ab6de']
+  outputs: ['x754b02b33b5a1a']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0044 xb4e7a7f792fe99: ai.onnx::Conv
+  inputs: ['x1fc969f196fb0b', 'xc8c5fac18b541d', 'x64ed21993753fe']
+  outputs: ['xfcefc3b58a6579']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0045 x40fc8a2fb09390: ai.onnx::Conv
+  inputs: ['x7aabb47fdc6538', 'x12fbd9fdf504ef', 'x3acb65524b1b31']
+  outputs: ['xa47ed42607e43e']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0046 x724b988975d960: ai.onnx::Conv
+  inputs: ['x8d46a9a874c08d', 'xc8c5fac18b541d', 'x64ed21993753fe']
+  outputs: ['xa8f679555960a7']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0047 x8d829562860317: ai.onnx::Concat
+  inputs: ['xe9e5a53e855ea1', 'x4f58162aa6e5ed']
+  outputs: ['xf5919950b1d799']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0048 x15eabe9f5cf6c5: ai.onnx::Relu
+  inputs: ['xfcefc3b58a6579']
+  outputs: ['x35e7c5538886a9']
+  attributes: []
+
+0049 xfb3e891e001b73: ai.onnx::Relu
+  inputs: ['xa8f679555960a7']
+  outputs: ['xf6a2bc96925f67']
+  attributes: []
+
+0050 xd35a1ac7d1677d: ai.onnx::Add
+  inputs: ['xe119a75924e8a1', 'xa47ed42607e43e']
+  outputs: ['x8f6740e194e6de']
+  attributes: []
+
+0051 x201e2004b14048: ai.onnx::Conv
+  inputs: ['x35e7c5538886a9', 'x44d5db10961524', 'x5c7e165b49c916']
+  outputs: ['x9da446e982a9dd']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0052 x197333899b4da1: ai.onnx::Conv
+  inputs: ['xf6a2bc96925f67', 'x44d5db10961524', 'x5c7e165b49c916']
+  outputs: ['xe067c77238985f']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0053 xca721be28d9f3f: ai.onnx::LeakyRelu
+  inputs: ['x8f6740e194e6de']
+  outputs: ['x18e6c9f0b28612']
+  attributes: [{"name": "alpha", "f": 0.1, "type": "FLOAT"}]
+
+0054 xa5ea72e3c53ee6: ai.onnx::Add
+  inputs: ['x9da446e982a9dd', 'x1fc969f196fb0b']
+  outputs: ['x5e8a9ead19609b']
+  attributes: []
+
+0055 x3532a658a26049: ai.onnx::Add
+  inputs: ['xe067c77238985f', 'x8d46a9a874c08d']
+  outputs: ['xeb58a068c44fd5']
+  attributes: []
+
+0056 x5efb4e76aedad6: ai.onnx::Relu
+  inputs: ['x5e8a9ead19609b']
+  outputs: ['x163cc9070ddd63']
+  attributes: []
+
+0057 x58216f6029d403: ai.onnx::Relu
+  inputs: ['xeb58a068c44fd5']
+  outputs: ['x103629c490db51']
+  attributes: []
+
+0058 xa9395b3835bfc0: ai.onnx::Conv
+  inputs: ['x163cc9070ddd63', 'x085a1b7940218c', 'x5389cab8398d62']
+  outputs: ['xd9b676699f72da']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0059 x14ea7ab25dc362: ai.onnx::Conv
+  inputs: ['x103629c490db51', 'x085a1b7940218c', 'x5389cab8398d62']
+  outputs: ['xcfd683aa851c89']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0060 xdecf1f30afcacf: ai.onnx::Relu
+  inputs: ['xd9b676699f72da']
+  outputs: ['xc22e7d46d9259d']
+  attributes: []
+
+0061 x7b4f63d9efea0e: ai.onnx::Relu
+  inputs: ['xcfd683aa851c89']
+  outputs: ['xc8084a4be7b52b']
+  attributes: []
+
+0062 xcd5e7597410ed9: ai.onnx::Conv
+  inputs: ['xc22e7d46d9259d', 'x9e1c37434e3b06', 'x6c447c87cc6f2a']
+  outputs: ['x58d4bc36d20b7b']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0063 x42c9242a2c8b38: ai.onnx::Conv
+  inputs: ['xc8084a4be7b52b', 'x9e1c37434e3b06', 'x6c447c87cc6f2a']
+  outputs: ['xcc34f5982359a9']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0064 x9490d8b785b6f9: ai.onnx::Add
+  inputs: ['x58d4bc36d20b7b', 'x163cc9070ddd63']
+  outputs: ['xb26d7682824fba']
+  attributes: []
+
+0065 x7ae4afef35b30d: ai.onnx::Add
+  inputs: ['xcc34f5982359a9', 'x103629c490db51']
+  outputs: ['x099fe7060c0618']
+  attributes: []
+
+0066 x8d031c1b3872a3: ai.onnx::Relu
+  inputs: ['xb26d7682824fba']
+  outputs: ['xe1aed473a2a71b']
+  attributes: []
+
+0067 x7f2d7f9147ea1a: ai.onnx::Relu
+  inputs: ['x099fe7060c0618']
+  outputs: ['x3e63600f6e0b8a']
+  attributes: []
+
+0068 xed6c161d1353f3: ai.onnx::Shape
+  inputs: ['xe1aed473a2a71b']
+  outputs: ['x586d9d5816c33c']
+  attributes: []
+
+0069 x2a6448b8c124a8: ai.onnx::Shape
+  inputs: ['x3e63600f6e0b8a']
+  outputs: ['x6689d6adabf3a2']
+  attributes: []
+
+0070 x2da5e9a8d755f9: ai.onnx::Reshape
+  inputs: ['xe1aed473a2a71b', 'x586d9d5816c33c']
+  outputs: ['x80611556f055a9']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0071 x1c3df9e8c8b5d4: ai.onnx::Reshape
+  inputs: ['x3e63600f6e0b8a', 'x6689d6adabf3a2']
+  outputs: ['x221a6f75662e63']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0072 x32a44075d561cb: ai.onnx::Shape
+  inputs: ['x80611556f055a9']
+  outputs: ['x2597e74409f7f5']
+  attributes: []
+
+0073 xaf75b736edf85b: ai.onnx::Slice
+  inputs: ['x80611556f055a9', 'xb7201b1efe918b', 'xaa1deabec5e294', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x38e3dc7e6ce562']
+  attributes: []
+
+0074 x2920e824ba1b87: ai.onnx::Shape
+  inputs: ['x221a6f75662e63']
+  outputs: ['x1a1018d149dfcc']
+  attributes: []
+
+0075 x2f6a300bcf8b79: ai.onnx::Slice
+  inputs: ['x80611556f055a9', 'xaa1deabec5e294', 'x503b446d13f169', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x3ae5899635405d']
+  attributes: []
+
+0076 xacb4836501745a: ai.onnx::Slice
+  inputs: ['x221a6f75662e63', 'xaa1deabec5e294', 'x503b446d13f169', 'x24ac29a528bb10', 'x24ac29a528bb10']
+  outputs: ['x94edff00e4916d']
+  attributes: []
+
+0077 x6d773806b756d4: ai.onnx::Reshape
+  inputs: ['x80611556f055a9', 'x2597e74409f7f5']
+  outputs: ['x1e8fd5653e7aca']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0078 x47c5256766f71c: ai.onnx::Conv
+  inputs: ['x38e3dc7e6ce562', 'x684d7df9a6c9d8', 'x94fa5548619fd6']
+  outputs: ['x7962c578d9702f']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0079 xbff28204b141e2: ai.onnx::Reshape
+  inputs: ['x221a6f75662e63', 'x1a1018d149dfcc']
+  outputs: ['xb84cd4a04dbfe1']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0080 xd2b062a9302d0e: ai.onnx::Gather
+  inputs: ['x2597e74409f7f5', 'xb8ffba9e5455f1']
+  outputs: ['x81b72299fc8d11']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0081 xe1c73c11c2cbef: ai.onnx::Gather
+  inputs: ['x2597e74409f7f5', 'x11b4d3befc6c8e']
+  outputs: ['xc8077f60d2b4ee']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0082 x2ef734c79dfa08: ai.onnx::Conv
+  inputs: ['x1e8fd5653e7aca', 'x7b0b022ee71cbc', 'xad54f586a2e314']
+  outputs: ['x62f959020fa0e6']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0083 x2c3230d762fe0c: ai.onnx::Conv
+  inputs: ['x1e8fd5653e7aca', 'xe6b5935d2bb89c', 'x6104d38b00d297']
+  outputs: ['xcb178dbf5485d4']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0084 xfcb4bd1cd2c2fd: ai.onnx::LeakyRelu
+  inputs: ['x7962c578d9702f']
+  outputs: ['x993c9b64bd8358']
+  attributes: [{"name": "alpha", "f": 0.1, "type": "FLOAT"}]
+
+0085 x4949a4fee71a60: ai.onnx::Conv
+  inputs: ['xb84cd4a04dbfe1', 'x7b0b022ee71cbc', 'xad54f586a2e314']
+  outputs: ['x1e19547306e80c']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0086 x0636ef323abe53: ai.onnx::Conv
+  inputs: ['xb84cd4a04dbfe1', 'xe6b5935d2bb89c', 'x6104d38b00d297']
+  outputs: ['x6060419ebf04a7']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0087 xc1fa606fda52c4: ai.onnx::Unsqueeze
+  inputs: ['x81b72299fc8d11', 'xb7201b1efe918b']
+  outputs: ['x5255bb2e198d7e']
+  attributes: []
+
+0088 x05c7f7b78b4278: ai.onnx::Unsqueeze
+  inputs: ['xc8077f60d2b4ee', 'xb7201b1efe918b']
+  outputs: ['xd62c533b185565']
+  attributes: []
+
+0089 x1a4ca8a806f24c: ai.onnx::Cast
+  inputs: ['x81b72299fc8d11']
+  outputs: ['x73cf522e5c10ba']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0090 xcbb082115882ea: ai.onnx::Relu
+  inputs: ['x62f959020fa0e6']
+  outputs: ['xdee0fb77885e27']
+  attributes: []
+
+0091 x3238e19977222f: ai.onnx::Conv
+  inputs: ['x993c9b64bd8358', 'x6086c9dade5f1e', 'x3b6fe8d5700436']
+  outputs: ['x62e71b8864c868']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0092 x3ed505eb1ec933: ai.onnx::Relu
+  inputs: ['x1e19547306e80c']
+  outputs: ['x47a4d76786ee00']
+  attributes: []
+
+0093 x875edb3e26dd55: ai.onnx::Concat
+  inputs: ['x5255bb2e198d7e', 'xd62c533b185565']
+  outputs: ['xf093fe9de9a49d']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0094 xaa482571715b0b: ai.onnx::Conv
+  inputs: ['xdee0fb77885e27', 'xa5c3bca7240a54', 'x4715526a016e47']
+  outputs: ['xe10cf7aa2ea762']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0095 x80f1e952f20a8c: ai.onnx::LeakyRelu
+  inputs: ['x62e71b8864c868']
+  outputs: ['xc14c8eddcc927e']
+  attributes: [{"name": "alpha", "f": 0.1, "type": "FLOAT"}]
+
+0096 xc3aa9712566ef1: ai.onnx::Conv
+  inputs: ['x47a4d76786ee00', 'xa5c3bca7240a54', 'x4715526a016e47']
+  outputs: ['xac7f5c4533bd97']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0097 x1a2db1153a5250: ai.onnx::Add
+  inputs: ['xe10cf7aa2ea762', 'xcb178dbf5485d4']
+  outputs: ['xc36e433dd6b55f']
+  attributes: []
+
+0098 x2061fbe4b110b9: ai.onnx::Add
+  inputs: ['xac7f5c4533bd97', 'x6060419ebf04a7']
+  outputs: ['x2ed900b462f96b']
+  attributes: []
+
+0099 xcd8c1e35e45b7d: ai.onnx::Relu
+  inputs: ['xc36e433dd6b55f']
+  outputs: ['x06e2793c4c4a77']
+  attributes: []
+
+0100 xac6d00293b4b32: ai.onnx::Relu
+  inputs: ['x2ed900b462f96b']
+  outputs: ['x1e8be82e344af5']
+  attributes: []
+
+0101 x9137ad7d24318e: ai.onnx::Conv
+  inputs: ['x06e2793c4c4a77', 'x259d2cacd85473', 'x9df0bc620f6ed9']
+  outputs: ['xa46ec91ea5d458']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0102 x15a90b2ec5d67e: ai.onnx::Conv
+  inputs: ['x1e8be82e344af5', 'x259d2cacd85473', 'x9df0bc620f6ed9']
+  outputs: ['xfdc5682965f3e8']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0103 x846508916b6bcc: ai.onnx::Relu
+  inputs: ['xa46ec91ea5d458']
+  outputs: ['xdbd43d1cab84f7']
+  attributes: []
+
+0104 x71a23f39722aee: ai.onnx::Relu
+  inputs: ['xfdc5682965f3e8']
+  outputs: ['xdacd35528a397e']
+  attributes: []
+
+0105 xe7bf4c0c21ece0: ai.onnx::Conv
+  inputs: ['xdbd43d1cab84f7', 'x0a7eb395bd25d5', 'x5dbd15dd9f9957']
+  outputs: ['x7de76513a14f62']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0106 x4e2fe725771761: ai.onnx::Conv
+  inputs: ['xdacd35528a397e', 'x0a7eb395bd25d5', 'x5dbd15dd9f9957']
+  outputs: ['x8184d022786bf8']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0107 x3c129400084de3: ai.onnx::Add
+  inputs: ['x7de76513a14f62', 'x06e2793c4c4a77']
+  outputs: ['xec63ba74541294']
+  attributes: []
+
+0108 x336d2207f76f0a: ai.onnx::Add
+  inputs: ['x8184d022786bf8', 'x1e8be82e344af5']
+  outputs: ['x87559c3671e9e0']
+  attributes: []
+
+0109 xcaf8f506f94211: ai.onnx::Relu
+  inputs: ['xec63ba74541294']
+  outputs: ['x8af753e86c9198']
+  attributes: []
+
+0110 x30d1f3f37a9766: ai.onnx::Relu
+  inputs: ['x87559c3671e9e0']
+  outputs: ['xbbdcf8d8bc0acc']
+  attributes: []
+
+0111 x973eb33f0d5f41: ai.onnx::Shape
+  inputs: ['x8af753e86c9198']
+  outputs: ['x2bad20c8d6da7d']
+  attributes: []
+
+0112 xda4a1f0d8f3253: ai.onnx::Shape
+  inputs: ['xbbdcf8d8bc0acc']
+  outputs: ['x6e366b515237f5']
+  attributes: []
+
+0113 x244ecef5124daa: ai.onnx::Reshape
+  inputs: ['x8af753e86c9198', 'x2bad20c8d6da7d']
+  outputs: ['x88fda3db0b266d']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0114 x04a67c8a8ddcc9: ai.onnx::Reshape
+  inputs: ['xbbdcf8d8bc0acc', 'x6e366b515237f5']
+  outputs: ['xee3e1098bd8867']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0115 x47e0f4f7fd3f39: ai.onnx::Conv
+  inputs: ['x88fda3db0b266d', 'x8edbf97d688d12', 'x909175c9491588']
+  outputs: ['x9b112bc39e291e']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0116 xda914ec83487ed: ai.onnx::Conv
+  inputs: ['xee3e1098bd8867', 'x8edbf97d688d12', 'x909175c9491588']
+  outputs: ['x55f0c440ec2494']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0117 xd3a76e8da6ca34: ai.onnx::ReduceL2
+  inputs: ['x9b112bc39e291e']
+  outputs: ['x051c525eb8f709']
+  attributes: [{"name": "axes", "ints": ["1"], "type": "INTS"}, {"name": "keepdims", "i": "1", "type": "INT"}]
+
+0118 x2ecc3dcfe425cf: ai.onnx::Shape
+  inputs: ['x9b112bc39e291e']
+  outputs: ['xe136f6e2b987a3']
+  attributes: []
+
+0119 x5333d6b883a14d: ai.onnx::ReduceL2
+  inputs: ['x55f0c440ec2494']
+  outputs: ['x75a724adc87ef3']
+  attributes: [{"name": "axes", "ints": ["1"], "type": "INTS"}, {"name": "keepdims", "i": "1", "type": "INT"}]
+
+0120 x20340da4330205: ai.onnx::Shape
+  inputs: ['x55f0c440ec2494']
+  outputs: ['x1ea632b6a56089']
+  attributes: []
+
+0121 x8759c78bf21321: ai.onnx::Clip
+  inputs: ['x051c525eb8f709', 'xe0560149b5ab46', '']
+  outputs: ['x13d429230182a2']
+  attributes: []
+
+0122 xba615d53ec86f5: ai.onnx::Clip
+  inputs: ['x75a724adc87ef3', 'xe0560149b5ab46', '']
+  outputs: ['x14dd6e2796b653']
+  attributes: []
+
+0123 x3e049751af698f: ai.onnx::Expand
+  inputs: ['x13d429230182a2', 'xe136f6e2b987a3']
+  outputs: ['x3ea0c9914b8dfe']
+  attributes: []
+
+0124 xe62454049c840d: ai.onnx::Expand
+  inputs: ['x14dd6e2796b653', 'x1ea632b6a56089']
+  outputs: ['x222b1d765c2aae']
+  attributes: []
+
+0125 xbf7bb84e7a1df8: ai.onnx::Div
+  inputs: ['x9b112bc39e291e', 'x3ea0c9914b8dfe']
+  outputs: ['x7d5903cc4226b2']
+  attributes: []
+
+0126 x5eac31e7716371: ai.onnx::Div
+  inputs: ['x55f0c440ec2494', 'x222b1d765c2aae']
+  outputs: ['x96a4a87595cff4']
+  attributes: []
+
+0127 xb0fdf26c0ff96d: sl::build_gwc_volume
+  inputs: ['x7d5903cc4226b2', 'x96a4a87595cff4']
+  outputs: ['xf8750c772f1165']
+  attributes: [{"name": "max_disp", "i": "24", "type": "INT"}, {"name": "num_groups", "i": "1", "type": "INT"}]
+
+0128 xf8cfab5c9d6172: ai.onnx::Shape
+  inputs: ['xf8750c772f1165']
+  outputs: ['x88c2c7ecfbfe2a']
+  attributes: []
+
+0129 x9b3dc456ab4d95: ai.onnx::Gather
+  inputs: ['x88c2c7ecfbfe2a', 'xa3e4e9db731a6c']
+  outputs: ['x5bbdb74e92fb55']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0130 xfafec2386ab459: ai.onnx::Gather
+  inputs: ['x88c2c7ecfbfe2a', 'xb8ffba9e5455f1']
+  outputs: ['x279eddcbb8fdc8']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0131 x5eded930000dba: ai.onnx::Gather
+  inputs: ['x88c2c7ecfbfe2a', 'x11b4d3befc6c8e']
+  outputs: ['xa70f2f63ee5ed7']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0132 x8b995844b460df: ai.onnx::Gather
+  inputs: ['x88c2c7ecfbfe2a', 'xacd7212d938487']
+  outputs: ['x9de0cc2aafd319']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0133 xe736fb7a36e481: ai.onnx::Unsqueeze
+  inputs: ['x5bbdb74e92fb55', 'xb7201b1efe918b']
+  outputs: ['x96b720e188d61e']
+  attributes: []
+
+0134 x19589df57dd046: ai.onnx::Unsqueeze
+  inputs: ['x279eddcbb8fdc8', 'xb7201b1efe918b']
+  outputs: ['xa62ae4be72b93d']
+  attributes: []
+
+0135 xca91495a451cb1: ai.onnx::Unsqueeze
+  inputs: ['xa70f2f63ee5ed7', 'xb7201b1efe918b']
+  outputs: ['x763bbd23d52a4d']
+  attributes: []
+
+0136 x3d84973a7e3911: ai.onnx::Unsqueeze
+  inputs: ['x9de0cc2aafd319', 'xb7201b1efe918b']
+  outputs: ['xf8700a166392c5']
+  attributes: []
+
+0137 xd1867a2c9f9d4e: ai.onnx::Concat
+  inputs: ['x96b720e188d61e', 'xa62ae4be72b93d', 'x763bbd23d52a4d', 'xf8700a166392c5']
+  outputs: ['x2408c3eebbebc4']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0138 x4fc2c953138599: ai.onnx::Reshape
+  inputs: ['xf8750c772f1165', 'x2408c3eebbebc4']
+  outputs: ['x89efe39dc12bdb']
+  attributes: [{"name": "allowzero", "i": "0", "type": "INT"}]
+
+0139 x50f1169f1af4ae: ai.onnx::Conv
+  inputs: ['x89efe39dc12bdb', 'x68db95123c38eb', 'xeafb6f93e2d09b']
+  outputs: ['x5dc0c910c00661']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0140 xe1ae3832c1126f: ai.onnx::Relu
+  inputs: ['x5dc0c910c00661']
+  outputs: ['xf0f525616b47e3']
+  attributes: []
+
+0141 x87aa014fa9c2a5: ai.onnx::Conv
+  inputs: ['xf0f525616b47e3', 'x2bda6c2a4e4956', 'x12e9792b83d421']
+  outputs: ['xaf541625e5b5af']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0142 x39720ae1b7a46b: ai.onnx::Conv
+  inputs: ['xf0f525616b47e3', 'x7805b41dff9f81', 'x3529cd4c56200d']
+  outputs: ['x4b4c5f7c78ef3f']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0143 x482b1393778910: ai.onnx::Relu
+  inputs: ['xaf541625e5b5af']
+  outputs: ['x9b56163bdd3c70']
+  attributes: []
+
+0144 x7f4bebf6275478: ai.onnx::Relu
+  inputs: ['x4b4c5f7c78ef3f']
+  outputs: ['xa295c106bfaa10']
+  attributes: []
+
+0145 x795a7005de84a5: ai.onnx::Conv
+  inputs: ['x9b56163bdd3c70', 'x7634129c97d8e5', 'x4e5cd5fba9a38e']
+  outputs: ['x0fc416e13fdb47']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0146 x4dc3f6d4f3363a: ai.onnx::Relu
+  inputs: ['x0fc416e13fdb47']
+  outputs: ['x3fec7c850af711']
+  attributes: []
+
+0147 x4fe496e28a3b7e: ai.onnx::Conv
+  inputs: ['x3fec7c850af711', 'x499f8701a757e6', 'x86080b91f5f5f5']
+  outputs: ['xcdc58daaa8ba41']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0148 x78915b84127c97: ai.onnx::Conv
+  inputs: ['x3fec7c850af711', 'x3e0d6fcc1cc201', 'x7612068a08ff49']
+  outputs: ['x4264739af36897']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0149 xc09d76fa5286a9: ai.onnx::Relu
+  inputs: ['xcdc58daaa8ba41']
+  outputs: ['xe45e7d674dc73e']
+  attributes: []
+
+0150 xeb308aec2f1765: ai.onnx::Relu
+  inputs: ['x4264739af36897']
+  outputs: ['x61f1cf23781f3a']
+  attributes: []
+
+0151 x369ca6dedd2fa1: ai.onnx::Conv
+  inputs: ['xe45e7d674dc73e', 'x688f424fe2d40b', 'xad2a5b960d4ea2']
+  outputs: ['x3216eb8bee5046']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0152 x1a9dd1e43b5c4c: ai.onnx::Relu
+  inputs: ['x3216eb8bee5046']
+  outputs: ['x404b0240378a9e']
+  attributes: []
+
+0153 xe9e08f91dc7352: ai.onnx::Conv
+  inputs: ['x404b0240378a9e', 'x8483eda4dc20e8', 'x01b6fa3dea2a68']
+  outputs: ['xb9f54e39a2e779']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0154 x896fea99bafe77: ai.onnx::Relu
+  inputs: ['xb9f54e39a2e779']
+  outputs: ['x39090bb2e67cc6']
+  attributes: []
+
+0155 xad147c1af2d042: ai.onnx::Conv
+  inputs: ['x39090bb2e67cc6', 'xefe417dd55480f', 'x1e071a2b118640']
+  outputs: ['xc1f25a1a9cce3d']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0156 x46f525865bfd60: ai.onnx::Relu
+  inputs: ['xc1f25a1a9cce3d']
+  outputs: ['x919ddc77427f67']
+  attributes: []
+
+0157 xa0a22c317e75bc: ai.onnx::Resize
+  inputs: ['x919ddc77427f67', '', 'xfdaa54e2b1a381']
+  outputs: ['x90648bbeeb3b98']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "YWxpZ25fY29ybmVycw==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0158 x53b46daa6d6c1c: ai.onnx::Conv
+  inputs: ['x90648bbeeb3b98', 'x176acca4b2139d', 'xecd96c41e2f356']
+  outputs: ['xb6193e0fc71c4b']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0159 xc2800e586d9d87: ai.onnx::Relu
+  inputs: ['xb6193e0fc71c4b']
+  outputs: ['xeaa9874e83f341']
+  attributes: []
+
+0160 x366b0b77b38709: ai.onnx::Add
+  inputs: ['xeaa9874e83f341', 'x61f1cf23781f3a']
+  outputs: ['xb308c62a09dade']
+  attributes: []
+
+0161 x423e35e1c10a86: ai.onnx::Relu
+  inputs: ['xb308c62a09dade']
+  outputs: ['xbe13e6d2d87a11']
+  attributes: []
+
+0162 xf2e2cd51c71269: ai.onnx::Resize
+  inputs: ['xbe13e6d2d87a11', '', 'xfdaa54e2b1a381']
+  outputs: ['xd041912845b0c8']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "YWxpZ25fY29ybmVycw==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0163 x5ea5afe4aee7df: ai.onnx::Conv
+  inputs: ['xd041912845b0c8', 'x4d7c5849cb9321', 'x2e35ce991eaf2d']
+  outputs: ['xf706553016dd35']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0164 xfcde390d72bc2e: ai.onnx::Relu
+  inputs: ['xf706553016dd35']
+  outputs: ['x638c0972c64114']
+  attributes: []
+
+0165 xebca989f2a979e: ai.onnx::Add
+  inputs: ['x638c0972c64114', 'xa295c106bfaa10']
+  outputs: ['x445f837eb904c9']
+  attributes: []
+
+0166 x6cf5af009c4103: ai.onnx::Softmax
+  inputs: ['x445f837eb904c9']
+  outputs: ['xcc39c1272cc336']
+  attributes: [{"name": "axis", "i": "1", "type": "INT"}]
+
+0167 xaaecda20c9f08d: ai.onnx::Shape
+  inputs: ['xcc39c1272cc336']
+  outputs: ['xd6b2c4c877d38d']
+  attributes: []
+
+0168 x45fc0ee421f0f4: ai.onnx::Neg
+  inputs: ['xcc39c1272cc336']
+  outputs: ['x28cb69e69da2f2']
+  attributes: []
+
+0169 x2597bbcd9da42c: ai.onnx::Gather
+  inputs: ['xd6b2c4c877d38d', 'xa3e4e9db731a6c']
+  outputs: ['x545affff8d3b22']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0170 xc37b12e2bdded3: ai.onnx::Gather
+  inputs: ['xd6b2c4c877d38d', 'xb8ffba9e5455f1']
+  outputs: ['x2b9c8a1f473d1a']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0171 x79dbed28b56329: ai.onnx::Gather
+  inputs: ['xd6b2c4c877d38d', 'x11b4d3befc6c8e']
+  outputs: ['xa8faaeaf2637ab']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0172 x078e8f389b1874: ai.onnx::Softmax
+  inputs: ['x28cb69e69da2f2']
+  outputs: ['x47ce7c9b95bce1']
+  attributes: [{"name": "axis", "i": "1", "type": "INT"}]
+
+0173 xdfecb01d1c4cfb: ai.onnx::LogSoftmax
+  inputs: ['x28cb69e69da2f2']
+  outputs: ['x9f0be0119e67e9']
+  attributes: [{"name": "axis", "i": "1", "type": "INT"}]
+
+0174 x4c66830660a396: ai.onnx::Unsqueeze
+  inputs: ['x545affff8d3b22', 'xb7201b1efe918b']
+  outputs: ['x144f3a2cd105db']
+  attributes: []
+
+0175 xb9a1ba63253a42: ai.onnx::Unsqueeze
+  inputs: ['x2b9c8a1f473d1a', 'xb7201b1efe918b']
+  outputs: ['xfb596a96341720']
+  attributes: []
+
+0176 x2fd859e785d2c1: ai.onnx::Unsqueeze
+  inputs: ['xa8faaeaf2637ab', 'xb7201b1efe918b']
+  outputs: ['x10f08c1bcfba54']
+  attributes: []
+
+0177 xe64eb077faf636: ai.onnx::Mul
+  inputs: ['x47ce7c9b95bce1', 'x9f0be0119e67e9']
+  outputs: ['x38eb21f8895182']
+  attributes: []
+
+0178 x79a234f4312c2a: ai.onnx::Concat
+  inputs: ['x144f3a2cd105db', 'x6a277c00cbb2fe', 'xfb596a96341720', 'x10f08c1bcfba54']
+  outputs: ['xb16e81ad469d86']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0179 x87dbaf1dc77650: ai.onnx::ReduceSum
+  inputs: ['x38eb21f8895182', 'x24ac29a528bb10']
+  outputs: ['x107af8cad05bcd']
+  attributes: [{"name": "keepdims", "i": "1", "type": "INT"}]
+
+0180 x1c25e2f4782a68: ai.onnx::Tile
+  inputs: ['xa9a82a8e419667', 'xb16e81ad469d86']
+  outputs: ['x1ced05abee324b']
+  attributes: []
+
+0181 x6cb3b184426800: ai.onnx::Mul
+  inputs: ['x107af8cad05bcd', 'xb7bae6efebad1f']
+  outputs: ['x79ed1151c7c7cd']
+  attributes: []
+
+0182 xd8c0e690771131: ai.onnx::Mul
+  inputs: ['xcc39c1272cc336', 'x1ced05abee324b']
+  outputs: ['xcd7f6e081eecba']
+  attributes: []
+
+0183 x30573d8b9d26e8: ai.onnx::Clip
+  inputs: ['x79ed1151c7c7cd', 'xc213c81849c3b1', 'x0c58ac94e8d133']
+  outputs: ['x36ecd3f2d7e28f']
+  attributes: []
+
+0184 xcc80c8b13b1bae: ai.onnx::ReduceSum
+  inputs: ['xcd7f6e081eecba', 'x24ac29a528bb10']
+  outputs: ['xb5678d5347ca9a']
+  attributes: [{"name": "keepdims", "i": "1", "type": "INT"}]
+
+0185 xf2d23c569fe661: ai.onnx::Shape
+  inputs: ['x36ecd3f2d7e28f']
+  outputs: ['x16b37da881dcfc']
+  attributes: []
+
+0186 xaef4d99b0673c1: ai.onnx::Shape
+  inputs: ['xb5678d5347ca9a']
+  outputs: ['x4c87f2dd24c033']
+  attributes: []
+
+0187 x247c3b406734cb: ai.onnx::Slice
+  inputs: ['x16b37da881dcfc', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['x83cd4184df7bd5']
+  attributes: []
+
+0188 xc165cf6843a29b: ai.onnx::Gather
+  inputs: ['x16b37da881dcfc', 'xb8ffba9e5455f1']
+  outputs: ['xd39083cb7b6574']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0189 xd087e5486c4518: ai.onnx::Slice
+  inputs: ['x4c87f2dd24c033', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['xd2987b071f475a']
+  attributes: []
+
+0190 xc4f294fd62d595: ai.onnx::Gather
+  inputs: ['x4c87f2dd24c033', 'xb8ffba9e5455f1']
+  outputs: ['xa71bc88e07cda1']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0191 xf9d45a9f51d3a6: ai.onnx::Concat
+  inputs: ['x83cd4184df7bd5', 'xf093fe9de9a49d']
+  outputs: ['x112da40708eee3']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0192 xb0aefd364f370e: ai.onnx::Cast
+  inputs: ['xd39083cb7b6574']
+  outputs: ['x8eb5fb36bc7d28']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0193 x4ec9247ec55e89: ai.onnx::Concat
+  inputs: ['xd2987b071f475a', 'xf093fe9de9a49d']
+  outputs: ['x198eeebb44231d']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0194 x1be876a8bb5896: ai.onnx::Cast
+  inputs: ['xa71bc88e07cda1']
+  outputs: ['x58196a64f0f860']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0195 xeb75b1b651fa92: ai.onnx::Resize
+  inputs: ['x36ecd3f2d7e28f', '', '', 'x112da40708eee3']
+  outputs: ['x2cfdfd39cd01ca']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0196 xc41bcd199946bf: ai.onnx::Resize
+  inputs: ['xb5678d5347ca9a', '', '', 'x198eeebb44231d']
+  outputs: ['x208230eb1ed17f']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0197 xc206f9d8590046: ai.onnx::Mul
+  inputs: ['x2cfdfd39cd01ca', 'x73cf522e5c10ba']
+  outputs: ['xb66d70532ed444']
+  attributes: []
+
+0198 xca0e75a44e81f9: ai.onnx::Mul
+  inputs: ['x208230eb1ed17f', 'x73cf522e5c10ba']
+  outputs: ['xe7c4108b88b0e4']
+  attributes: []
+
+0199 x8e40b7089271ed: ai.onnx::Div
+  inputs: ['xb66d70532ed444', 'x8eb5fb36bc7d28']
+  outputs: ['x2bc6428ed764d7']
+  attributes: []
+
+0200 xf624c99d7d1f85: ai.onnx::Div
+  inputs: ['xe7c4108b88b0e4', 'x58196a64f0f860']
+  outputs: ['xa891edf6858399']
+  attributes: []
+
+0201 xf941b3643eccce: sl::build_offset_volume
+  inputs: ['x3ae5899635405d', 'x94edff00e4916d', 'xa891edf6858399']
+  outputs: ['x0124b752da1128']
+  attributes: [{"name": "max_offset_disp", "i": "3", "type": "INT"}, {"name": "num_groups", "i": "1", "type": "INT"}]
+
+0202 xa1111ee9affad9: ai.onnx::Concat
+  inputs: ['xc14c8eddcc927e', 'x0124b752da1128', 'xa891edf6858399', 'x2bc6428ed764d7']
+  outputs: ['xbf2b1ce25ad2ee']
+  attributes: [{"name": "axis", "i": "1", "type": "INT"}]
+
+0203 xe3da08c4c6cf2e: ai.onnx::Shape
+  inputs: ['xbf2b1ce25ad2ee']
+  outputs: ['x52c69a4e98c024']
+  attributes: []
+
+0204 x2558876a85fa49: ai.onnx::Conv
+  inputs: ['xbf2b1ce25ad2ee', 'x9e361920b69dba', 'x1fba20ecca6dc7']
+  outputs: ['x2d25202b40b65e']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0205 x848adc9d38fbe7: ai.onnx::Gather
+  inputs: ['x52c69a4e98c024', 'xb8ffba9e5455f1']
+  outputs: ['x2305b9fe61d108']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0206 x0052857f778c25: ai.onnx::Gather
+  inputs: ['x52c69a4e98c024', 'x11b4d3befc6c8e']
+  outputs: ['x5c202adfa89d11']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0207 x95a1dfa36e5f3a: ai.onnx::Relu
+  inputs: ['x2d25202b40b65e']
+  outputs: ['xa8a532363e95a5']
+  attributes: []
+
+0208 x964026dbfccf0e: ai.onnx::BatchNormalization
+  inputs: ['xa8a532363e95a5', 'x8a7353348ea4fb', 'xdbaa337e2a241d', 'x866778708ff8c9', 'x23f600a62ff855']
+  outputs: ['xe5e00eb878b939']
+  attributes: [{"name": "epsilon", "f": 1e-05, "type": "FLOAT"}, {"name": "momentum", "f": 0.9, "type": "FLOAT"}, {"name": "training_mode", "i": "0", "type": "INT"}]
+
+0209 xa0a7cd7c7a875a: ai.onnx::Unsqueeze
+  inputs: ['x2305b9fe61d108', 'xb7201b1efe918b']
+  outputs: ['x362429db760f4c']
+  attributes: []
+
+0210 x941029b49afdff: ai.onnx::Unsqueeze
+  inputs: ['x5c202adfa89d11', 'xb7201b1efe918b']
+  outputs: ['x49dee51c6d4789']
+  attributes: []
+
+0211 xc6e77021655de1: ai.onnx::Conv
+  inputs: ['xe5e00eb878b939', 'xfa729e9635186e', 'xb88da65fe6299f']
+  outputs: ['x16df6d05b7bc30']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0212 x143caf68b18d78: ai.onnx::Concat
+  inputs: ['x362429db760f4c', 'x49dee51c6d4789']
+  outputs: ['xc35e6c7a8babdc']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0213 xde7d2d6b98fd94: ai.onnx::Relu
+  inputs: ['x16df6d05b7bc30']
+  outputs: ['x4c1445ed71ed36']
+  attributes: []
+
+0214 x8cb8d0e5ec89a5: ai.onnx::Shape
+  inputs: ['x4c1445ed71ed36']
+  outputs: ['x92f3a8db9358b3']
+  attributes: []
+
+0215 x11f21886a5a527: ai.onnx::Conv
+  inputs: ['x4c1445ed71ed36', 'xe9b00d80840c9b', 'xfdfcbee3bed838']
+  outputs: ['x681846b97a4d9b']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0216 xda567a8013b045: ai.onnx::Gather
+  inputs: ['x92f3a8db9358b3', 'xb8ffba9e5455f1']
+  outputs: ['xe78ad8b1b24f8c']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0217 x266112c8605116: ai.onnx::Gather
+  inputs: ['x92f3a8db9358b3', 'x11b4d3befc6c8e']
+  outputs: ['x12051c64280a89']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0218 x4a62ca228ee588: ai.onnx::Relu
+  inputs: ['x681846b97a4d9b']
+  outputs: ['x951ce7a2a84e2a']
+  attributes: []
+
+0219 x31d8452a3a848d: ai.onnx::Conv
+  inputs: ['x951ce7a2a84e2a', 'xdd4a090a2f3461', 'xc1c03fdb77162f']
+  outputs: ['xfcad4c9efc3fed']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["7", "7"], "type": "INTS"}, {"name": "pads", "ints": ["3", "3", "3", "3"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0220 x7b9dd783800289: ai.onnx::Unsqueeze
+  inputs: ['xe78ad8b1b24f8c', 'xb7201b1efe918b']
+  outputs: ['x1f083c89f786b8']
+  attributes: []
+
+0221 x5c17ab8d6a1cb9: ai.onnx::Unsqueeze
+  inputs: ['x12051c64280a89', 'xb7201b1efe918b']
+  outputs: ['x34e0c53e26826c']
+  attributes: []
+
+0222 xcfc82a08ff82bf: ai.onnx::Relu
+  inputs: ['xfcad4c9efc3fed']
+  outputs: ['x17b998a88337b0']
+  attributes: []
+
+0223 x085d2c59b25c89: ai.onnx::Concat
+  inputs: ['x1f083c89f786b8', 'x34e0c53e26826c']
+  outputs: ['x3e6754fff87858']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0224 xa3aa5540b5b7ee: ai.onnx::Shape
+  inputs: ['x17b998a88337b0']
+  outputs: ['x58bddf459acf3b']
+  attributes: []
+
+0225 xb859170622152f: ai.onnx::Slice
+  inputs: ['x58bddf459acf3b', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['x86cbf55f62812d']
+  attributes: []
+
+0226 x00492c40741a8d: ai.onnx::Concat
+  inputs: ['x86cbf55f62812d', 'x3e6754fff87858']
+  outputs: ['xd3ed45a44448be']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0227 x763c24c6dd7364: ai.onnx::Resize
+  inputs: ['x17b998a88337b0', '', '', 'xd3ed45a44448be']
+  outputs: ['x8701810fe5742a']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0228 x5b2d5da4356162: ai.onnx::Conv
+  inputs: ['x8701810fe5742a', 'x5756c9c83acaac', 'x1e02c6bd7d8bcb']
+  outputs: ['x4fd84584990e13']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0229 x0da37dc6b44568: ai.onnx::Relu
+  inputs: ['x4fd84584990e13']
+  outputs: ['x286dab986c1c45']
+  attributes: []
+
+0230 xa684167d39071a: ai.onnx::Add
+  inputs: ['x286dab986c1c45', 'x4c1445ed71ed36']
+  outputs: ['xe507f1f2b9118f']
+  attributes: []
+
+0231 x34b8d3b597c76b: ai.onnx::Conv
+  inputs: ['xe507f1f2b9118f', 'xaad98446804242', 'x8526249ae27926']
+  outputs: ['x89b87b484b5843']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0232 xba3f568c182d93: ai.onnx::Relu
+  inputs: ['x89b87b484b5843']
+  outputs: ['xb4f8a0c77f804c']
+  attributes: []
+
+0233 x833894dead0c8d: ai.onnx::Shape
+  inputs: ['xb4f8a0c77f804c']
+  outputs: ['x909058627f4e6d']
+  attributes: []
+
+0234 x8e7303951aaa33: ai.onnx::Slice
+  inputs: ['x909058627f4e6d', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['xc01d52a04c8317']
+  attributes: []
+
+0235 x7d7a006b08f1a8: ai.onnx::Concat
+  inputs: ['xc01d52a04c8317', 'xc35e6c7a8babdc']
+  outputs: ['xfd45fd67193f63']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0236 x8201364041aa3a: ai.onnx::Resize
+  inputs: ['xb4f8a0c77f804c', '', '', 'xfd45fd67193f63']
+  outputs: ['xa8811e7453d43e']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0237 x442cbd0e248808: ai.onnx::Conv
+  inputs: ['xa8811e7453d43e', 'xe60575d419f272', 'x055ae731ad556a']
+  outputs: ['xebcdc13477aed4']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0238 x2ccd821a5c43f7: ai.onnx::Relu
+  inputs: ['xebcdc13477aed4']
+  outputs: ['x7eb5d007ca9a83']
+  attributes: []
+
+0239 x0032ea277b165d: ai.onnx::Add
+  inputs: ['x7eb5d007ca9a83', 'xe5e00eb878b939']
+  outputs: ['x2369acb846a367']
+  attributes: []
+
+0240 xe00c8826b5ee87: ai.onnx::Conv
+  inputs: ['x2369acb846a367', 'x65b02ff18dcdf5', 'x921a5b92e79d71']
+  outputs: ['x5bc79990d87964']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0241 xa2b1a9e2d758dc: ai.onnx::Relu
+  inputs: ['x5bc79990d87964']
+  outputs: ['x1705c52ab1b9dd']
+  attributes: []
+
+0242 x465b70535f2f50: ai.onnx::Conv
+  inputs: ['x1705c52ab1b9dd', 'x203deaa1f88576', 'x2025b283326d69']
+  outputs: ['x6d5ac69124713d']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0243 x642aef32569ab3: ai.onnx::Conv
+  inputs: ['x1705c52ab1b9dd', 'x16b6a74a68fc30', 'xf874345f759b13']
+  outputs: ['xc752edf0ada8ba']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0244 x8d9b8d1f106dbd: ai.onnx::Sigmoid
+  inputs: ['xc752edf0ada8ba']
+  outputs: ['x89cc280f0c3faf']
+  attributes: []
+
+0245 x68f892fd392e95: ai.onnx::Add
+  inputs: ['xa891edf6858399', 'x6d5ac69124713d']
+  outputs: ['x43b3c653f924cb']
+  attributes: []
+
+0246 xc671b9946b9167: ai.onnx::Clip
+  inputs: ['x89cc280f0c3faf', 'xc213c81849c3b1', 'x0c58ac94e8d133']
+  outputs: ['x31b203d47f4dfc']
+  attributes: []
+
+0247 x1f8d27dabbd370: ai.onnx::Relu
+  inputs: ['x43b3c653f924cb']
+  outputs: ['x777146a9b5e90f']
+  attributes: []
+
+0248 xba8c15645aadaa: ai.onnx::Shape
+  inputs: ['x777146a9b5e90f']
+  outputs: ['xdfef6a4bf0b8f3']
+  attributes: []
+
+0249 x62234c7e2c9b02: ai.onnx::Shape
+  inputs: ['x31b203d47f4dfc']
+  outputs: ['x165a93772e3f0f']
+  attributes: []
+
+0250 xff5063f3f2ddd1: ai.onnx::Slice
+  inputs: ['xdfef6a4bf0b8f3', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['xe92cf43e833f88']
+  attributes: []
+
+0251 x42c84ce6439960: ai.onnx::Gather
+  inputs: ['xdfef6a4bf0b8f3', 'xb8ffba9e5455f1']
+  outputs: ['xe276ca1af58eec']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0252 xdeb0bacc163ba2: ai.onnx::Slice
+  inputs: ['x165a93772e3f0f', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['xcebd87cb3c3e73']
+  attributes: []
+
+0253 xf1e1462c708dda: ai.onnx::Gather
+  inputs: ['x165a93772e3f0f', 'xb8ffba9e5455f1']
+  outputs: ['x797bb9ed593fa4']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0254 x92c49e95adb503: ai.onnx::Concat
+  inputs: ['xe92cf43e833f88', 'xf5919950b1d799']
+  outputs: ['xf89232c6111248']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0255 x503a2a4a52f9e3: ai.onnx::Cast
+  inputs: ['xe276ca1af58eec']
+  outputs: ['xc9ba331092ffc0']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0256 x244960c512cf7b: ai.onnx::Concat
+  inputs: ['xcebd87cb3c3e73', 'xf5919950b1d799']
+  outputs: ['x03b0572b8f2645']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0257 x95bdd3a15d69d4: ai.onnx::Cast
+  inputs: ['x797bb9ed593fa4']
+  outputs: ['xc56475a795d6d0']
+  attributes: [{"name": "to", "i": "1", "type": "INT"}]
+
+0258 x8ea060bf6e207f: ai.onnx::Resize
+  inputs: ['x777146a9b5e90f', '', '', 'xf89232c6111248']
+  outputs: ['x84a5b2940d8281']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0259 x9de95a82257b72: ai.onnx::Resize
+  inputs: ['x31b203d47f4dfc', '', '', 'x03b0572b8f2645']
+  outputs: ['x5aa6eaeade618e']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0260 x04eb4b025e1714: ai.onnx::Mul
+  inputs: ['x84a5b2940d8281', 'x754b02b33b5a1a']
+  outputs: ['x08519626028416']
+  attributes: []
+
+0261 xe06d3f1b2f63fd: ai.onnx::Mul
+  inputs: ['x5aa6eaeade618e', 'x754b02b33b5a1a']
+  outputs: ['x82e406508c4350']
+  attributes: []
+
+0262 x03b9e0d1193caa: ai.onnx::Div
+  inputs: ['x08519626028416', 'xc9ba331092ffc0']
+  outputs: ['x43da339a674e95']
+  attributes: []
+
+0263 x831bbf270cef4a: ai.onnx::Div
+  inputs: ['x82e406508c4350', 'xc56475a795d6d0']
+  outputs: ['xe024f3c799c85c']
+  attributes: []
+
+0264 x75d5afa3a8a344: sl::build_offset_volume
+  inputs: ['x85644f8577a831', 'x32cd98ccdbc550', 'x43da339a674e95']
+  outputs: ['x5f2f223eda8433']
+  attributes: [{"name": "max_offset_disp", "i": "3", "type": "INT"}, {"name": "num_groups", "i": "1", "type": "INT"}]
+
+0265 xf13fba42ff5c67: ai.onnx::Resize
+  inputs: ['x43da339a674e95', '', 'xfdaa54e2b1a381']
+  outputs: ['xc13a620965e96b']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0266 xca43c3b081646f: ai.onnx::Mul
+  inputs: ['xc13a620965e96b', 'x47a1de5947f621']
+  outputs: ['x84a734baa1d33b']
+  attributes: []
+
+0267 xbac0697ed70ad1: ai.onnx::Concat
+  inputs: ['x18e6c9f0b28612', 'x5f2f223eda8433', 'x43da339a674e95', 'xe024f3c799c85c']
+  outputs: ['x3a95a1380e830e']
+  attributes: [{"name": "axis", "i": "1", "type": "INT"}]
+
+0268 x699c04b3b40220: ai.onnx::Shape
+  inputs: ['x3a95a1380e830e']
+  outputs: ['xb7c7802365f490']
+  attributes: []
+
+0269 x8642698effe011: ai.onnx::Conv
+  inputs: ['x3a95a1380e830e', 'x1e98f02de0b57b', 'x057edfdf52ae7e']
+  outputs: ['x5f07c34d15a94e']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0270 x82f7f3efc3675f: ai.onnx::Gather
+  inputs: ['xb7c7802365f490', 'xb8ffba9e5455f1']
+  outputs: ['xd56caa71920f59']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0271 x721f932d8d1a0f: ai.onnx::Gather
+  inputs: ['xb7c7802365f490', 'x11b4d3befc6c8e']
+  outputs: ['x955bbf305cba9e']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0272 x9445f2494cf8c9: ai.onnx::Relu
+  inputs: ['x5f07c34d15a94e']
+  outputs: ['xb1af2aa9105143']
+  attributes: []
+
+0273 xc246f97c78c7f6: ai.onnx::BatchNormalization
+  inputs: ['xb1af2aa9105143', 'x8a7353348ea4fb', 'xdbaa337e2a241d', 'x33bc6d3c7ecb7b', 'x0381fdfa08954c']
+  outputs: ['x56561fd1f0a53b']
+  attributes: [{"name": "epsilon", "f": 1e-05, "type": "FLOAT"}, {"name": "momentum", "f": 0.9, "type": "FLOAT"}, {"name": "training_mode", "i": "0", "type": "INT"}]
+
+0274 xb3abc4ff88e10e: ai.onnx::Unsqueeze
+  inputs: ['xd56caa71920f59', 'xb7201b1efe918b']
+  outputs: ['xf411c3b1d584f0']
+  attributes: []
+
+0275 x87637d29fd066e: ai.onnx::Unsqueeze
+  inputs: ['x955bbf305cba9e', 'xb7201b1efe918b']
+  outputs: ['xb019e3e865fd7a']
+  attributes: []
+
+0276 x26aa14713472ad: ai.onnx::Mul
+  inputs: ['xd56caa71920f59', 'xba5f858360c3af']
+  outputs: ['xb99e0b6579926c']
+  attributes: []
+
+0277 xa64e07ce79f8a7: ai.onnx::Mul
+  inputs: ['x955bbf305cba9e', 'xba5f858360c3af']
+  outputs: ['x6d517bb8edf624']
+  attributes: []
+
+0278 x7db268dd64f872: ai.onnx::Conv
+  inputs: ['x56561fd1f0a53b', 'x7d2c56978828d2', 'xa91adcb0817723']
+  outputs: ['xfc6e5761381df0']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0279 x6fdd1e79046033: ai.onnx::Concat
+  inputs: ['xf411c3b1d584f0', 'xb019e3e865fd7a']
+  outputs: ['x4dd87617630c75']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0280 x30ce4a168b1507: ai.onnx::Unsqueeze
+  inputs: ['xb99e0b6579926c', 'xb7201b1efe918b']
+  outputs: ['xd9351d19978537']
+  attributes: []
+
+0281 x4933bbdd654f5f: ai.onnx::Unsqueeze
+  inputs: ['x6d517bb8edf624', 'xb7201b1efe918b']
+  outputs: ['x10d96641813bb9']
+  attributes: []
+
+0282 x13ea6874cc7455: ai.onnx::Relu
+  inputs: ['xfc6e5761381df0']
+  outputs: ['x1896404c9db4f9']
+  attributes: []
+
+0283 xacdb66ec163159: ai.onnx::Concat
+  inputs: ['xd9351d19978537', 'x10d96641813bb9']
+  outputs: ['x0d4fd2c0882890']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0284 x34daa0d73ba2e9: ai.onnx::Shape
+  inputs: ['x1896404c9db4f9']
+  outputs: ['xf608fede93340b']
+  attributes: []
+
+0285 x5ee56e8ef60e85: ai.onnx::Conv
+  inputs: ['x1896404c9db4f9', 'x5af6085cd740d5', 'x1a665721d148be']
+  outputs: ['xc3e7d997a4d7c6']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["2", "2"], "type": "INTS"}]
+
+0286 x4bff1dcb9e9405: ai.onnx::Gather
+  inputs: ['xf608fede93340b', 'xb8ffba9e5455f1']
+  outputs: ['x3d46ac86741c0c']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0287 x605f1a29a7e24a: ai.onnx::Gather
+  inputs: ['xf608fede93340b', 'x11b4d3befc6c8e']
+  outputs: ['x8a4f20a8d8d7ca']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0288 x0685c0e72dc298: ai.onnx::Relu
+  inputs: ['xc3e7d997a4d7c6']
+  outputs: ['xc292dfaf21867b']
+  attributes: []
+
+0289 x633a60d4f8c547: ai.onnx::Conv
+  inputs: ['xc292dfaf21867b', 'xf611561b3e5311', 'xc4d68a7721ba5b']
+  outputs: ['x5aa1ca2053b884']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["7", "7"], "type": "INTS"}, {"name": "pads", "ints": ["3", "3", "3", "3"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0290 x4f80963816a8e8: ai.onnx::Unsqueeze
+  inputs: ['x3d46ac86741c0c', 'xb7201b1efe918b']
+  outputs: ['x7b45f8a9f8a8ca']
+  attributes: []
+
+0291 x2160200fde1b09: ai.onnx::Unsqueeze
+  inputs: ['x8a4f20a8d8d7ca', 'xb7201b1efe918b']
+  outputs: ['x09610a446f5f96']
+  attributes: []
+
+0292 x2ad56e94d14c2b: ai.onnx::Relu
+  inputs: ['x5aa1ca2053b884']
+  outputs: ['x04fffabcffc9c4']
+  attributes: []
+
+0293 xaa84d5eeed8231: ai.onnx::Concat
+  inputs: ['x7b45f8a9f8a8ca', 'x09610a446f5f96']
+  outputs: ['x416b679eed9f28']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0294 xa0cf764e3542d6: ai.onnx::Shape
+  inputs: ['x04fffabcffc9c4']
+  outputs: ['x0e55005873a085']
+  attributes: []
+
+0295 xcc85e5f7908fa5: ai.onnx::Slice
+  inputs: ['x0e55005873a085', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['xd488d3a746ccf9']
+  attributes: []
+
+0296 x313e9f2fc21f3f: ai.onnx::Concat
+  inputs: ['xd488d3a746ccf9', 'x416b679eed9f28']
+  outputs: ['x052d6ab25241ab']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0297 xe730e367351050: ai.onnx::Resize
+  inputs: ['x04fffabcffc9c4', '', '', 'x052d6ab25241ab']
+  outputs: ['xdadbe4974bdc5f']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0298 xb25769e8543cbb: ai.onnx::Conv
+  inputs: ['xdadbe4974bdc5f', 'x9e9ce026adc1e4', 'xd863402bc6cd29']
+  outputs: ['xf8c1070f1d62e4']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0299 xfd63388aa71be1: ai.onnx::Relu
+  inputs: ['xf8c1070f1d62e4']
+  outputs: ['xfa8eaef3cdb781']
+  attributes: []
+
+0300 x00ec10e128f166: ai.onnx::Add
+  inputs: ['xfa8eaef3cdb781', 'x1896404c9db4f9']
+  outputs: ['xf31d1d002e7a8d']
+  attributes: []
+
+0301 xf2a19b271fd8bb: ai.onnx::Conv
+  inputs: ['xf31d1d002e7a8d', 'x19662a28d5aaf4', 'x862e5533d3c19f']
+  outputs: ['x33f62554fac93a']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0302 x51f9ef2df7f45c: ai.onnx::Relu
+  inputs: ['x33f62554fac93a']
+  outputs: ['x9c8948ba91ff18']
+  attributes: []
+
+0303 x4c63730a400d8f: ai.onnx::Shape
+  inputs: ['x9c8948ba91ff18']
+  outputs: ['xba9823516e3390']
+  attributes: []
+
+0304 xd1937678ee12e2: ai.onnx::Slice
+  inputs: ['xba9823516e3390', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['x111dce66fb21de']
+  attributes: []
+
+0305 x8c9ab78a4e1d0e: ai.onnx::Concat
+  inputs: ['x111dce66fb21de', 'x4dd87617630c75']
+  outputs: ['x1ad5bffb7b1c52']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0306 xce4caa6f6b3eb2: ai.onnx::Resize
+  inputs: ['x9c8948ba91ff18', '', '', 'x1ad5bffb7b1c52']
+  outputs: ['xa9daf20d1b2a69']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0307 xac8254ac4c48b2: ai.onnx::Conv
+  inputs: ['xa9daf20d1b2a69', 'xe72339c89b66d9', 'xd91bb8ca7e9249']
+  outputs: ['xcc18752e1ba1af']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0308 xc640b48ff00bb4: ai.onnx::Relu
+  inputs: ['xcc18752e1ba1af']
+  outputs: ['xd98d6421d1e5f6']
+  attributes: []
+
+0309 xf1f296ec796937: ai.onnx::Add
+  inputs: ['xd98d6421d1e5f6', 'x56561fd1f0a53b']
+  outputs: ['x470b8e3ea8a3c8']
+  attributes: []
+
+0310 xf1247abe7ad664: ai.onnx::Conv
+  inputs: ['x470b8e3ea8a3c8', 'x3f645a3af5728b', 'x806cd76c002501']
+  outputs: ['x16bfe7c057d1a7']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0311 x22335d1ed48e11: ai.onnx::Relu
+  inputs: ['x16bfe7c057d1a7']
+  outputs: ['x531b8f9f538de1']
+  attributes: []
+
+0312 x0fd83d1e7c546e: ai.onnx::Shape
+  inputs: ['x531b8f9f538de1']
+  outputs: ['x9cec534df79936']
+  attributes: []
+
+0313 x3e77918df02339: ai.onnx::Slice
+  inputs: ['x9cec534df79936', 'xb7201b1efe918b', 'x8117f0fd51ce49', 'xb7201b1efe918b']
+  outputs: ['x3c754e09d8e310']
+  attributes: []
+
+0314 x84149e97223830: ai.onnx::Concat
+  inputs: ['x3c754e09d8e310', 'x0d4fd2c0882890']
+  outputs: ['x49a4cfb46c205f']
+  attributes: [{"name": "axis", "i": "0", "type": "INT"}]
+
+0315 xef58685b978027: ai.onnx::Resize
+  inputs: ['x531b8f9f538de1', '', '', 'x49a4cfb46c205f']
+  outputs: ['x1af30688bec46c']
+  attributes: [{"name": "coordinate_transformation_mode", "s": "aGFsZl9waXhlbA==", "type": "STRING"}, {"name": "cubic_coeff_a", "f": -0.75, "type": "FLOAT"}, {"name": "mode", "s": "bGluZWFy", "type": "STRING"}, {"name": "nearest_mode", "s": "Zmxvb3I=", "type": "STRING"}]
+
+0316 x6c5b57586f98ab: ai.onnx::Conv
+  inputs: ['x1af30688bec46c', 'xde19d513de0839', 'xe0c218e871f62e']
+  outputs: ['xa16dbd8da6ad1a']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["3", "3"], "type": "INTS"}, {"name": "pads", "ints": ["1", "1", "1", "1"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0317 x983d6243054d58: ai.onnx::Relu
+  inputs: ['xa16dbd8da6ad1a']
+  outputs: ['x395fa8756cd860']
+  attributes: []
+
+0318 x948fedf9dcba48: ai.onnx::Conv
+  inputs: ['x395fa8756cd860', 'x52bdfe8a5e0c2a', 'xe77e51292c1350']
+  outputs: ['xcad9c8002ade7a']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0319 x23f66523663977: ai.onnx::Conv
+  inputs: ['x395fa8756cd860', 'x58b45df6833578', 'x2d2d60bc29cf37']
+  outputs: ['xd778b55a2308eb']
+  attributes: [{"name": "dilations", "ints": ["1", "1"], "type": "INTS"}, {"name": "group", "i": "1", "type": "INT"}, {"name": "kernel_shape", "ints": ["1", "1"], "type": "INTS"}, {"name": "pads", "ints": ["0", "0", "0", "0"], "type": "INTS"}, {"name": "strides", "ints": ["1", "1"], "type": "INTS"}]
+
+0320 x8026b59ca964fc: ai.onnx::Sigmoid
+  inputs: ['xd778b55a2308eb']
+  outputs: ['x64b6e472442667']
+  attributes: []
+
+0321 x28ca65105af3c9: ai.onnx::Add
+  inputs: ['x84a734baa1d33b', 'xcad9c8002ade7a']
+  outputs: ['x2def3ca11c3198']
+  attributes: []
+
+0322 xa256e92471dd55: ai.onnx::Clip
+  inputs: ['x64b6e472442667', 'xc213c81849c3b1', 'x0c58ac94e8d133']
+  outputs: ['confidence']
+  attributes: []
+
+0323 x564572b20c401a: ai.onnx::Relu
+  inputs: ['x2def3ca11c3198']
+  outputs: ['disparity']
+  attributes: []
+
+0324 x572eca6ffc17de: ai.onnx::Shape
+  inputs: ['disparity']
+  outputs: ['xe94185e6244ec7']
+  attributes: []
+
+0325 x59a3c399350d09: ai.onnx::ConstantOfShape
+  inputs: ['xe94185e6244ec7']
+  outputs: ['disparity_right']
+  attributes: [{"name": "value", "t": {"dims": ["1"], "data_type": 1, "name": "", "raw_data": "AAAAAA=="}, "type": "TENSOR"}]

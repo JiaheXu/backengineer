@@ -1,0 +1,30 @@
+Static evidence for RGB input preparation — ZED SDK 5.5.0
+
+libsl_ai.so build ID: e3260433e54b488da8004e3d91c6646ef6e58209.
+PTX source: sl_ai.ptx, produced by cuobjdump from this installed library.
+
+Color path: normalizeRGBAto01_CHW<float>, PTX entry line 206021.
+It loads four-byte source pixels at byte offsets +2, +1 and +0, writes
+three contiguous channel planes in that order, and multiplies each byte by
+the supplied float scalar. Alpha is unused. For SDK BGRA source pixels these
+planes are RGB; the comparison script takes already-RGB Pillow images directly.
+
+Host ultranet_preprocess<float> at 0xc72e0 loads scalar at 0x8c1180 via
+instruction 0xc7375 and invokes the normalization kernel wrapper at 0xc62f0.
+The scalar bytes at 0x8c1180 decode to 0.003921568859368563, FP32 1/255.
+ultranet_preprocess<half> at 0xc7460 loads the same scalar at 0xc74f5.
+The half kernel at PTX entry line 206198 multiplies bytes in FP32 and then
+converts to FP16 with round-to-nearest. The script likewise scales in FP32,
+then casts to the graph's declared input precision.
+
+NeuralDepth::run_internal at 0x122080 dispatches the color preprocessing path
+when member +0x27c == 1, with FLOAT and half branches at 0x1220c6/0x122170.
+A separate legacy grayscale path calls neuralbg_preprocess instead. The
+recovered ONNX graphs all declare three input channels and are color graphs.
+This is static evidence for their color preparation, not a runtime observation.
+
+No subtraction of mean, division by standard deviation, or other per-channel
+normalization appears in the color kernel. The comparison tool explicitly uses
+RGB in [0,1] and does not claim to reproduce upstream camera resizing,
+rectification, artifact selection or temporal/postprocessing.
+Edge padding and optional Pillow resizing are test utility choices.

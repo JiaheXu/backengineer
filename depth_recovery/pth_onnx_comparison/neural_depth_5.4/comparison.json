@@ -1,0 +1,94 @@
+{
+  "model": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.4.onnx",
+  "model_sha256": "c197a4f67274267790cd252f2d9cceeceb3eeb9b6307f6a47e2d0f1d2731ed50",
+  "checkpoint": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.4.pth",
+  "checkpoint_sha256": "455d9ee8c6c41adbcac8d9e6c62152b66ef7c4a3dc0d00d6013bb10531e8d807",
+  "left_image": "/usr/local/zed/backengineer/depth_recovery/input/im0.png",
+  "right_image": "/usr/local/zed/backengineer/depth_recovery/input/im1.png",
+  "preprocessing": {
+    "original_hw": [
+      621,
+      1104
+    ],
+    "resized_hw": [
+      256,
+      512
+    ],
+    "network_hw": [
+      256,
+      512
+    ],
+    "padding_bottom_right": [
+      0,
+      0
+    ],
+    "padding_mode": "edge",
+    "color_order": "RGB",
+    "scaling": "uint8 -> float32 * (1/255) -> model dtype",
+    "dtype": "float32"
+  },
+  "reference_backend": "onnxruntime_standard_nodes_numpy_custom_ops",
+  "reference_is_sdk_cuda": false,
+  "pytorch_intermediates_injected": false,
+  "fp16_quantization_reference": "NumPy ONNX nearest-even specification",
+  "comparison_domain": "full network outputs including padded image area",
+  "atol": 0.003,
+  "rtol": 0.003,
+  "outputs": {
+    "disparity": {
+      "shape": [
+        1,
+        1,
+        128,
+        256
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 0.008857544708007481,
+      "max_abs_error": 0.7369899749755859,
+      "rmse": 0.030716468392678706,
+      "p99_abs_error": 0.14313566684722862,
+      "fraction_outside_tolerance": 0.056243896484375,
+      "allclose": false
+    },
+    "disparity_right": {
+      "shape": [
+        1,
+        1,
+        128,
+        256
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 0.0,
+      "max_abs_error": 0.0,
+      "rmse": 0.0,
+      "p99_abs_error": 0.0,
+      "fraction_outside_tolerance": 0.0,
+      "allclose": true
+    },
+    "confidence": {
+      "shape": [
+        1,
+        1,
+        128,
+        256
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 0.0017846619964099197,
+      "max_abs_error": 0.14948126673698425,
+      "rmse": 0.005155886599326865,
+      "p99_abs_error": 0.0230319026112556,
+      "fraction_outside_tolerance": 0.128021240234375,
+      "allclose": false
+    }
+  },
+  "allclose": false,
+  "pytorch_forward_seconds": 0.14200996200088412,
+  "onnx_reference_setup_and_run_seconds": 0.322351823997451,
+  "difference_image_scale": "absolute disparity difference, scaled to maximum (white)",
+  "difference_image_max_abs_error": 0.7369899749755859,
+  "output_directory": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.4",
+  "analysis_pdf": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.4/analysis.pdf"
+}

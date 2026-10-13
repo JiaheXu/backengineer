@@ -1,0 +1,230 @@
+[
+  {
+    "model": "neural_depth_5.3.onnx",
+    "checkpoint": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.3.pth",
+    "checkpoint_sha256": "22ac1f50682c533a2705b31f48afd7060955fcd2d65939deb69341aa8ac23fc8",
+    "allclose": true,
+    "outputs": {
+      "disparity": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 2.2705280571244657e-06,
+        "max_abs_error": 0.00013256072998046875,
+        "rmse": 5.7662503086948736e-06,
+        "p99_abs_error": 2.288818359375e-05,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "disparity_right": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.0,
+        "max_abs_error": 0.0,
+        "rmse": 0.0,
+        "p99_abs_error": 0.0,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "confidence": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 4.5743585053159563e-07,
+        "max_abs_error": 5.739927291870117e-05,
+        "rmse": 1.7303646641261676e-06,
+        "p99_abs_error": 7.1574747562408165e-06,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      }
+    },
+    "report": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.3/comparison.json"
+  },
+  {
+    "model": "neural_depth_5.4.onnx",
+    "checkpoint": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.4.pth",
+    "checkpoint_sha256": "455d9ee8c6c41adbcac8d9e6c62152b66ef7c4a3dc0d00d6013bb10531e8d807",
+    "allclose": false,
+    "outputs": {
+      "disparity": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.008857544708007481,
+        "max_abs_error": 0.7369899749755859,
+        "rmse": 0.030716468392678706,
+        "p99_abs_error": 0.14313566684722862,
+        "fraction_outside_tolerance": 0.056243896484375,
+        "allclose": false
+      },
+      "disparity_right": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.0,
+        "max_abs_error": 0.0,
+        "rmse": 0.0,
+        "p99_abs_error": 0.0,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "confidence": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.0017846619964099197,
+        "max_abs_error": 0.14948126673698425,
+        "rmse": 0.005155886599326865,
+        "p99_abs_error": 0.0230319026112556,
+        "fraction_outside_tolerance": 0.128021240234375,
+        "allclose": false
+      }
+    },
+    "report": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.4/comparison.json"
+  },
+  {
+    "model": "neural_depth_5.6.onnx",
+    "checkpoint": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.6.pth",
+    "checkpoint_sha256": "6bb8f80a82f7aca85927740c0047072afed7fa98c8f47c468dcf68afbd394694",
+    "allclose": false,
+    "outputs": {
+      "disparity": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.033680468797683716,
+        "max_abs_error": 2.609375,
+        "rmse": 0.089541604588282,
+        "p99_abs_error": 0.34375,
+        "fraction_outside_tolerance": 0.26019287109375,
+        "allclose": false
+      },
+      "disparity_right": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.0,
+        "max_abs_error": 0.0,
+        "rmse": 0.0,
+        "p99_abs_error": 0.0,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "confidence": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.008653433840663638,
+        "max_abs_error": 0.3199903964996338,
+        "rmse": 0.020803566163279455,
+        "p99_abs_error": 0.09463010609149919,
+        "fraction_outside_tolerance": 0.379241943359375,
+        "allclose": false
+      }
+    },
+    "report": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.6/comparison.json"
+  },
+  {
+    "model": "neural_depth_light_5.3.onnx",
+    "checkpoint": "/usr/local/zed/backengineer/depth_recovery/neural_depth_light_5.3.pth",
+    "checkpoint_sha256": "593299475c446605cf5fc72f0843a72ed0115ff65e7bdab382242f31d19a6420",
+    "allclose": true,
+    "outputs": {
+      "disparity": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 2.9229677238618024e-06,
+        "max_abs_error": 0.0002942085266113281,
+        "rmse": 8.180316388537115e-06,
+        "p99_abs_error": 3.0517578125e-05,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "disparity_right": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 0.0,
+        "max_abs_error": 0.0,
+        "rmse": 0.0,
+        "p99_abs_error": 0.0,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      },
+      "confidence": {
+        "shape": [
+          1,
+          1,
+          128,
+          256
+        ],
+        "all_finite": true,
+        "nonfinite_elements": 0,
+        "mean_abs_error": 4.34433789386901e-07,
+        "max_abs_error": 3.9696693420410156e-05,
+        "rmse": 1.3729192924791527e-06,
+        "p99_abs_error": 6.407499313354492e-06,
+        "fraction_outside_tolerance": 0.0,
+        "allclose": true
+      }
+    },
+    "report": "/usr/local/zed/backengineer/depth_recovery/pth_onnx_comparison/neural_depth_light_5.3/comparison.json"
+  }
+]

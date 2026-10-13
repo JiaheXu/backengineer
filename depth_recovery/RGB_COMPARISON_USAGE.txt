@@ -1,0 +1,142 @@
+PyTorch weight conversion and RGB image comparison
+
+Run from /usr/local/zed. Dependencies are already installed: torch, numpy,
+onnx, onnxruntime, Pillow and matplotlib. No camera or GPU is required.
+
+Weights
+  The recovered neural_depth_*.pt files already contain PyTorch state_dicts.
+  They preserve the shipped inference tensors, including folded/fused weights,
+  biases and constants. The original training checkpoint and original names
+  were not recovered. A state_dict requires its corresponding architecture.
+
+  Recreate a checkpoint from ONNX:
+    python3 backengineer/depth_recovery/convert_weights.py \
+      backengineer/depth_recovery/neural_depth_5.3.onnx \
+      --output backengineer/depth_recovery/neural_depth_5.3.converted.pth
+
+  Or convert the extracted NumPy archive:
+    python3 backengineer/depth_recovery/convert_weights.py \
+      backengineer/depth_recovery/neural_depth_5.3.weights.npz \
+      --output backengineer/depth_recovery/neural_depth_5.3.converted.pth
+
+  Conversion verifies every tensor's name, dtype, shape and bytes by reloading
+  the written checkpoint with torch.load(weights_only=True). Existing output
+  files are rejected unless --overwrite is supplied. Source weights are kept.
+
+Two RGB images
+    python3 backengineer/depth_recovery/compare_images.py \
+      --onnx backengineer/depth_recovery/neural_depth_5.3.onnx \
+      --weights backengineer/depth_recovery/neural_depth_5.3.converted.pth \
+      --left /path/to/left.png --right /path/to/right.png \
+      --output-dir depth_comparison
+
+  For reconstructed-result validation, supply --weights with a converted .pth
+  so the PyTorch side explicitly loads the checkpoint under test. The regression
+  test does this and also checks that altered weights cause output differences.
+  --weights remains optional for inspection: without it, PyTorch loads the ONNX initializers directly.
+  The left and right images must have the same pixel dimensions. Use a rectified
+  stereo pair for meaningful disparity. This script does not calibrate/rectify.
+  Both images are decoded to RGB, multiplied by FP32 1/255, rearranged to NCHW,
+  and cast to the model input type (FLOAT, or FLOAT16 for 5.6). This reproduces
+  the color-normalization kernel found in libsl_ai.so; see preprocessing notes.
+  No ImageNet mean/std is used.
+  Both are edge-padded on the bottom/right to multiples of 128 for skip shapes.
+  No resizing happens unless --height H --width W are provided together.
+  Resizing uses Pillow bilinear interpolation; this is an explicit test utility
+  choice, not a reconstruction of the SDK resize/rectification pipeline.
+  Source and network image sizes/padding are recorded in comparison.json.
+
+What the comparison means
+  PyTorch executes torch_network.py and torch_custom_ops.py with its own tensors.
+  The independent reference executes standard layers in ONNX Runtime segments,
+  and custom cost-volume operators in separate NumPy code. Each side computes
+  its own intermediate arrays from the RGB inputs; PyTorch intermediates are
+  never injected into the reference. The source ONNX file is unchanged.
+  Native ONNX Runtime cannot execute Stereolabs' proprietary custom operators.
+  Thus this is ONNX Runtime + reconstructed NumPy custom ops, not native ZED
+  TensorRT/CUDA inference. It cannot establish parity with proprietary kernels.
+  For 5.6, FP16 QuantizeLinear also uses NumPy nearest-even quantization because
+  installed ONNX Runtime 1.23.2 incorrectly truncates in that CPU implementation.
+
+Outputs and tolerances
+  onnx_outputs.npz       disparity, disparity_right, confidence from the reference.
+  pytorch_outputs.npz    Corresponding PyTorch arrays.
+  comparison.json       MAE, maximum absolute error, RMSE, 99th percentile error,
+                        out-of-tolerance fraction, finite checks, timings and
+                        input/model provenance and checkpoint path/SHA-256.
+  disparity_difference.png   Grayscale absolute difference, scaled to its own
+                             maximum. Bright pixels need not be large errors;
+                             the exact maximum is recorded in the report.
+  onnx_<output>.png / pytorch_<output>.png   All three output maps, using the
+                             same color limits for each ONNX/PyTorch pair.
+  analysis.pdf          Three-page report with inputs, numeric summary, disparity
+                        and confidence maps, error heatmaps and distributions.
+                        Generated automatically, including on tolerance failure.
+  To regenerate only the PDF and visual maps from saved output arrays:
+    python3 backengineer/depth_recovery/analyze_outputs.py depth_comparison
+  Arrays and metrics include the padded area and retain native network output
+  coordinates. For tested 128x256 inputs, outputs are 64x128; they are not
+  rescaled to the original camera image or converted into metric depth.
+  disparity_right is an all-zero placeholder in the recovered graphs.
+  Default atol=.003, rtol=.003; both can be supplied on the command line.
+  allclose uses abs(torch-onnx) <= atol + rtol*abs(onnx) for every finite element.
+  Nonfinite values always fail. Exit 0 means within tolerance; exit 2 means the
+  comparison completed but outputs differ; exit 1 means an execution/input error.
+  Results are still written on exit 2 so differences can be investigated.
+
+Test example included (synthetic RGB noise with a four-pixel stereo shift):
+    python3 backengineer/depth_recovery/compare_images.py \
+      --left backengineer/depth_recovery/example_inputs/left.png \
+      --right backengineer/depth_recovery/example_inputs/right.png \
+      --output-dir backengineer/depth_recovery/example_comparison
+
+  Recorded 5.3 example: disparity MAE 1.44e-5, maximum 1.27e-4; confidence MAE
+  7.37e-6, maximum 6.80e-5. Both pass the default tolerance.
+  Recorded 5.6 example: disparity MAE .00307, maximum .03320; confidence MAE
+  .000985, maximum .07156. It fails the default tolerance; no FP16 full-network
+  parity is claimed. These are synthetic checks, not depth accuracy measurements.
+  Samples: example_comparison/comparison.json and
+           example_comparison_fp16/comparison.json.
+
+Tests
+    PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -q \
+      backengineer/depth_recovery/test_torch_network.py backengineer/depth_recovery/test_custom_ops.py \
+      backengineer/depth_recovery/test_image_comparison.py backengineer/depth_recovery/test_onnx_reference.py
+  30 tests pass. They cover bytewise conversion, RGB scaling/padding, metrics,
+  custom operator math/gradients, independent graph execution, full FLOAT output
+  comparison and deliberately changed PyTorch weights being detected.
+  FP16 tests require finite correctly shaped output but do not assert tight
+  independent full-network parity. No SDK/GPU accuracy comparison was performed.
+
+Converted PTH versus ONNX validation (2026-10-13)
+  neural_depth_5.3.pth, neural_depth_5.4.pth, neural_depth_5.6.pth and
+  neural_depth_light_5.3.pth were freshly converted from their corresponding
+  ONNX models and verified tensor-for-tensor. pth_manifest.json records hashes.
+  These are state_dict files in the same format as .pt; the extension does not
+  change the serialization format.
+
+  Compare the saved stereo input with explicit checkpoint loading:
+    python3 backengineer/depth_recovery/compare_images.py \
+      --onnx backengineer/depth_recovery/neural_depth_5.3.onnx \
+      --weights backengineer/depth_recovery/neural_depth_5.3.pth \
+      --left backengineer/depth_recovery/input/im0.png --right backengineer/depth_recovery/input/im1.png \
+      --height 256 --width 512 \
+      --output-dir backengineer/depth_recovery/pth_onnx_comparison/neural_depth_5.3
+
+  All four model comparisons are saved in pth_onnx_comparison/<model>/ with
+  numeric reports, both raw output archives, matched visual maps and analysis.pdf.
+  summary.json records pass/fail at the unchanged atol=.003, rtol=.003.
+  Input resizing is explicit test preprocessing, not SDK-equivalent resizing.
+
+  Recorded saved-pair results at 256x512 (atol=.003, rtol=.003):
+    Model       Pass   Disparity MAE   Max disparity error
+    5.3         yes    0.00000227      0.00013256
+    light 5.3   yes    0.00000292      0.00029421
+    5.4         no     0.00885754      0.73698997
+    5.6         no     0.03368047      2.60937500
+  Errors are in native network disparity units, not metric depth.
+  Conversion diagnostic: for 5.4 and 5.6, every PTH tensor matches the ONNX
+  initializer, and PyTorch predictions before/after loading PTH are identical
+  (maximum difference 0 for every output). Conversion does not explain these
+  failures; the exact execution-path discrepancy remains unresolved. See
+  pth_onnx_comparison/conversion_diagnostic.json. Tolerances were not loosened.

@@ -1,0 +1,92 @@
+{
+  "model": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.3.onnx",
+  "model_sha256": "aea0bfbb8448e0982813e97b5a55e7d7bf5ed9043a4a72162207e8b9102de85c",
+  "checkpoint": "/tmp/zed_rgb_comparison_weights.pt",
+  "left_image": "/usr/local/zed/backengineer/depth_recovery/example_inputs/left.png",
+  "right_image": "/usr/local/zed/backengineer/depth_recovery/example_inputs/right.png",
+  "preprocessing": {
+    "original_hw": [
+      128,
+      256
+    ],
+    "resized_hw": [
+      128,
+      256
+    ],
+    "network_hw": [
+      128,
+      256
+    ],
+    "padding_bottom_right": [
+      0,
+      0
+    ],
+    "padding_mode": "edge",
+    "color_order": "RGB",
+    "scaling": "uint8 -> float32 * (1/255) -> model dtype",
+    "dtype": "float32"
+  },
+  "reference_backend": "onnxruntime_standard_nodes_numpy_custom_ops",
+  "reference_is_sdk_cuda": false,
+  "pytorch_intermediates_injected": false,
+  "fp16_quantization_reference": "NumPy ONNX nearest-even specification",
+  "comparison_domain": "full network outputs including padded image area",
+  "atol": 0.003,
+  "rtol": 0.003,
+  "outputs": {
+    "disparity": {
+      "shape": [
+        1,
+        1,
+        64,
+        128
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 1.4392746379598975e-05,
+      "max_abs_error": 0.00012731552124023438,
+      "rmse": 2.003420686288245e-05,
+      "p99_abs_error": 6.151199340820312e-05,
+      "fraction_outside_tolerance": 0.0,
+      "allclose": true
+    },
+    "disparity_right": {
+      "shape": [
+        1,
+        1,
+        64,
+        128
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 0.0,
+      "max_abs_error": 0.0,
+      "rmse": 0.0,
+      "p99_abs_error": 0.0,
+      "fraction_outside_tolerance": 0.0,
+      "allclose": true
+    },
+    "confidence": {
+      "shape": [
+        1,
+        1,
+        64,
+        128
+      ],
+      "all_finite": true,
+      "nonfinite_elements": 0,
+      "mean_abs_error": 7.367019748016901e-06,
+      "max_abs_error": 6.80088996887207e-05,
+      "rmse": 1.0428397270444093e-05,
+      "p99_abs_error": 3.412902355194093e-05,
+      "fraction_outside_tolerance": 0.0,
+      "allclose": true
+    }
+  },
+  "allclose": true,
+  "pytorch_forward_seconds": 0.045613476999278646,
+  "onnx_reference_setup_and_run_seconds": 0.1969735269958619,
+  "difference_image_scale": "absolute disparity difference, scaled to maximum (white)",
+  "difference_image_max_abs_error": 0.00012731552124023438,
+  "output_directory": "/usr/local/zed/backengineer/depth_recovery/example_comparison"
+}

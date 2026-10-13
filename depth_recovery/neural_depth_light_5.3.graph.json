@@ -1,0 +1,8584 @@
+{
+  "ir_version": "10",
+  "producer_name": "",
+  "producer_version": "",
+  "model_version": "0",
+  "doc_string": "",
+  "graph": {
+    "node": [
+      {
+        "input": [
+          "left",
+          "xaa6861449a8642"
+        ],
+        "output": [
+          "xb8cfda1118f5fb"
+        ],
+        "name": "x06a5d2f1077a14",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "right",
+          "xaa6861449a8642"
+        ],
+        "output": [
+          "xdee8a6385600de"
+        ],
+        "name": "x69cf09f7d432be",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb8cfda1118f5fb",
+          "x00060b3df39762"
+        ],
+        "output": [
+          "x3afa15d918fdc5"
+        ],
+        "name": "x6fc23903eaf054",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdee8a6385600de",
+          "x00060b3df39762"
+        ],
+        "output": [
+          "x803ebae8ca536c"
+        ],
+        "name": "x425ba491db1ee0",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3afa15d918fdc5",
+          "x69410978a0d7b6"
+        ],
+        "output": [
+          "x9cdf8b7d7ce1b7"
+        ],
+        "name": "xe9e90e8ce8d16b",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x803ebae8ca536c",
+          "x69410978a0d7b6"
+        ],
+        "output": [
+          "x5a51541c8fc595"
+        ],
+        "name": "x6d4631fc038e23",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9cdf8b7d7ce1b7"
+        ],
+        "output": [
+          "x5f4fa4ed555188"
+        ],
+        "name": "x8cb5363dabf7a2",
+        "op_type": "Transpose",
+        "attribute": [
+          {
+            "name": "perm",
+            "ints": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "2",
+              "4"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5a51541c8fc595"
+        ],
+        "output": [
+          "xd6899f52259c09"
+        ],
+        "name": "x74f1e2645db843",
+        "op_type": "Transpose",
+        "attribute": [
+          {
+            "name": "perm",
+            "ints": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "2",
+              "4"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5f4fa4ed555188",
+          "x35e7ecdf5f744b"
+        ],
+        "output": [
+          "x14fe4bf9233e48"
+        ],
+        "name": "x26e965178802f4",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd6899f52259c09",
+          "x35e7ecdf5f744b"
+        ],
+        "output": [
+          "x4564e88a3d9604"
+        ],
+        "name": "x49b50e5306706f",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x14fe4bf9233e48",
+          "xb4ad77867d90b9"
+        ],
+        "output": [
+          "x80c04fb1724025"
+        ],
+        "name": "x08f809f5bc42c3",
+        "op_type": "Squeeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4564e88a3d9604",
+          "xb4ad77867d90b9"
+        ],
+        "output": [
+          "x23da6575bb007d"
+        ],
+        "name": "x90082ad1b658a5",
+        "op_type": "Squeeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80c04fb1724025",
+          "x45fb897db43bd2",
+          "x55459ec4e9e4f0"
+        ],
+        "output": [
+          "x5b8de9e87a5212"
+        ],
+        "name": "x4b90a43b3b3b30",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "7",
+              "7"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "3",
+              "3",
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x23da6575bb007d",
+          "x45fb897db43bd2",
+          "x55459ec4e9e4f0"
+        ],
+        "output": [
+          "x9a577a29450573"
+        ],
+        "name": "x8d9d6d01fbb68e",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "7",
+              "7"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "3",
+              "3",
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80c04fb1724025",
+          "xebfb96578a0153",
+          "x5a1a3bdae5130f"
+        ],
+        "output": [
+          "x94b238df6830bb"
+        ],
+        "name": "x88ee4f582bad42",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5b8de9e87a5212"
+        ],
+        "output": [
+          "x98d05b87137f49"
+        ],
+        "name": "x35f096f131767a",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9a577a29450573"
+        ],
+        "output": [
+          "xc701f386c0ecea"
+        ],
+        "name": "x12e7b5b099b441",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x94b238df6830bb"
+        ],
+        "output": [
+          "x2e1229e412238d"
+        ],
+        "name": "xa0383f2282aad4",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5b8de9e87a5212",
+          "x98d05b87137f49"
+        ],
+        "output": [
+          "x62b071cd797184"
+        ],
+        "name": "xb02e90c00a05f7",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9a577a29450573",
+          "xc701f386c0ecea"
+        ],
+        "output": [
+          "x09bb8b1d09f6ae"
+        ],
+        "name": "x84e5b48a2f6dec",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2e1229e412238d",
+          "x12cb920aa40118",
+          "x3acb65524b1b31"
+        ],
+        "output": [
+          "xe119a75924e8a1"
+        ],
+        "name": "x330da2f5122535",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x62b071cd797184"
+        ],
+        "output": [
+          "x508b1105c82f8b"
+        ],
+        "name": "xfc24bef668be9b",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x09bb8b1d09f6ae"
+        ],
+        "output": [
+          "xaad12107511697"
+        ],
+        "name": "x046221ae0b18ce",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x508b1105c82f8b"
+        ],
+        "output": [
+          "x30867aa142624d"
+        ],
+        "name": "x4630651ee93eae",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xaad12107511697"
+        ],
+        "output": [
+          "xf42b6bee8be297"
+        ],
+        "name": "x82d25e502ee557",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x508b1105c82f8b",
+          "x30867aa142624d"
+        ],
+        "output": [
+          "x67381d14d9d453"
+        ],
+        "name": "x7e5a81fdb70c65",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xaad12107511697",
+          "xf42b6bee8be297"
+        ],
+        "output": [
+          "x2145ca2fe6e3f8"
+        ],
+        "name": "xa1f32dd0e58152",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x67381d14d9d453"
+        ],
+        "output": [
+          "x5fece94a735881"
+        ],
+        "name": "x0b3ddf137fa447",
+        "op_type": "MaxPool",
+        "attribute": [
+          {
+            "name": "ceil_mode",
+            "i": "0",
+            "type": "INT"
+          },
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x67381d14d9d453",
+          "xb7201b1efe918b",
+          "xaa1deabec5e294",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x6140bf237931ae"
+        ],
+        "name": "xc9cb4f41258c9e",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2145ca2fe6e3f8"
+        ],
+        "output": [
+          "xa40cb5cd0dbea6"
+        ],
+        "name": "x93dad2241e5bc8",
+        "op_type": "MaxPool",
+        "attribute": [
+          {
+            "name": "ceil_mode",
+            "i": "0",
+            "type": "INT"
+          },
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x67381d14d9d453"
+        ],
+        "output": [
+          "x4b83312cd362a6"
+        ],
+        "name": "x1e747328eebcd2",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x67381d14d9d453",
+          "xaa1deabec5e294",
+          "x503b446d13f169",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x85644f8577a831"
+        ],
+        "name": "x59fa078696066b",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2145ca2fe6e3f8",
+          "xaa1deabec5e294",
+          "x503b446d13f169",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x32cd98ccdbc550"
+        ],
+        "name": "x0cf57e982857e5",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5fece94a735881"
+        ],
+        "output": [
+          "x22703f3ac4a47e"
+        ],
+        "name": "x4d5762423684bf",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x6140bf237931ae",
+          "x3afe92e5d9be04",
+          "xb06019ab3f2ddb"
+        ],
+        "output": [
+          "x13b31fce7f0197"
+        ],
+        "name": "x05cc828d688a3c",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa40cb5cd0dbea6"
+        ],
+        "output": [
+          "x8d4650ca0dcd4a"
+        ],
+        "name": "xef1fb3f8e44e05",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4b83312cd362a6",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x31de672c8ab6de"
+        ],
+        "name": "x23a6d65e4799ea",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4b83312cd362a6",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "xaab3524bb1c1e3"
+        ],
+        "name": "xf4c16602188b2b",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5fece94a735881",
+          "x22703f3ac4a47e"
+        ],
+        "output": [
+          "x1fc969f196fb0b"
+        ],
+        "name": "x3259f8ee1bb8eb",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x13b31fce7f0197"
+        ],
+        "output": [
+          "x7aabb47fdc6538"
+        ],
+        "name": "xb6f2a87edf326b",
+        "op_type": "LeakyRelu",
+        "attribute": [
+          {
+            "name": "alpha",
+            "f": 0.1,
+            "type": "FLOAT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa40cb5cd0dbea6",
+          "x8d4650ca0dcd4a"
+        ],
+        "output": [
+          "x8d46a9a874c08d"
+        ],
+        "name": "x8e2661b2a8c480",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x31de672c8ab6de",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xe9e5a53e855ea1"
+        ],
+        "name": "x012ff55cbd8a1c",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xaab3524bb1c1e3",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x4f58162aa6e5ed"
+        ],
+        "name": "x9d2f45db303320",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x31de672c8ab6de"
+        ],
+        "output": [
+          "x754b02b33b5a1a"
+        ],
+        "name": "x6fbb3881e20ab6",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1fc969f196fb0b",
+          "xc8c5fac18b541d",
+          "x64ed21993753fe"
+        ],
+        "output": [
+          "xfcefc3b58a6579"
+        ],
+        "name": "xb4e7a7f792fe99",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7aabb47fdc6538",
+          "x12fbd9fdf504ef",
+          "x3acb65524b1b31"
+        ],
+        "output": [
+          "xa47ed42607e43e"
+        ],
+        "name": "x40fc8a2fb09390",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8d46a9a874c08d",
+          "xc8c5fac18b541d",
+          "x64ed21993753fe"
+        ],
+        "output": [
+          "xa8f679555960a7"
+        ],
+        "name": "x724b988975d960",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe9e5a53e855ea1",
+          "x4f58162aa6e5ed"
+        ],
+        "output": [
+          "xf5919950b1d799"
+        ],
+        "name": "x8d829562860317",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xfcefc3b58a6579"
+        ],
+        "output": [
+          "x35e7c5538886a9"
+        ],
+        "name": "x15eabe9f5cf6c5",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa8f679555960a7"
+        ],
+        "output": [
+          "xf6a2bc96925f67"
+        ],
+        "name": "xfb3e891e001b73",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe119a75924e8a1",
+          "xa47ed42607e43e"
+        ],
+        "output": [
+          "x8f6740e194e6de"
+        ],
+        "name": "xd35a1ac7d1677d",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x35e7c5538886a9",
+          "x44d5db10961524",
+          "x5c7e165b49c916"
+        ],
+        "output": [
+          "x9da446e982a9dd"
+        ],
+        "name": "x201e2004b14048",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf6a2bc96925f67",
+          "x44d5db10961524",
+          "x5c7e165b49c916"
+        ],
+        "output": [
+          "xe067c77238985f"
+        ],
+        "name": "x197333899b4da1",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8f6740e194e6de"
+        ],
+        "output": [
+          "x18e6c9f0b28612"
+        ],
+        "name": "xca721be28d9f3f",
+        "op_type": "LeakyRelu",
+        "attribute": [
+          {
+            "name": "alpha",
+            "f": 0.1,
+            "type": "FLOAT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9da446e982a9dd",
+          "x1fc969f196fb0b"
+        ],
+        "output": [
+          "x5e8a9ead19609b"
+        ],
+        "name": "xa5ea72e3c53ee6",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe067c77238985f",
+          "x8d46a9a874c08d"
+        ],
+        "output": [
+          "xeb58a068c44fd5"
+        ],
+        "name": "x3532a658a26049",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5e8a9ead19609b"
+        ],
+        "output": [
+          "x163cc9070ddd63"
+        ],
+        "name": "x5efb4e76aedad6",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xeb58a068c44fd5"
+        ],
+        "output": [
+          "x103629c490db51"
+        ],
+        "name": "x58216f6029d403",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x163cc9070ddd63",
+          "x085a1b7940218c",
+          "x5389cab8398d62"
+        ],
+        "output": [
+          "xd9b676699f72da"
+        ],
+        "name": "xa9395b3835bfc0",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x103629c490db51",
+          "x085a1b7940218c",
+          "x5389cab8398d62"
+        ],
+        "output": [
+          "xcfd683aa851c89"
+        ],
+        "name": "x14ea7ab25dc362",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd9b676699f72da"
+        ],
+        "output": [
+          "xc22e7d46d9259d"
+        ],
+        "name": "xdecf1f30afcacf",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcfd683aa851c89"
+        ],
+        "output": [
+          "xc8084a4be7b52b"
+        ],
+        "name": "x7b4f63d9efea0e",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc22e7d46d9259d",
+          "x9e1c37434e3b06",
+          "x6c447c87cc6f2a"
+        ],
+        "output": [
+          "x58d4bc36d20b7b"
+        ],
+        "name": "xcd5e7597410ed9",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc8084a4be7b52b",
+          "x9e1c37434e3b06",
+          "x6c447c87cc6f2a"
+        ],
+        "output": [
+          "xcc34f5982359a9"
+        ],
+        "name": "x42c9242a2c8b38",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x58d4bc36d20b7b",
+          "x163cc9070ddd63"
+        ],
+        "output": [
+          "xb26d7682824fba"
+        ],
+        "name": "x9490d8b785b6f9",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcc34f5982359a9",
+          "x103629c490db51"
+        ],
+        "output": [
+          "x099fe7060c0618"
+        ],
+        "name": "x7ae4afef35b30d",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb26d7682824fba"
+        ],
+        "output": [
+          "xe1aed473a2a71b"
+        ],
+        "name": "x8d031c1b3872a3",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x099fe7060c0618"
+        ],
+        "output": [
+          "x3e63600f6e0b8a"
+        ],
+        "name": "x7f2d7f9147ea1a",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe1aed473a2a71b"
+        ],
+        "output": [
+          "x586d9d5816c33c"
+        ],
+        "name": "xed6c161d1353f3",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3e63600f6e0b8a"
+        ],
+        "output": [
+          "x6689d6adabf3a2"
+        ],
+        "name": "x2a6448b8c124a8",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe1aed473a2a71b",
+          "x586d9d5816c33c"
+        ],
+        "output": [
+          "x80611556f055a9"
+        ],
+        "name": "x2da5e9a8d755f9",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3e63600f6e0b8a",
+          "x6689d6adabf3a2"
+        ],
+        "output": [
+          "x221a6f75662e63"
+        ],
+        "name": "x1c3df9e8c8b5d4",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80611556f055a9"
+        ],
+        "output": [
+          "x2597e74409f7f5"
+        ],
+        "name": "x32a44075d561cb",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80611556f055a9",
+          "xb7201b1efe918b",
+          "xaa1deabec5e294",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x38e3dc7e6ce562"
+        ],
+        "name": "xaf75b736edf85b",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x221a6f75662e63"
+        ],
+        "output": [
+          "x1a1018d149dfcc"
+        ],
+        "name": "x2920e824ba1b87",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80611556f055a9",
+          "xaa1deabec5e294",
+          "x503b446d13f169",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x3ae5899635405d"
+        ],
+        "name": "x2f6a300bcf8b79",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x221a6f75662e63",
+          "xaa1deabec5e294",
+          "x503b446d13f169",
+          "x24ac29a528bb10",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x94edff00e4916d"
+        ],
+        "name": "xacb4836501745a",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x80611556f055a9",
+          "x2597e74409f7f5"
+        ],
+        "output": [
+          "x1e8fd5653e7aca"
+        ],
+        "name": "x6d773806b756d4",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x38e3dc7e6ce562",
+          "x684d7df9a6c9d8",
+          "x94fa5548619fd6"
+        ],
+        "output": [
+          "x7962c578d9702f"
+        ],
+        "name": "x47c5256766f71c",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x221a6f75662e63",
+          "x1a1018d149dfcc"
+        ],
+        "output": [
+          "xb84cd4a04dbfe1"
+        ],
+        "name": "xbff28204b141e2",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2597e74409f7f5",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x81b72299fc8d11"
+        ],
+        "name": "xd2b062a9302d0e",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2597e74409f7f5",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "xc8077f60d2b4ee"
+        ],
+        "name": "xe1c73c11c2cbef",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1e8fd5653e7aca",
+          "x7b0b022ee71cbc",
+          "xad54f586a2e314"
+        ],
+        "output": [
+          "x62f959020fa0e6"
+        ],
+        "name": "x2ef734c79dfa08",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1e8fd5653e7aca",
+          "xe6b5935d2bb89c",
+          "x6104d38b00d297"
+        ],
+        "output": [
+          "xcb178dbf5485d4"
+        ],
+        "name": "x2c3230d762fe0c",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7962c578d9702f"
+        ],
+        "output": [
+          "x993c9b64bd8358"
+        ],
+        "name": "xfcb4bd1cd2c2fd",
+        "op_type": "LeakyRelu",
+        "attribute": [
+          {
+            "name": "alpha",
+            "f": 0.1,
+            "type": "FLOAT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb84cd4a04dbfe1",
+          "x7b0b022ee71cbc",
+          "xad54f586a2e314"
+        ],
+        "output": [
+          "x1e19547306e80c"
+        ],
+        "name": "x4949a4fee71a60",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb84cd4a04dbfe1",
+          "xe6b5935d2bb89c",
+          "x6104d38b00d297"
+        ],
+        "output": [
+          "x6060419ebf04a7"
+        ],
+        "name": "x0636ef323abe53",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x81b72299fc8d11",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x5255bb2e198d7e"
+        ],
+        "name": "xc1fa606fda52c4",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc8077f60d2b4ee",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xd62c533b185565"
+        ],
+        "name": "x05c7f7b78b4278",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x81b72299fc8d11"
+        ],
+        "output": [
+          "x73cf522e5c10ba"
+        ],
+        "name": "x1a4ca8a806f24c",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x62f959020fa0e6"
+        ],
+        "output": [
+          "xdee0fb77885e27"
+        ],
+        "name": "xcbb082115882ea",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x993c9b64bd8358",
+          "x6086c9dade5f1e",
+          "x3b6fe8d5700436"
+        ],
+        "output": [
+          "x62e71b8864c868"
+        ],
+        "name": "x3238e19977222f",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1e19547306e80c"
+        ],
+        "output": [
+          "x47a4d76786ee00"
+        ],
+        "name": "x3ed505eb1ec933",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5255bb2e198d7e",
+          "xd62c533b185565"
+        ],
+        "output": [
+          "xf093fe9de9a49d"
+        ],
+        "name": "x875edb3e26dd55",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdee0fb77885e27",
+          "xa5c3bca7240a54",
+          "x4715526a016e47"
+        ],
+        "output": [
+          "xe10cf7aa2ea762"
+        ],
+        "name": "xaa482571715b0b",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x62e71b8864c868"
+        ],
+        "output": [
+          "xc14c8eddcc927e"
+        ],
+        "name": "x80f1e952f20a8c",
+        "op_type": "LeakyRelu",
+        "attribute": [
+          {
+            "name": "alpha",
+            "f": 0.1,
+            "type": "FLOAT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x47a4d76786ee00",
+          "xa5c3bca7240a54",
+          "x4715526a016e47"
+        ],
+        "output": [
+          "xac7f5c4533bd97"
+        ],
+        "name": "xc3aa9712566ef1",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe10cf7aa2ea762",
+          "xcb178dbf5485d4"
+        ],
+        "output": [
+          "xc36e433dd6b55f"
+        ],
+        "name": "x1a2db1153a5250",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xac7f5c4533bd97",
+          "x6060419ebf04a7"
+        ],
+        "output": [
+          "x2ed900b462f96b"
+        ],
+        "name": "x2061fbe4b110b9",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc36e433dd6b55f"
+        ],
+        "output": [
+          "x06e2793c4c4a77"
+        ],
+        "name": "xcd8c1e35e45b7d",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2ed900b462f96b"
+        ],
+        "output": [
+          "x1e8be82e344af5"
+        ],
+        "name": "xac6d00293b4b32",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x06e2793c4c4a77",
+          "x259d2cacd85473",
+          "x9df0bc620f6ed9"
+        ],
+        "output": [
+          "xa46ec91ea5d458"
+        ],
+        "name": "x9137ad7d24318e",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1e8be82e344af5",
+          "x259d2cacd85473",
+          "x9df0bc620f6ed9"
+        ],
+        "output": [
+          "xfdc5682965f3e8"
+        ],
+        "name": "x15a90b2ec5d67e",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa46ec91ea5d458"
+        ],
+        "output": [
+          "xdbd43d1cab84f7"
+        ],
+        "name": "x846508916b6bcc",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xfdc5682965f3e8"
+        ],
+        "output": [
+          "xdacd35528a397e"
+        ],
+        "name": "x71a23f39722aee",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdbd43d1cab84f7",
+          "x0a7eb395bd25d5",
+          "x5dbd15dd9f9957"
+        ],
+        "output": [
+          "x7de76513a14f62"
+        ],
+        "name": "xe7bf4c0c21ece0",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdacd35528a397e",
+          "x0a7eb395bd25d5",
+          "x5dbd15dd9f9957"
+        ],
+        "output": [
+          "x8184d022786bf8"
+        ],
+        "name": "x4e2fe725771761",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7de76513a14f62",
+          "x06e2793c4c4a77"
+        ],
+        "output": [
+          "xec63ba74541294"
+        ],
+        "name": "x3c129400084de3",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8184d022786bf8",
+          "x1e8be82e344af5"
+        ],
+        "output": [
+          "x87559c3671e9e0"
+        ],
+        "name": "x336d2207f76f0a",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xec63ba74541294"
+        ],
+        "output": [
+          "x8af753e86c9198"
+        ],
+        "name": "xcaf8f506f94211",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x87559c3671e9e0"
+        ],
+        "output": [
+          "xbbdcf8d8bc0acc"
+        ],
+        "name": "x30d1f3f37a9766",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8af753e86c9198"
+        ],
+        "output": [
+          "x2bad20c8d6da7d"
+        ],
+        "name": "x973eb33f0d5f41",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xbbdcf8d8bc0acc"
+        ],
+        "output": [
+          "x6e366b515237f5"
+        ],
+        "name": "xda4a1f0d8f3253",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8af753e86c9198",
+          "x2bad20c8d6da7d"
+        ],
+        "output": [
+          "x88fda3db0b266d"
+        ],
+        "name": "x244ecef5124daa",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xbbdcf8d8bc0acc",
+          "x6e366b515237f5"
+        ],
+        "output": [
+          "xee3e1098bd8867"
+        ],
+        "name": "x04a67c8a8ddcc9",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x88fda3db0b266d",
+          "x8edbf97d688d12",
+          "x909175c9491588"
+        ],
+        "output": [
+          "x9b112bc39e291e"
+        ],
+        "name": "x47e0f4f7fd3f39",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xee3e1098bd8867",
+          "x8edbf97d688d12",
+          "x909175c9491588"
+        ],
+        "output": [
+          "x55f0c440ec2494"
+        ],
+        "name": "xda914ec83487ed",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9b112bc39e291e"
+        ],
+        "output": [
+          "x051c525eb8f709"
+        ],
+        "name": "xd3a76e8da6ca34",
+        "op_type": "ReduceL2",
+        "attribute": [
+          {
+            "name": "axes",
+            "ints": [
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "keepdims",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9b112bc39e291e"
+        ],
+        "output": [
+          "xe136f6e2b987a3"
+        ],
+        "name": "x2ecc3dcfe425cf",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x55f0c440ec2494"
+        ],
+        "output": [
+          "x75a724adc87ef3"
+        ],
+        "name": "x5333d6b883a14d",
+        "op_type": "ReduceL2",
+        "attribute": [
+          {
+            "name": "axes",
+            "ints": [
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "keepdims",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x55f0c440ec2494"
+        ],
+        "output": [
+          "x1ea632b6a56089"
+        ],
+        "name": "x20340da4330205",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x051c525eb8f709",
+          "xe0560149b5ab46",
+          ""
+        ],
+        "output": [
+          "x13d429230182a2"
+        ],
+        "name": "x8759c78bf21321",
+        "op_type": "Clip",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x75a724adc87ef3",
+          "xe0560149b5ab46",
+          ""
+        ],
+        "output": [
+          "x14dd6e2796b653"
+        ],
+        "name": "xba615d53ec86f5",
+        "op_type": "Clip",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x13d429230182a2",
+          "xe136f6e2b987a3"
+        ],
+        "output": [
+          "x3ea0c9914b8dfe"
+        ],
+        "name": "x3e049751af698f",
+        "op_type": "Expand",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x14dd6e2796b653",
+          "x1ea632b6a56089"
+        ],
+        "output": [
+          "x222b1d765c2aae"
+        ],
+        "name": "xe62454049c840d",
+        "op_type": "Expand",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9b112bc39e291e",
+          "x3ea0c9914b8dfe"
+        ],
+        "output": [
+          "x7d5903cc4226b2"
+        ],
+        "name": "xbf7bb84e7a1df8",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x55f0c440ec2494",
+          "x222b1d765c2aae"
+        ],
+        "output": [
+          "x96a4a87595cff4"
+        ],
+        "name": "x5eac31e7716371",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7d5903cc4226b2",
+          "x96a4a87595cff4"
+        ],
+        "output": [
+          "xf8750c772f1165"
+        ],
+        "name": "xb0fdf26c0ff96d",
+        "op_type": "build_gwc_volume",
+        "attribute": [
+          {
+            "name": "max_disp",
+            "i": "24",
+            "type": "INT"
+          },
+          {
+            "name": "num_groups",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": "",
+        "domain": "sl"
+      },
+      {
+        "input": [
+          "xf8750c772f1165"
+        ],
+        "output": [
+          "x88c2c7ecfbfe2a"
+        ],
+        "name": "xf8cfab5c9d6172",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x88c2c7ecfbfe2a",
+          "xa3e4e9db731a6c"
+        ],
+        "output": [
+          "x5bbdb74e92fb55"
+        ],
+        "name": "x9b3dc456ab4d95",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x88c2c7ecfbfe2a",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x279eddcbb8fdc8"
+        ],
+        "name": "xfafec2386ab459",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x88c2c7ecfbfe2a",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "xa70f2f63ee5ed7"
+        ],
+        "name": "x5eded930000dba",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x88c2c7ecfbfe2a",
+          "xacd7212d938487"
+        ],
+        "output": [
+          "x9de0cc2aafd319"
+        ],
+        "name": "x8b995844b460df",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5bbdb74e92fb55",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x96b720e188d61e"
+        ],
+        "name": "xe736fb7a36e481",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x279eddcbb8fdc8",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xa62ae4be72b93d"
+        ],
+        "name": "x19589df57dd046",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa70f2f63ee5ed7",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x763bbd23d52a4d"
+        ],
+        "name": "xca91495a451cb1",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9de0cc2aafd319",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xf8700a166392c5"
+        ],
+        "name": "x3d84973a7e3911",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x96b720e188d61e",
+          "xa62ae4be72b93d",
+          "x763bbd23d52a4d",
+          "xf8700a166392c5"
+        ],
+        "output": [
+          "x2408c3eebbebc4"
+        ],
+        "name": "xd1867a2c9f9d4e",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf8750c772f1165",
+          "x2408c3eebbebc4"
+        ],
+        "output": [
+          "x89efe39dc12bdb"
+        ],
+        "name": "x4fc2c953138599",
+        "op_type": "Reshape",
+        "attribute": [
+          {
+            "name": "allowzero",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x89efe39dc12bdb",
+          "x68db95123c38eb",
+          "xeafb6f93e2d09b"
+        ],
+        "output": [
+          "x5dc0c910c00661"
+        ],
+        "name": "x50f1169f1af4ae",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5dc0c910c00661"
+        ],
+        "output": [
+          "xf0f525616b47e3"
+        ],
+        "name": "xe1ae3832c1126f",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf0f525616b47e3",
+          "x2bda6c2a4e4956",
+          "x12e9792b83d421"
+        ],
+        "output": [
+          "xaf541625e5b5af"
+        ],
+        "name": "x87aa014fa9c2a5",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf0f525616b47e3",
+          "x7805b41dff9f81",
+          "x3529cd4c56200d"
+        ],
+        "output": [
+          "x4b4c5f7c78ef3f"
+        ],
+        "name": "x39720ae1b7a46b",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xaf541625e5b5af"
+        ],
+        "output": [
+          "x9b56163bdd3c70"
+        ],
+        "name": "x482b1393778910",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4b4c5f7c78ef3f"
+        ],
+        "output": [
+          "xa295c106bfaa10"
+        ],
+        "name": "x7f4bebf6275478",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9b56163bdd3c70",
+          "x7634129c97d8e5",
+          "x4e5cd5fba9a38e"
+        ],
+        "output": [
+          "x0fc416e13fdb47"
+        ],
+        "name": "x795a7005de84a5",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x0fc416e13fdb47"
+        ],
+        "output": [
+          "x3fec7c850af711"
+        ],
+        "name": "x4dc3f6d4f3363a",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3fec7c850af711",
+          "x499f8701a757e6",
+          "x86080b91f5f5f5"
+        ],
+        "output": [
+          "xcdc58daaa8ba41"
+        ],
+        "name": "x4fe496e28a3b7e",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3fec7c850af711",
+          "x3e0d6fcc1cc201",
+          "x7612068a08ff49"
+        ],
+        "output": [
+          "x4264739af36897"
+        ],
+        "name": "x78915b84127c97",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcdc58daaa8ba41"
+        ],
+        "output": [
+          "xe45e7d674dc73e"
+        ],
+        "name": "xc09d76fa5286a9",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4264739af36897"
+        ],
+        "output": [
+          "x61f1cf23781f3a"
+        ],
+        "name": "xeb308aec2f1765",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe45e7d674dc73e",
+          "x688f424fe2d40b",
+          "xad2a5b960d4ea2"
+        ],
+        "output": [
+          "x3216eb8bee5046"
+        ],
+        "name": "x369ca6dedd2fa1",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3216eb8bee5046"
+        ],
+        "output": [
+          "x404b0240378a9e"
+        ],
+        "name": "x1a9dd1e43b5c4c",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x404b0240378a9e",
+          "x8483eda4dc20e8",
+          "x01b6fa3dea2a68"
+        ],
+        "output": [
+          "xb9f54e39a2e779"
+        ],
+        "name": "xe9e08f91dc7352",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb9f54e39a2e779"
+        ],
+        "output": [
+          "x39090bb2e67cc6"
+        ],
+        "name": "x896fea99bafe77",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x39090bb2e67cc6",
+          "xefe417dd55480f",
+          "x1e071a2b118640"
+        ],
+        "output": [
+          "xc1f25a1a9cce3d"
+        ],
+        "name": "xad147c1af2d042",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc1f25a1a9cce3d"
+        ],
+        "output": [
+          "x919ddc77427f67"
+        ],
+        "name": "x46f525865bfd60",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x919ddc77427f67",
+          "",
+          "xfdaa54e2b1a381"
+        ],
+        "output": [
+          "x90648bbeeb3b98"
+        ],
+        "name": "xa0a22c317e75bc",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "YWxpZ25fY29ybmVycw==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x90648bbeeb3b98",
+          "x176acca4b2139d",
+          "xecd96c41e2f356"
+        ],
+        "output": [
+          "xb6193e0fc71c4b"
+        ],
+        "name": "x53b46daa6d6c1c",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb6193e0fc71c4b"
+        ],
+        "output": [
+          "xeaa9874e83f341"
+        ],
+        "name": "xc2800e586d9d87",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xeaa9874e83f341",
+          "x61f1cf23781f3a"
+        ],
+        "output": [
+          "xb308c62a09dade"
+        ],
+        "name": "x366b0b77b38709",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb308c62a09dade"
+        ],
+        "output": [
+          "xbe13e6d2d87a11"
+        ],
+        "name": "x423e35e1c10a86",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xbe13e6d2d87a11",
+          "",
+          "xfdaa54e2b1a381"
+        ],
+        "output": [
+          "xd041912845b0c8"
+        ],
+        "name": "xf2e2cd51c71269",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "YWxpZ25fY29ybmVycw==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd041912845b0c8",
+          "x4d7c5849cb9321",
+          "x2e35ce991eaf2d"
+        ],
+        "output": [
+          "xf706553016dd35"
+        ],
+        "name": "x5ea5afe4aee7df",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf706553016dd35"
+        ],
+        "output": [
+          "x638c0972c64114"
+        ],
+        "name": "xfcde390d72bc2e",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x638c0972c64114",
+          "xa295c106bfaa10"
+        ],
+        "output": [
+          "x445f837eb904c9"
+        ],
+        "name": "xebca989f2a979e",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x445f837eb904c9"
+        ],
+        "output": [
+          "xcc39c1272cc336"
+        ],
+        "name": "x6cf5af009c4103",
+        "op_type": "Softmax",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcc39c1272cc336"
+        ],
+        "output": [
+          "xd6b2c4c877d38d"
+        ],
+        "name": "xaaecda20c9f08d",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcc39c1272cc336"
+        ],
+        "output": [
+          "x28cb69e69da2f2"
+        ],
+        "name": "x45fc0ee421f0f4",
+        "op_type": "Neg",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd6b2c4c877d38d",
+          "xa3e4e9db731a6c"
+        ],
+        "output": [
+          "x545affff8d3b22"
+        ],
+        "name": "x2597bbcd9da42c",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd6b2c4c877d38d",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x2b9c8a1f473d1a"
+        ],
+        "name": "xc37b12e2bdded3",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd6b2c4c877d38d",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "xa8faaeaf2637ab"
+        ],
+        "name": "x79dbed28b56329",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x28cb69e69da2f2"
+        ],
+        "output": [
+          "x47ce7c9b95bce1"
+        ],
+        "name": "x078e8f389b1874",
+        "op_type": "Softmax",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x28cb69e69da2f2"
+        ],
+        "output": [
+          "x9f0be0119e67e9"
+        ],
+        "name": "xdfecb01d1c4cfb",
+        "op_type": "LogSoftmax",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x545affff8d3b22",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x144f3a2cd105db"
+        ],
+        "name": "x4c66830660a396",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2b9c8a1f473d1a",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xfb596a96341720"
+        ],
+        "name": "xb9a1ba63253a42",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa8faaeaf2637ab",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x10f08c1bcfba54"
+        ],
+        "name": "x2fd859e785d2c1",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x47ce7c9b95bce1",
+          "x9f0be0119e67e9"
+        ],
+        "output": [
+          "x38eb21f8895182"
+        ],
+        "name": "xe64eb077faf636",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x144f3a2cd105db",
+          "x6a277c00cbb2fe",
+          "xfb596a96341720",
+          "x10f08c1bcfba54"
+        ],
+        "output": [
+          "xb16e81ad469d86"
+        ],
+        "name": "x79a234f4312c2a",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x38eb21f8895182",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "x107af8cad05bcd"
+        ],
+        "name": "x87dbaf1dc77650",
+        "op_type": "ReduceSum",
+        "attribute": [
+          {
+            "name": "keepdims",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa9a82a8e419667",
+          "xb16e81ad469d86"
+        ],
+        "output": [
+          "x1ced05abee324b"
+        ],
+        "name": "x1c25e2f4782a68",
+        "op_type": "Tile",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x107af8cad05bcd",
+          "xb7bae6efebad1f"
+        ],
+        "output": [
+          "x79ed1151c7c7cd"
+        ],
+        "name": "x6cb3b184426800",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcc39c1272cc336",
+          "x1ced05abee324b"
+        ],
+        "output": [
+          "xcd7f6e081eecba"
+        ],
+        "name": "xd8c0e690771131",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x79ed1151c7c7cd",
+          "xc213c81849c3b1",
+          "x0c58ac94e8d133"
+        ],
+        "output": [
+          "x36ecd3f2d7e28f"
+        ],
+        "name": "x30573d8b9d26e8",
+        "op_type": "Clip",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcd7f6e081eecba",
+          "x24ac29a528bb10"
+        ],
+        "output": [
+          "xb5678d5347ca9a"
+        ],
+        "name": "xcc80c8b13b1bae",
+        "op_type": "ReduceSum",
+        "attribute": [
+          {
+            "name": "keepdims",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x36ecd3f2d7e28f"
+        ],
+        "output": [
+          "x16b37da881dcfc"
+        ],
+        "name": "xf2d23c569fe661",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb5678d5347ca9a"
+        ],
+        "output": [
+          "x4c87f2dd24c033"
+        ],
+        "name": "xaef4d99b0673c1",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x16b37da881dcfc",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x83cd4184df7bd5"
+        ],
+        "name": "x247c3b406734cb",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x16b37da881dcfc",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "xd39083cb7b6574"
+        ],
+        "name": "xc165cf6843a29b",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4c87f2dd24c033",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xd2987b071f475a"
+        ],
+        "name": "xd087e5486c4518",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4c87f2dd24c033",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "xa71bc88e07cda1"
+        ],
+        "name": "xc4f294fd62d595",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x83cd4184df7bd5",
+          "xf093fe9de9a49d"
+        ],
+        "output": [
+          "x112da40708eee3"
+        ],
+        "name": "xf9d45a9f51d3a6",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd39083cb7b6574"
+        ],
+        "output": [
+          "x8eb5fb36bc7d28"
+        ],
+        "name": "xb0aefd364f370e",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd2987b071f475a",
+          "xf093fe9de9a49d"
+        ],
+        "output": [
+          "x198eeebb44231d"
+        ],
+        "name": "x4ec9247ec55e89",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa71bc88e07cda1"
+        ],
+        "output": [
+          "x58196a64f0f860"
+        ],
+        "name": "x1be876a8bb5896",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x36ecd3f2d7e28f",
+          "",
+          "",
+          "x112da40708eee3"
+        ],
+        "output": [
+          "x2cfdfd39cd01ca"
+        ],
+        "name": "xeb75b1b651fa92",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb5678d5347ca9a",
+          "",
+          "",
+          "x198eeebb44231d"
+        ],
+        "output": [
+          "x208230eb1ed17f"
+        ],
+        "name": "xc41bcd199946bf",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2cfdfd39cd01ca",
+          "x73cf522e5c10ba"
+        ],
+        "output": [
+          "xb66d70532ed444"
+        ],
+        "name": "xc206f9d8590046",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x208230eb1ed17f",
+          "x73cf522e5c10ba"
+        ],
+        "output": [
+          "xe7c4108b88b0e4"
+        ],
+        "name": "xca0e75a44e81f9",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb66d70532ed444",
+          "x8eb5fb36bc7d28"
+        ],
+        "output": [
+          "x2bc6428ed764d7"
+        ],
+        "name": "x8e40b7089271ed",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe7c4108b88b0e4",
+          "x58196a64f0f860"
+        ],
+        "output": [
+          "xa891edf6858399"
+        ],
+        "name": "xf624c99d7d1f85",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3ae5899635405d",
+          "x94edff00e4916d",
+          "xa891edf6858399"
+        ],
+        "output": [
+          "x0124b752da1128"
+        ],
+        "name": "xf941b3643eccce",
+        "op_type": "build_offset_volume",
+        "attribute": [
+          {
+            "name": "max_offset_disp",
+            "i": "3",
+            "type": "INT"
+          },
+          {
+            "name": "num_groups",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": "",
+        "domain": "sl"
+      },
+      {
+        "input": [
+          "xc14c8eddcc927e",
+          "x0124b752da1128",
+          "xa891edf6858399",
+          "x2bc6428ed764d7"
+        ],
+        "output": [
+          "xbf2b1ce25ad2ee"
+        ],
+        "name": "xa1111ee9affad9",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xbf2b1ce25ad2ee"
+        ],
+        "output": [
+          "x52c69a4e98c024"
+        ],
+        "name": "xe3da08c4c6cf2e",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xbf2b1ce25ad2ee",
+          "x9e361920b69dba",
+          "x1fba20ecca6dc7"
+        ],
+        "output": [
+          "x2d25202b40b65e"
+        ],
+        "name": "x2558876a85fa49",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x52c69a4e98c024",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x2305b9fe61d108"
+        ],
+        "name": "x848adc9d38fbe7",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x52c69a4e98c024",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "x5c202adfa89d11"
+        ],
+        "name": "x0052857f778c25",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2d25202b40b65e"
+        ],
+        "output": [
+          "xa8a532363e95a5"
+        ],
+        "name": "x95a1dfa36e5f3a",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa8a532363e95a5",
+          "x8a7353348ea4fb",
+          "xdbaa337e2a241d",
+          "x866778708ff8c9",
+          "x23f600a62ff855"
+        ],
+        "output": [
+          "xe5e00eb878b939"
+        ],
+        "name": "x964026dbfccf0e",
+        "op_type": "BatchNormalization",
+        "attribute": [
+          {
+            "name": "epsilon",
+            "f": 1e-05,
+            "type": "FLOAT"
+          },
+          {
+            "name": "momentum",
+            "f": 0.9,
+            "type": "FLOAT"
+          },
+          {
+            "name": "training_mode",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2305b9fe61d108",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x362429db760f4c"
+        ],
+        "name": "xa0a7cd7c7a875a",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5c202adfa89d11",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x49dee51c6d4789"
+        ],
+        "name": "x941029b49afdff",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe5e00eb878b939",
+          "xfa729e9635186e",
+          "xb88da65fe6299f"
+        ],
+        "output": [
+          "x16df6d05b7bc30"
+        ],
+        "name": "xc6e77021655de1",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x362429db760f4c",
+          "x49dee51c6d4789"
+        ],
+        "output": [
+          "xc35e6c7a8babdc"
+        ],
+        "name": "x143caf68b18d78",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x16df6d05b7bc30"
+        ],
+        "output": [
+          "x4c1445ed71ed36"
+        ],
+        "name": "xde7d2d6b98fd94",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4c1445ed71ed36"
+        ],
+        "output": [
+          "x92f3a8db9358b3"
+        ],
+        "name": "x8cb8d0e5ec89a5",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4c1445ed71ed36",
+          "xe9b00d80840c9b",
+          "xfdfcbee3bed838"
+        ],
+        "output": [
+          "x681846b97a4d9b"
+        ],
+        "name": "x11f21886a5a527",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x92f3a8db9358b3",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "xe78ad8b1b24f8c"
+        ],
+        "name": "xda567a8013b045",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x92f3a8db9358b3",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "x12051c64280a89"
+        ],
+        "name": "x266112c8605116",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x681846b97a4d9b"
+        ],
+        "output": [
+          "x951ce7a2a84e2a"
+        ],
+        "name": "x4a62ca228ee588",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x951ce7a2a84e2a",
+          "xdd4a090a2f3461",
+          "xc1c03fdb77162f"
+        ],
+        "output": [
+          "xfcad4c9efc3fed"
+        ],
+        "name": "x31d8452a3a848d",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "7",
+              "7"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "3",
+              "3",
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe78ad8b1b24f8c",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x1f083c89f786b8"
+        ],
+        "name": "x7b9dd783800289",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x12051c64280a89",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x34e0c53e26826c"
+        ],
+        "name": "x5c17ab8d6a1cb9",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xfcad4c9efc3fed"
+        ],
+        "output": [
+          "x17b998a88337b0"
+        ],
+        "name": "xcfc82a08ff82bf",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1f083c89f786b8",
+          "x34e0c53e26826c"
+        ],
+        "output": [
+          "x3e6754fff87858"
+        ],
+        "name": "x085d2c59b25c89",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x17b998a88337b0"
+        ],
+        "output": [
+          "x58bddf459acf3b"
+        ],
+        "name": "xa3aa5540b5b7ee",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x58bddf459acf3b",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x86cbf55f62812d"
+        ],
+        "name": "xb859170622152f",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x86cbf55f62812d",
+          "x3e6754fff87858"
+        ],
+        "output": [
+          "xd3ed45a44448be"
+        ],
+        "name": "x00492c40741a8d",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x17b998a88337b0",
+          "",
+          "",
+          "xd3ed45a44448be"
+        ],
+        "output": [
+          "x8701810fe5742a"
+        ],
+        "name": "x763c24c6dd7364",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8701810fe5742a",
+          "x5756c9c83acaac",
+          "x1e02c6bd7d8bcb"
+        ],
+        "output": [
+          "x4fd84584990e13"
+        ],
+        "name": "x5b2d5da4356162",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x4fd84584990e13"
+        ],
+        "output": [
+          "x286dab986c1c45"
+        ],
+        "name": "x0da37dc6b44568",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x286dab986c1c45",
+          "x4c1445ed71ed36"
+        ],
+        "output": [
+          "xe507f1f2b9118f"
+        ],
+        "name": "xa684167d39071a",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe507f1f2b9118f",
+          "xaad98446804242",
+          "x8526249ae27926"
+        ],
+        "output": [
+          "x89b87b484b5843"
+        ],
+        "name": "x34b8d3b597c76b",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x89b87b484b5843"
+        ],
+        "output": [
+          "xb4f8a0c77f804c"
+        ],
+        "name": "xba3f568c182d93",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb4f8a0c77f804c"
+        ],
+        "output": [
+          "x909058627f4e6d"
+        ],
+        "name": "x833894dead0c8d",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x909058627f4e6d",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xc01d52a04c8317"
+        ],
+        "name": "x8e7303951aaa33",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc01d52a04c8317",
+          "xc35e6c7a8babdc"
+        ],
+        "output": [
+          "xfd45fd67193f63"
+        ],
+        "name": "x7d7a006b08f1a8",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb4f8a0c77f804c",
+          "",
+          "",
+          "xfd45fd67193f63"
+        ],
+        "output": [
+          "xa8811e7453d43e"
+        ],
+        "name": "x8201364041aa3a",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa8811e7453d43e",
+          "xe60575d419f272",
+          "x055ae731ad556a"
+        ],
+        "output": [
+          "xebcdc13477aed4"
+        ],
+        "name": "x442cbd0e248808",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xebcdc13477aed4"
+        ],
+        "output": [
+          "x7eb5d007ca9a83"
+        ],
+        "name": "x2ccd821a5c43f7",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7eb5d007ca9a83",
+          "xe5e00eb878b939"
+        ],
+        "output": [
+          "x2369acb846a367"
+        ],
+        "name": "x0032ea277b165d",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2369acb846a367",
+          "x65b02ff18dcdf5",
+          "x921a5b92e79d71"
+        ],
+        "output": [
+          "x5bc79990d87964"
+        ],
+        "name": "xe00c8826b5ee87",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5bc79990d87964"
+        ],
+        "output": [
+          "x1705c52ab1b9dd"
+        ],
+        "name": "xa2b1a9e2d758dc",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1705c52ab1b9dd",
+          "x203deaa1f88576",
+          "x2025b283326d69"
+        ],
+        "output": [
+          "x6d5ac69124713d"
+        ],
+        "name": "x465b70535f2f50",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1705c52ab1b9dd",
+          "x16b6a74a68fc30",
+          "xf874345f759b13"
+        ],
+        "output": [
+          "xc752edf0ada8ba"
+        ],
+        "name": "x642aef32569ab3",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc752edf0ada8ba"
+        ],
+        "output": [
+          "x89cc280f0c3faf"
+        ],
+        "name": "x8d9b8d1f106dbd",
+        "op_type": "Sigmoid",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa891edf6858399",
+          "x6d5ac69124713d"
+        ],
+        "output": [
+          "x43b3c653f924cb"
+        ],
+        "name": "x68f892fd392e95",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x89cc280f0c3faf",
+          "xc213c81849c3b1",
+          "x0c58ac94e8d133"
+        ],
+        "output": [
+          "x31b203d47f4dfc"
+        ],
+        "name": "xc671b9946b9167",
+        "op_type": "Clip",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x43b3c653f924cb"
+        ],
+        "output": [
+          "x777146a9b5e90f"
+        ],
+        "name": "x1f8d27dabbd370",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x777146a9b5e90f"
+        ],
+        "output": [
+          "xdfef6a4bf0b8f3"
+        ],
+        "name": "xba8c15645aadaa",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x31b203d47f4dfc"
+        ],
+        "output": [
+          "x165a93772e3f0f"
+        ],
+        "name": "x62234c7e2c9b02",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdfef6a4bf0b8f3",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xe92cf43e833f88"
+        ],
+        "name": "xff5063f3f2ddd1",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdfef6a4bf0b8f3",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "xe276ca1af58eec"
+        ],
+        "name": "x42c84ce6439960",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x165a93772e3f0f",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xcebd87cb3c3e73"
+        ],
+        "name": "xdeb0bacc163ba2",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x165a93772e3f0f",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x797bb9ed593fa4"
+        ],
+        "name": "xf1e1462c708dda",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe92cf43e833f88",
+          "xf5919950b1d799"
+        ],
+        "output": [
+          "xf89232c6111248"
+        ],
+        "name": "x92c49e95adb503",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe276ca1af58eec"
+        ],
+        "output": [
+          "xc9ba331092ffc0"
+        ],
+        "name": "x503a2a4a52f9e3",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcebd87cb3c3e73",
+          "xf5919950b1d799"
+        ],
+        "output": [
+          "x03b0572b8f2645"
+        ],
+        "name": "x244960c512cf7b",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x797bb9ed593fa4"
+        ],
+        "output": [
+          "xc56475a795d6d0"
+        ],
+        "name": "x95bdd3a15d69d4",
+        "op_type": "Cast",
+        "attribute": [
+          {
+            "name": "to",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x777146a9b5e90f",
+          "",
+          "",
+          "xf89232c6111248"
+        ],
+        "output": [
+          "x84a5b2940d8281"
+        ],
+        "name": "x8ea060bf6e207f",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x31b203d47f4dfc",
+          "",
+          "",
+          "x03b0572b8f2645"
+        ],
+        "output": [
+          "x5aa6eaeade618e"
+        ],
+        "name": "x9de95a82257b72",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x84a5b2940d8281",
+          "x754b02b33b5a1a"
+        ],
+        "output": [
+          "x08519626028416"
+        ],
+        "name": "x04eb4b025e1714",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5aa6eaeade618e",
+          "x754b02b33b5a1a"
+        ],
+        "output": [
+          "x82e406508c4350"
+        ],
+        "name": "xe06d3f1b2f63fd",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x08519626028416",
+          "xc9ba331092ffc0"
+        ],
+        "output": [
+          "x43da339a674e95"
+        ],
+        "name": "x03b9e0d1193caa",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x82e406508c4350",
+          "xc56475a795d6d0"
+        ],
+        "output": [
+          "xe024f3c799c85c"
+        ],
+        "name": "x831bbf270cef4a",
+        "op_type": "Div",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x85644f8577a831",
+          "x32cd98ccdbc550",
+          "x43da339a674e95"
+        ],
+        "output": [
+          "x5f2f223eda8433"
+        ],
+        "name": "x75d5afa3a8a344",
+        "op_type": "build_offset_volume",
+        "attribute": [
+          {
+            "name": "max_offset_disp",
+            "i": "3",
+            "type": "INT"
+          },
+          {
+            "name": "num_groups",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": "",
+        "domain": "sl"
+      },
+      {
+        "input": [
+          "x43da339a674e95",
+          "",
+          "xfdaa54e2b1a381"
+        ],
+        "output": [
+          "xc13a620965e96b"
+        ],
+        "name": "xf13fba42ff5c67",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc13a620965e96b",
+          "x47a1de5947f621"
+        ],
+        "output": [
+          "x84a734baa1d33b"
+        ],
+        "name": "xca43c3b081646f",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x18e6c9f0b28612",
+          "x5f2f223eda8433",
+          "x43da339a674e95",
+          "xe024f3c799c85c"
+        ],
+        "output": [
+          "x3a95a1380e830e"
+        ],
+        "name": "xbac0697ed70ad1",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "1",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3a95a1380e830e"
+        ],
+        "output": [
+          "xb7c7802365f490"
+        ],
+        "name": "x699c04b3b40220",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3a95a1380e830e",
+          "x1e98f02de0b57b",
+          "x057edfdf52ae7e"
+        ],
+        "output": [
+          "x5f07c34d15a94e"
+        ],
+        "name": "x8642698effe011",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb7c7802365f490",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "xd56caa71920f59"
+        ],
+        "name": "x82f7f3efc3675f",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb7c7802365f490",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "x955bbf305cba9e"
+        ],
+        "name": "x721f932d8d1a0f",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5f07c34d15a94e"
+        ],
+        "output": [
+          "xb1af2aa9105143"
+        ],
+        "name": "x9445f2494cf8c9",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb1af2aa9105143",
+          "x8a7353348ea4fb",
+          "xdbaa337e2a241d",
+          "x33bc6d3c7ecb7b",
+          "x0381fdfa08954c"
+        ],
+        "output": [
+          "x56561fd1f0a53b"
+        ],
+        "name": "xc246f97c78c7f6",
+        "op_type": "BatchNormalization",
+        "attribute": [
+          {
+            "name": "epsilon",
+            "f": 1e-05,
+            "type": "FLOAT"
+          },
+          {
+            "name": "momentum",
+            "f": 0.9,
+            "type": "FLOAT"
+          },
+          {
+            "name": "training_mode",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd56caa71920f59",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xf411c3b1d584f0"
+        ],
+        "name": "xb3abc4ff88e10e",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x955bbf305cba9e",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xb019e3e865fd7a"
+        ],
+        "name": "x87637d29fd066e",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd56caa71920f59",
+          "xba5f858360c3af"
+        ],
+        "output": [
+          "xb99e0b6579926c"
+        ],
+        "name": "x26aa14713472ad",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x955bbf305cba9e",
+          "xba5f858360c3af"
+        ],
+        "output": [
+          "x6d517bb8edf624"
+        ],
+        "name": "xa64e07ce79f8a7",
+        "op_type": "Mul",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x56561fd1f0a53b",
+          "x7d2c56978828d2",
+          "xa91adcb0817723"
+        ],
+        "output": [
+          "xfc6e5761381df0"
+        ],
+        "name": "x7db268dd64f872",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf411c3b1d584f0",
+          "xb019e3e865fd7a"
+        ],
+        "output": [
+          "x4dd87617630c75"
+        ],
+        "name": "x6fdd1e79046033",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xb99e0b6579926c",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xd9351d19978537"
+        ],
+        "name": "x30ce4a168b1507",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x6d517bb8edf624",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x10d96641813bb9"
+        ],
+        "name": "x4933bbdd654f5f",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xfc6e5761381df0"
+        ],
+        "output": [
+          "x1896404c9db4f9"
+        ],
+        "name": "x13ea6874cc7455",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd9351d19978537",
+          "x10d96641813bb9"
+        ],
+        "output": [
+          "x0d4fd2c0882890"
+        ],
+        "name": "xacdb66ec163159",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1896404c9db4f9"
+        ],
+        "output": [
+          "xf608fede93340b"
+        ],
+        "name": "x34daa0d73ba2e9",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1896404c9db4f9",
+          "x5af6085cd740d5",
+          "x1a665721d148be"
+        ],
+        "output": [
+          "xc3e7d997a4d7c6"
+        ],
+        "name": "x5ee56e8ef60e85",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "2",
+              "2"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf608fede93340b",
+          "xb8ffba9e5455f1"
+        ],
+        "output": [
+          "x3d46ac86741c0c"
+        ],
+        "name": "x4bff1dcb9e9405",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf608fede93340b",
+          "x11b4d3befc6c8e"
+        ],
+        "output": [
+          "x8a4f20a8d8d7ca"
+        ],
+        "name": "x605f1a29a7e24a",
+        "op_type": "Gather",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc3e7d997a4d7c6"
+        ],
+        "output": [
+          "xc292dfaf21867b"
+        ],
+        "name": "x0685c0e72dc298",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xc292dfaf21867b",
+          "xf611561b3e5311",
+          "xc4d68a7721ba5b"
+        ],
+        "output": [
+          "x5aa1ca2053b884"
+        ],
+        "name": "x633a60d4f8c547",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "7",
+              "7"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "3",
+              "3",
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3d46ac86741c0c",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x7b45f8a9f8a8ca"
+        ],
+        "name": "x4f80963816a8e8",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x8a4f20a8d8d7ca",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x09610a446f5f96"
+        ],
+        "name": "x2160200fde1b09",
+        "op_type": "Unsqueeze",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x5aa1ca2053b884"
+        ],
+        "output": [
+          "x04fffabcffc9c4"
+        ],
+        "name": "x2ad56e94d14c2b",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x7b45f8a9f8a8ca",
+          "x09610a446f5f96"
+        ],
+        "output": [
+          "x416b679eed9f28"
+        ],
+        "name": "xaa84d5eeed8231",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x04fffabcffc9c4"
+        ],
+        "output": [
+          "x0e55005873a085"
+        ],
+        "name": "xa0cf764e3542d6",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x0e55005873a085",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "xd488d3a746ccf9"
+        ],
+        "name": "xcc85e5f7908fa5",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd488d3a746ccf9",
+          "x416b679eed9f28"
+        ],
+        "output": [
+          "x052d6ab25241ab"
+        ],
+        "name": "x313e9f2fc21f3f",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x04fffabcffc9c4",
+          "",
+          "",
+          "x052d6ab25241ab"
+        ],
+        "output": [
+          "xdadbe4974bdc5f"
+        ],
+        "name": "xe730e367351050",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xdadbe4974bdc5f",
+          "x9e9ce026adc1e4",
+          "xd863402bc6cd29"
+        ],
+        "output": [
+          "xf8c1070f1d62e4"
+        ],
+        "name": "xb25769e8543cbb",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf8c1070f1d62e4"
+        ],
+        "output": [
+          "xfa8eaef3cdb781"
+        ],
+        "name": "xfd63388aa71be1",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xfa8eaef3cdb781",
+          "x1896404c9db4f9"
+        ],
+        "output": [
+          "xf31d1d002e7a8d"
+        ],
+        "name": "x00ec10e128f166",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xf31d1d002e7a8d",
+          "x19662a28d5aaf4",
+          "x862e5533d3c19f"
+        ],
+        "output": [
+          "x33f62554fac93a"
+        ],
+        "name": "xf2a19b271fd8bb",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x33f62554fac93a"
+        ],
+        "output": [
+          "x9c8948ba91ff18"
+        ],
+        "name": "x51f9ef2df7f45c",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9c8948ba91ff18"
+        ],
+        "output": [
+          "xba9823516e3390"
+        ],
+        "name": "x4c63730a400d8f",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xba9823516e3390",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x111dce66fb21de"
+        ],
+        "name": "xd1937678ee12e2",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x111dce66fb21de",
+          "x4dd87617630c75"
+        ],
+        "output": [
+          "x1ad5bffb7b1c52"
+        ],
+        "name": "x8c9ab78a4e1d0e",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9c8948ba91ff18",
+          "",
+          "",
+          "x1ad5bffb7b1c52"
+        ],
+        "output": [
+          "xa9daf20d1b2a69"
+        ],
+        "name": "xce4caa6f6b3eb2",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa9daf20d1b2a69",
+          "xe72339c89b66d9",
+          "xd91bb8ca7e9249"
+        ],
+        "output": [
+          "xcc18752e1ba1af"
+        ],
+        "name": "xac8254ac4c48b2",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xcc18752e1ba1af"
+        ],
+        "output": [
+          "xd98d6421d1e5f6"
+        ],
+        "name": "xc640b48ff00bb4",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd98d6421d1e5f6",
+          "x56561fd1f0a53b"
+        ],
+        "output": [
+          "x470b8e3ea8a3c8"
+        ],
+        "name": "xf1f296ec796937",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x470b8e3ea8a3c8",
+          "x3f645a3af5728b",
+          "x806cd76c002501"
+        ],
+        "output": [
+          "x16bfe7c057d1a7"
+        ],
+        "name": "xf1247abe7ad664",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x16bfe7c057d1a7"
+        ],
+        "output": [
+          "x531b8f9f538de1"
+        ],
+        "name": "x22335d1ed48e11",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x531b8f9f538de1"
+        ],
+        "output": [
+          "x9cec534df79936"
+        ],
+        "name": "x0fd83d1e7c546e",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x9cec534df79936",
+          "xb7201b1efe918b",
+          "x8117f0fd51ce49",
+          "xb7201b1efe918b"
+        ],
+        "output": [
+          "x3c754e09d8e310"
+        ],
+        "name": "x3e77918df02339",
+        "op_type": "Slice",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x3c754e09d8e310",
+          "x0d4fd2c0882890"
+        ],
+        "output": [
+          "x49a4cfb46c205f"
+        ],
+        "name": "x84149e97223830",
+        "op_type": "Concat",
+        "attribute": [
+          {
+            "name": "axis",
+            "i": "0",
+            "type": "INT"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x531b8f9f538de1",
+          "",
+          "",
+          "x49a4cfb46c205f"
+        ],
+        "output": [
+          "x1af30688bec46c"
+        ],
+        "name": "xef58685b978027",
+        "op_type": "Resize",
+        "attribute": [
+          {
+            "name": "coordinate_transformation_mode",
+            "s": "aGFsZl9waXhlbA==",
+            "type": "STRING"
+          },
+          {
+            "name": "cubic_coeff_a",
+            "f": -0.75,
+            "type": "FLOAT"
+          },
+          {
+            "name": "mode",
+            "s": "bGluZWFy",
+            "type": "STRING"
+          },
+          {
+            "name": "nearest_mode",
+            "s": "Zmxvb3I=",
+            "type": "STRING"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x1af30688bec46c",
+          "xde19d513de0839",
+          "xe0c218e871f62e"
+        ],
+        "output": [
+          "xa16dbd8da6ad1a"
+        ],
+        "name": "x6c5b57586f98ab",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "3",
+              "3"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xa16dbd8da6ad1a"
+        ],
+        "output": [
+          "x395fa8756cd860"
+        ],
+        "name": "x983d6243054d58",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x395fa8756cd860",
+          "x52bdfe8a5e0c2a",
+          "xe77e51292c1350"
+        ],
+        "output": [
+          "xcad9c8002ade7a"
+        ],
+        "name": "x948fedf9dcba48",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x395fa8756cd860",
+          "x58b45df6833578",
+          "x2d2d60bc29cf37"
+        ],
+        "output": [
+          "xd778b55a2308eb"
+        ],
+        "name": "x23f66523663977",
+        "op_type": "Conv",
+        "attribute": [
+          {
+            "name": "dilations",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "group",
+            "i": "1",
+            "type": "INT"
+          },
+          {
+            "name": "kernel_shape",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "pads",
+            "ints": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "type": "INTS"
+          },
+          {
+            "name": "strides",
+            "ints": [
+              "1",
+              "1"
+            ],
+            "type": "INTS"
+          }
+        ],
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xd778b55a2308eb"
+        ],
+        "output": [
+          "x64b6e472442667"
+        ],
+        "name": "x8026b59ca964fc",
+        "op_type": "Sigmoid",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x84a734baa1d33b",
+          "xcad9c8002ade7a"
+        ],
+        "output": [
+          "x2def3ca11c3198"
+        ],
+        "name": "x28ca65105af3c9",
+        "op_type": "Add",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x64b6e472442667",
+          "xc213c81849c3b1",
+          "x0c58ac94e8d133"
+        ],
+        "output": [
+          "confidence"
+        ],
+        "name": "xa256e92471dd55",
+        "op_type": "Clip",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "x2def3ca11c3198"
+        ],
+        "output": [
+          "disparity"
+        ],
+        "name": "x564572b20c401a",
+        "op_type": "Relu",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "disparity"
+        ],
+        "output": [
+          "xe94185e6244ec7"
+        ],
+        "name": "x572eca6ffc17de",
+        "op_type": "Shape",
+        "doc_string": ""
+      },
+      {
+        "input": [
+          "xe94185e6244ec7"
+        ],
+        "output": [
+          "disparity_right"
+        ],
+        "name": "x59a3c399350d09",
+        "op_type": "ConstantOfShape",
+        "attribute": [
+          {
+            "name": "value",
+            "t": {
+              "dims": [
+                "1"
+              ],
+              "data_type": 1,
+              "name": "",
+              "raw_data": "AAAAAA=="
+            },
+            "type": "TENSOR"
+          }
+        ],
+        "doc_string": ""
+      }
+    ],
+    "name": "g",
+    "initializer": [
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "xaa6861449a8642"
+      },
+      {
+        "dims": [
+          "5"
+        ],
+        "data_type": 7,
+        "name": "x00060b3df39762"
+      },
+      {
+        "dims": [
+          "6"
+        ],
+        "data_type": 7,
+        "name": "x69410978a0d7b6"
+      },
+      {
+        "dims": [
+          "6"
+        ],
+        "data_type": 7,
+        "name": "x35e7ecdf5f744b"
+      },
+      {
+        "dims": [
+          "2"
+        ],
+        "data_type": 7,
+        "name": "xb4ad77867d90b9"
+      },
+      {
+        "dims": [
+          "64",
+          "12",
+          "7",
+          "7"
+        ],
+        "data_type": 1,
+        "name": "x45fb897db43bd2"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x55459ec4e9e4f0"
+      },
+      {
+        "dims": [
+          "4",
+          "12",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xebfb96578a0153"
+      },
+      {
+        "dims": [
+          "4"
+        ],
+        "data_type": 1,
+        "name": "x5a1a3bdae5130f"
+      },
+      {
+        "dims": [
+          "8",
+          "4",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x12cb920aa40118"
+      },
+      {
+        "dims": [
+          "8"
+        ],
+        "data_type": 1,
+        "name": "x3acb65524b1b31"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "xb7201b1efe918b"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "xaa1deabec5e294"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "x24ac29a528bb10"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "x503b446d13f169"
+      },
+      {
+        "dims": [
+          "16",
+          "32",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x3afe92e5d9be04"
+      },
+      {
+        "dims": [
+          "16"
+        ],
+        "data_type": 1,
+        "name": "xb06019ab3f2ddb"
+      },
+      {
+        "data_type": 7,
+        "name": "xb8ffba9e5455f1"
+      },
+      {
+        "data_type": 7,
+        "name": "x11b4d3befc6c8e"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xc8c5fac18b541d"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x64ed21993753fe"
+      },
+      {
+        "dims": [
+          "8",
+          "16",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x12fbd9fdf504ef"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x44d5db10961524"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x5c7e165b49c916"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x085a1b7940218c"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x5389cab8398d62"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x9e1c37434e3b06"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x6c447c87cc6f2a"
+      },
+      {
+        "dims": [
+          "16",
+          "32",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x684d7df9a6c9d8"
+      },
+      {
+        "dims": [
+          "16"
+        ],
+        "data_type": 1,
+        "name": "x94fa5548619fd6"
+      },
+      {
+        "dims": [
+          "128",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x7b0b022ee71cbc"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "xad54f586a2e314"
+      },
+      {
+        "dims": [
+          "128",
+          "64",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "xe6b5935d2bb89c"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "x6104d38b00d297"
+      },
+      {
+        "dims": [
+          "8",
+          "16",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x6086c9dade5f1e"
+      },
+      {
+        "dims": [
+          "8"
+        ],
+        "data_type": 1,
+        "name": "x3b6fe8d5700436"
+      },
+      {
+        "dims": [
+          "128",
+          "128",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xa5c3bca7240a54"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "x4715526a016e47"
+      },
+      {
+        "dims": [
+          "128",
+          "128",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x259d2cacd85473"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "x9df0bc620f6ed9"
+      },
+      {
+        "dims": [
+          "128",
+          "128",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x0a7eb395bd25d5"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "x5dbd15dd9f9957"
+      },
+      {
+        "dims": [
+          "32",
+          "128",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x8edbf97d688d12"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x909175c9491588"
+      },
+      {
+        "data_type": 1,
+        "name": "xe0560149b5ab46"
+      },
+      {
+        "data_type": 7,
+        "name": "xa3e4e9db731a6c"
+      },
+      {
+        "data_type": 7,
+        "name": "xacd7212d938487"
+      },
+      {
+        "dims": [
+          "24",
+          "24",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x68db95123c38eb"
+      },
+      {
+        "dims": [
+          "24"
+        ],
+        "data_type": 1,
+        "name": "xeafb6f93e2d09b"
+      },
+      {
+        "dims": [
+          "48",
+          "24",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x2bda6c2a4e4956"
+      },
+      {
+        "dims": [
+          "48"
+        ],
+        "data_type": 1,
+        "name": "x12e9792b83d421"
+      },
+      {
+        "dims": [
+          "24",
+          "24",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x7805b41dff9f81"
+      },
+      {
+        "dims": [
+          "24"
+        ],
+        "data_type": 1,
+        "name": "x3529cd4c56200d"
+      },
+      {
+        "dims": [
+          "48",
+          "48",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x7634129c97d8e5"
+      },
+      {
+        "dims": [
+          "48"
+        ],
+        "data_type": 1,
+        "name": "x4e5cd5fba9a38e"
+      },
+      {
+        "dims": [
+          "96",
+          "48",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x499f8701a757e6"
+      },
+      {
+        "dims": [
+          "96"
+        ],
+        "data_type": 1,
+        "name": "x86080b91f5f5f5"
+      },
+      {
+        "dims": [
+          "48",
+          "48",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x3e0d6fcc1cc201"
+      },
+      {
+        "dims": [
+          "48"
+        ],
+        "data_type": 1,
+        "name": "x7612068a08ff49"
+      },
+      {
+        "dims": [
+          "96",
+          "96",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x688f424fe2d40b"
+      },
+      {
+        "dims": [
+          "96"
+        ],
+        "data_type": 1,
+        "name": "xad2a5b960d4ea2"
+      },
+      {
+        "dims": [
+          "96",
+          "96",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x8483eda4dc20e8"
+      },
+      {
+        "dims": [
+          "96"
+        ],
+        "data_type": 1,
+        "name": "x01b6fa3dea2a68"
+      },
+      {
+        "dims": [
+          "96",
+          "96",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xefe417dd55480f"
+      },
+      {
+        "dims": [
+          "96"
+        ],
+        "data_type": 1,
+        "name": "x1e071a2b118640"
+      },
+      {
+        "dims": [
+          "4"
+        ],
+        "data_type": 1,
+        "name": "xfdaa54e2b1a381"
+      },
+      {
+        "dims": [
+          "48",
+          "96",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x176acca4b2139d"
+      },
+      {
+        "dims": [
+          "48"
+        ],
+        "data_type": 1,
+        "name": "xecd96c41e2f356"
+      },
+      {
+        "dims": [
+          "24",
+          "48",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x4d7c5849cb9321"
+      },
+      {
+        "dims": [
+          "24"
+        ],
+        "data_type": 1,
+        "name": "x2e35ce991eaf2d"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "x6a277c00cbb2fe"
+      },
+      {
+        "dims": [
+          "1",
+          "24",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "xa9a82a8e419667"
+      },
+      {
+        "data_type": 1,
+        "name": "xb7bae6efebad1f"
+      },
+      {
+        "data_type": 1,
+        "name": "xc213c81849c3b1"
+      },
+      {
+        "data_type": 1,
+        "name": "x0c58ac94e8d133"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 7,
+        "name": "x8117f0fd51ce49"
+      },
+      {
+        "dims": [
+          "32",
+          "15",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x9e361920b69dba"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x1fba20ecca6dc7"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x8a7353348ea4fb"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "xdbaa337e2a241d"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x866778708ff8c9"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x23f600a62ff855"
+      },
+      {
+        "dims": [
+          "64",
+          "32",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xfa729e9635186e"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "xb88da65fe6299f"
+      },
+      {
+        "dims": [
+          "128",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xe9b00d80840c9b"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "xfdfcbee3bed838"
+      },
+      {
+        "dims": [
+          "64",
+          "128",
+          "7",
+          "7"
+        ],
+        "data_type": 1,
+        "name": "xdd4a090a2f3461"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "xc1c03fdb77162f"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x5756c9c83acaac"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x1e02c6bd7d8bcb"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xaad98446804242"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x8526249ae27926"
+      },
+      {
+        "dims": [
+          "32",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xe60575d419f272"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x055ae731ad556a"
+      },
+      {
+        "dims": [
+          "32",
+          "32",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x65b02ff18dcdf5"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x921a5b92e79d71"
+      },
+      {
+        "dims": [
+          "1",
+          "32",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x203deaa1f88576"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x2025b283326d69"
+      },
+      {
+        "dims": [
+          "1",
+          "32",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x16b6a74a68fc30"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 1,
+        "name": "xf874345f759b13"
+      },
+      {
+        "data_type": 1,
+        "name": "x47a1de5947f621"
+      },
+      {
+        "dims": [
+          "32",
+          "15",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x1e98f02de0b57b"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x057edfdf52ae7e"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x33bc6d3c7ecb7b"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "x0381fdfa08954c"
+      },
+      {
+        "data_type": 7,
+        "name": "xba5f858360c3af"
+      },
+      {
+        "dims": [
+          "64",
+          "32",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x7d2c56978828d2"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "xa91adcb0817723"
+      },
+      {
+        "dims": [
+          "128",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x5af6085cd740d5"
+      },
+      {
+        "dims": [
+          "128"
+        ],
+        "data_type": 1,
+        "name": "x1a665721d148be"
+      },
+      {
+        "dims": [
+          "64",
+          "128",
+          "7",
+          "7"
+        ],
+        "data_type": 1,
+        "name": "xf611561b3e5311"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "xc4d68a7721ba5b"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x9e9ce026adc1e4"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "xd863402bc6cd29"
+      },
+      {
+        "dims": [
+          "64",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x19662a28d5aaf4"
+      },
+      {
+        "dims": [
+          "64"
+        ],
+        "data_type": 1,
+        "name": "x862e5533d3c19f"
+      },
+      {
+        "dims": [
+          "32",
+          "64",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xe72339c89b66d9"
+      },
+      {
+        "dims": [
+          "32"
+        ],
+        "data_type": 1,
+        "name": "xd91bb8ca7e9249"
+      },
+      {
+        "dims": [
+          "16",
+          "32",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "x3f645a3af5728b"
+      },
+      {
+        "dims": [
+          "16"
+        ],
+        "data_type": 1,
+        "name": "x806cd76c002501"
+      },
+      {
+        "dims": [
+          "16",
+          "16",
+          "3",
+          "3"
+        ],
+        "data_type": 1,
+        "name": "xde19d513de0839"
+      },
+      {
+        "dims": [
+          "16"
+        ],
+        "data_type": 1,
+        "name": "xe0c218e871f62e"
+      },
+      {
+        "dims": [
+          "1",
+          "16",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x52bdfe8a5e0c2a"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 1,
+        "name": "xe77e51292c1350"
+      },
+      {
+        "dims": [
+          "1",
+          "16",
+          "1",
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x58b45df6833578"
+      },
+      {
+        "dims": [
+          "1"
+        ],
+        "data_type": 1,
+        "name": "x2d2d60bc29cf37"
+      }
+    ],
+    "doc_string": "",
+    "input": [
+      {
+        "name": "left",
+        "type": {
+          "tensor_type": {
+            "elem_type": 1,
+            "shape": {
+              "dim": [
+                {
+                  "dim_param": "batch_size"
+                },
+                {
+                  "dim_value": "3"
+                },
+                {
+                  "dim_param": "height"
+                },
+                {
+                  "dim_param": "width"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "right",
+        "type": {
+          "tensor_type": {
+            "elem_type": 1,
+            "shape": {
+              "dim": [
+                {
+                  "dim_param": "batch_size"
+                },
+                {
+                  "dim_value": "3"
+                },
+                {
+                  "dim_param": "height"
+                },
+                {
+                  "dim_param": "width"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "output": [
+      {
+        "name": "disparity",
+        "type": {
+          "tensor_type": {
+            "elem_type": 1,
+            "shape": {
+              "dim": [
+                {
+                  "dim_param": "batch_size"
+                },
+                {
+                  "dim_param": "Reludisparity_dim_1"
+                },
+                {
+                  "dim_param": "out_height"
+                },
+                {
+                  "dim_param": "out_width"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "disparity_right",
+        "type": {
+          "tensor_type": {
+            "elem_type": 1,
+            "shape": {
+              "dim": [
+                {
+                  "dim_param": "batch_size"
+                },
+                {
+                  "dim_param": "Reludisparity_dim_1"
+                },
+                {
+                  "dim_param": "out_height"
+                },
+                {
+                  "dim_param": "out_width"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "name": "confidence",
+        "type": {
+          "tensor_type": {
+            "elem_type": 1,
+            "shape": {
+              "dim": [
+                {
+                  "dim_param": "batch_size"
+                },
+                {
+                  "dim_value": "1"
+                },
+                {
+                  "dim_param": "out_height"
+                },
+                {
+                  "dim_param": "out_width"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "opset_import": [
+    {
+      "version": "16"
+    },
+    {
+      "domain": "sl",
+      "version": "1"
+    }
+  ]
+}

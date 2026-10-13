@@ -1,0 +1,148 @@
+ZED SDK 5.5.0 depth network recovery — 2026-10-13
+
+RESULT
+Recovered four original model payloads as ONNX, with their embedded tensors.
+Exported every initializer to NumPy NPZ without changing dtype, shape or bytes.
+No replacement networks were substituted. Original SDK resources were preserved.
+
+Artifacts                         Nodes   Initializers   Initializer elements
+neural_depth_light_5.3.onnx          326       126              2,318,800
+neural_depth_5.3.onnx                373       103              7,432,802
+neural_depth_5.4.onnx                514       192              7,503,939
+neural_depth_5.6.onnx                518       192              7,503,939
+
+These element counts include weights, biases, shape constants, quantization
+scales and other buffers; they are not counts of trainable parameters.
+The .model2 suffix/version is an artifact version, not the SDK version.
+
+For each artifact:
+  .onnx          Original decoded graph with embedded weights.
+  .weights.npz   Every initializer under its exact ONNX tensor name.
+  .weights.json  Tensor names, dimensions, dtypes, element counts and sizes.
+  .graph.json    Full node topology and attributes, plus tensor metadata.
+  .graph.txt     Readable numbered nodes, input/output edges and attributes.
+manifest.json records graph counts, input/output types and validation results.
+
+NETWORK STRUCTURE OBSERVED IN THE GRAPHS
+All four have two stereo inputs, left/right, shaped [batch,3,height,width], and
+three outputs: disparity, disparity_right and confidence. These are disparity
+networks; camera calibration and SDK processing turn disparity into metric depth.
+Original internal node and tensor names are obfuscated, but the topology,
+operators, kernel shapes, connections and weight tensors remain available.
+
+Common structure:
+  Stereo inputs
+    -> reshape/transpose packing of 2x2 spatial neighborhoods into 12 channels
+    -> shared left/right convolutional feature extraction
+    -> stereo cost volume
+    -> cost processing and disparity estimation
+    -> local offset cost volumes and learned refinement
+    -> left/right disparity and confidence outputs
+
+neural_depth_5.3:
+  FLOAT inputs; FLOAT weights; ONNX opset 16.
+  77 Conv nodes (70 2D, 7 3D), 3 3D ConvTranspose nodes.
+  Shared first feature kernel [64,12,7,7], stride 2; a separate
+  [16,12,3,3] convolutional branch is also present.
+  sl::build_gwc_volume(max_disp=24,num_groups=32).
+  Three sl::build_offset_volume(max_offset_disp=3,num_groups=1) nodes.
+  Cost processing includes 3D convolution and spatial upsampling.
+  Outputs include Softmax/ReduceSum disparity computation and Sigmoid confidence.
+
+neural_depth_light_5.3:
+  FLOAT inputs; FLOAT weights; ONNX opset 16.
+  60 Conv nodes, all 2D; no ConvTranspose.
+  Shared first feature kernel [64,12,7,7], stride 2.
+  sl::build_gwc_volume(max_disp=24,num_groups=1).
+  Two sl::build_offset_volume(max_offset_disp=3,num_groups=1) nodes.
+  Includes feature normalization, 2D processing and upsampling/refinement.
+
+neural_depth_5.4 and neural_depth_5.6:
+  79 Conv nodes (72 2D, 7 3D), 3 3D ConvTranspose nodes.
+  CensusXnorCostVolume(census_bits=512,groups=32,max_disp=24) replaces
+  the explicit build_gwc_volume seen in the 5.3 graph.
+  Each includes 66 QuantizeLinear and 66 DequantizeLinear nodes, and three
+  sl::build_offset_volume(max_offset_disp=3,num_groups=1) nodes.
+  5.4 uses FLOAT inputs and predominantly FLOAT initializer tensors, opset 16.
+  5.6 uses FLOAT16 inputs and predominantly FLOAT16 initializer tensors, opset 19.
+  Both preserve quantization scales and INT8 zero-point tensors in NPZ.
+  Quantized convolution weights can be produced through graph Q/DQ operations;
+  the initializer archive preserves what was actually shipped.
+
+No particular published architecture (RAFT, CREStereo, etc.) is established by
+this evidence. The custom-depth sample downloads alternative networks; it does
+not demonstrate which network the built-in depth modes use.
+The exact runtime mapping of every artifact to NEURAL/NEURAL_PLUS and hardware
+fallback selections was not traced. Filenames alone do not establish that map.
+
+DOWNLOAD AND RECOVERY METHOD
+Official instructions:
+https://docs.stereolabs.com/docs/development/zed-tools/zed-diagnostics
+  ZED_Diagnostic -aid       Download all SDK AI models.
+  ZED_Diagnostic -nrlo_all  Download and optimize the neural depth modes.
+  Individual optimization flags: -nrlo, -nrlo_plus, -nrlo_light.
+
+The local --help confirms these flags. Running -aid in this environment returned
+exit 1 without downloading; nvidia-smi also cannot communicate with the driver.
+Three depth .model2 files and optimized caches already existed in resources/.
+Downloaded the missing artifact directly from the official endpoint:
+https://download.stereolabs.com/ai/model/neural_depth_5.4.model2
+It redirects to Stereolabs' DigitalOcean model bucket.
+
+MD5 values match the corresponding embedded SDK checksum-table entries:
+  neural_depth_5.3        f22d8add944ce1e52c6e78e26d3167cd
+  neural_depth_5.4        cf68888a008a15201fab2de824a8a38b
+  neural_depth_5.6        278e9986463d1a5e2c87c7d510be7212
+  neural_depth_light_5.3  69020705ea2d6662af09e9fc2e7a429b
+Full source paths, sizes and SHA-256 digests: evidence/source_files.json.
+
+libsl_ai.so build ID: e3260433e54b488da8004e3d91c6646ef6e58209.
+The .model2 magic is 89 5a 45 44 4d 4f 44 03 (ZEDMOD plus version byte).
+Static GNU objdump analysis located a CPU decoder at library offset 0x191ab0.
+The call at 0x18e580 supplies input bytes, length, an output std::vector and
+optional metadata. Its failure path reports v2 model decrypt/inflate failure.
+extract_model.cpp loads this installed library and calls that same decoder with
+null optional metadata. All four returned rc=0 and nonempty ONNX payloads.
+This helper depends on the exact installed binary and C++ ABI; do not use its
+hardcoded offset against another SDK build. It is not a portable standalone
+reimplementation of the encryption scheme.
+Focused disassembly evidence is retained in evidence/*.asm.
+REA MCP tools were unavailable, and npm acquisition failed with EAI_AGAIN.
+The evidence here comes from ordinary shell analysis and actual decoder runs,
+not REA-generated evidence records.
+
+REPRODUCE
+From /usr/local/zed:
+  g++ -O2 -Wall -Wextra backengineer/depth_recovery/extract_model.cpp -ldl \
+      -o backengineer/depth_recovery/extract_model
+  backengineer/depth_recovery/extract_model resources/neural_depth_5.3.model2 \
+      backengineer/depth_recovery/neural_depth_5.3.onnx
+  python3 backengineer/depth_recovery/export_graphs.py
+Other inputs can be extracted with the same helper. The downloaded 5.4 input
+is in backengineer/depth_recovery/, while the three original inputs remain in resources/.
+Python dependencies onnx and numpy were already installed.
+
+Read weights:
+  import numpy as np
+  weights = np.load('backengineer/depth_recovery/neural_depth_5.3.weights.npz')
+  print(weights.files)
+  tensor = weights[weights.files[0]]
+
+VALIDATION AND LIMITS
+5.3 and light 5.3 pass onnx.checker.check_model on the original exported files.
+5.4 and 5.6 parse successfully, but the checker rejects CensusXnorCostVolume
+because it is a proprietary op placed in the default ONNX domain. Assigning it
+to sl in a temporary in-memory copy lets the remaining structural checks pass;
+the delivered ONNX files are unmodified. Custom-op semantics are not validated
+by this check, including for the models that pass directly.
+
+All NPZ tensors round-trip byte for byte against every ONNX initializer.
+This recovers the shipped inference graphs and tensors, not training source,
+original pre-export parameter names, gradients or optimizer checkpoints.
+Standalone inference needs implementations/plugins for build_gwc_volume,
+build_offset_volume and, for 5.4/5.6, CensusXnorCostVolume. PyTorch translations
+of those operators and all four graphs are now implemented and tested; see
+PYTORCH_USAGE.txt and evidence/custom_ops_notes.txt for validation and limits.
+Exact SDK preprocessing, calibration, runtime
+artifact selection and output postprocessing were not fully traced. No GPU
+inference or numerical equivalence comparison against SDK depth was performed.

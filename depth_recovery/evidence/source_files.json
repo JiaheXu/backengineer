@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/usr/local/zed/lib/libsl_ai.so",
+    "bytes": 14541576,
+    "sha256": "4de70ad5c0ada1e2f487384cb445d4034a2a154215223fa363cc805fc7d6597e",
+    "md5": "514fae85a92a80c58ab18db07504b8fb"
+  },
+  {
+    "path": "/usr/local/zed/lib/libsl_zed.so",
+    "bytes": 66627448,
+    "sha256": "4e5aa07309028ced6c9484d2b7251e105ab16952453abdce3a6bbdbf6075f1e2",
+    "md5": "1632eba4375c0686cd0ce66a49eaccb0"
+  },
+  {
+    "path": "/usr/local/zed/resources/neural_depth_light_5.3.model2",
+    "bytes": 8655182,
+    "sha256": "ef7549c8006009810667d861d073da301a1cb63384b6741fcc425a1c0c3d6dae",
+    "md5": "69020705ea2d6662af09e9fc2e7a429b"
+  },
+  {
+    "path": "/usr/local/zed/resources/neural_depth_5.3.model2",
+    "bytes": 27679790,
+    "sha256": "ac7defff568c70b62e32c2646892ae42f1a2c537b43fd84ccd840f057c986572",
+    "md5": "f22d8add944ce1e52c6e78e26d3167cd"
+  },
+  {
+    "path": "/usr/local/zed/resources/neural_depth_5.6.model2",
+    "bytes": 13940563,
+    "sha256": "58442bd68a80a607954f359e3021b03c1b1eeed6ccfdd884cd554371528262f0",
+    "md5": "278e9986463d1a5e2c87c7d510be7212"
+  },
+  {
+    "path": "/usr/local/zed/backengineer/depth_recovery/neural_depth_5.4.model2",
+    "bytes": 27938067,
+    "sha256": "cd3df1ef095efc4cd1dbd18c8d0098ef26484ff4713539382c7364c07c9411be",
+    "md5": "cf68888a008a15201fab2de824a8a38b"
+  }
+]

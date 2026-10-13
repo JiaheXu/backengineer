@@ -1,0 +1,92 @@
+Paper comparison for recovered ZED depth models — 2026-10-13
+
+Conclusion
+The reviewed papers contain matching operators and related architectural
+patterns. None of the reviewed primary sources establishes that the recovered
+ZED network is an exact implementation of a named published model. Similarity
+is not proof of authorship, derivation, identical training or identical weights.
+
+Primary manufacturer source
+https://www.stereolabs.com/blog/neural-depth-sensing
+Stereolabs' May 23, 2022 announcement describes a custom CNN trained on stereo
+images for feature extraction, matching and cost aggregation. It names no paper
+for that design. This announcement describes the original neural-depth release,
+not detailed architecture of the currently recovered SDK 5.5.0 artifacts.
+
+Observed local fingerprint, neural_depth_5.3.onnx
+Two RGB inputs; 2x2 spatial packing to 12 channels; shared convolutional stem
+with a [64,12,7,7] kernel; residual feature blocks with 64 and 128 channels;
+32-group correlation cost volume, 24 disparity hypotheses; a spatial 3D
+encoder-decoder with channel stages 64/128/256 and three ConvTranspose layers;
+softmax disparity regression; three local offset-volume refinements, each using
+five offsets {-2,-1,0,1,2} around the current disparity; confidence prediction.
+The model contains 77 Conv nodes (70 2D, 7 3D), 3 ConvTranspose nodes, and
+7,432,743 learnable elements as registered in the reconstructed inference graph.
+Refinement after the initial 3D cost processing uses 2D convolutions.
+Local evidence: neural_depth_5.3.graph.json, torch_custom_ops.py,
+evidence/custom_ops_notes.txt and torch_manifest.json.
+
+1. Group-Wise Correlation Stereo Network (GwcNet), CVPR 2019
+https://openaccess.thecvf.com/content_CVPR_2019/html/Guo_Group-Wise_Correlation_Stereo_Network_CVPR_2019_paper.html
+https://arxiv.org/abs/1903.04025
+Authors' code: https://github.com/xy-guo/GwcNet
+
+Strongest operator match. Its group-wise correlation equation (3) is the same
+mathematical construction recovered from ZED's BuildGWCVolume kernel: split
+channels into contiguous groups, average left*shifted-right channel products.
+Both also process correlation volumes using 3D convolutions.
+Differences: the published configuration uses 40 correlation groups and three
+stacked hourglass modules; recovered ZED 5.3 uses 32 groups and a different
+3D encoder-decoder followed by 2D local offset refinement. The ZED graph is
+not established as stock GwcNet. A shared operator does not identify a network.
+
+2. Anytime Stereo Image Depth Estimation on Mobile Devices (AnyNet), ICRA 2019
+https://arxiv.org/abs/1810.11408
+https://arxiv.org/pdf/1810.11408
+Authors' code: https://github.com/mileyan/AnyNet
+
+Strong match to the coarse-to-fine refinement idea. Section III(c) explicitly
+uses a five-entry local residual cost volume with offsets -2,-1,0,1,2 after
+upsampling and warping an existing disparity estimate. That search window
+matches the recovered ZED offset kernel exactly as a hypothesis set.
+Differences: AnyNet uses L1 feature distance rather than group-wise product
+correlation, a small U-Net feature extractor and 3D convolutional residual cost
+processing, plus a final spatial-propagation stage. ZED's feature widths,
+parameter count and refinement networks differ. Same search offsets are not
+evidence that ZED uses the entire AnyNet architecture.
+
+3. StereoNet: Guided Hierarchical Refinement for Real-Time Edge-Aware Depth
+   Prediction, ECCV 2018
+https://research.google/pubs/stereonet-guided-hierarchical-refinement-for-edge-aware-depth-prediction/
+https://arxiv.org/abs/1807.08865
+
+Related overall strategy: shared stereo feature extraction, low-resolution
+cost-volume disparity prediction and learned hierarchical upsampling/refinement.
+This explains the architectural family but is a weaker identity match than
+the GwcNet operator or AnyNet's exact local search window. Its refinement design
+does not establish an exact match to the recovered offset-correlation cascade.
+
+4. CFNet: Cascade and Fused Cost Volume for Robust Stereo Matching, CVPR 2021
+https://arxiv.org/abs/2104.04314
+https://arxiv.org/pdf/2104.04314
+
+Related group-wise correlation and cascaded cost-volume search, but with an
+important mismatch: CFNet uses variance-based uncertainty to adapt the next
+stage's search range and fuses multiple low-resolution cost volumes. Recovered
+ZED 5.3 exposes fixed local offsets in its custom kernel. This is a related
+reference, not a demonstrated exact architecture match.
+
+Other recovered artifacts
+Light 5.3 uses one correlation group and 2D cost aggregation. 5.4/5.6 replace
+the initial product-correlation operator with sign-bit XNOR/Hamming similarity
+over learned features. The reviewed papers do not establish the exact source
+of that combined design. A kernel named CensusXnorCostVolume is not by itself
+proof of classical spatial-neighborhood Census or of a particular paper.
+
+Search limits
+Checked manufacturer documentation/announcement and primary paper sources
+for GwcNet, AnyNet, StereoNet and CFNet, with additional candidate searches.
+No exhaustive claim is made that no relevant paper exists. The strongest
+supported description is a custom stereo network sharing published building
+blocks. Establishing exact provenance would require a matching detailed paper,
+source topology or a manufacturer attribution, beyond these similarities.

@@ -1,0 +1,22 @@
+[
+  {
+    "model": "neural_depth_5.4",
+    "checkpoint_weights_match_onnx": true,
+    "pytorch_onnx_initializers_vs_pth_max_abs_difference": {
+      "disparity": 0.0,
+      "disparity_right": 0.0,
+      "confidence": 0.0
+    },
+    "conclusion": "Observed ONNX-reference discrepancy is not caused by checkpoint conversion; exact execution-path cause remains unresolved."
+  },
+  {
+    "model": "neural_depth_5.6",
+    "checkpoint_weights_match_onnx": true,
+    "pytorch_onnx_initializers_vs_pth_max_abs_difference": {
+      "disparity": 0.0,
+      "disparity_right": 0.0,
+      "confidence": 0.0
+    },
+    "conclusion": "Observed ONNX-reference discrepancy is not caused by checkpoint conversion; exact execution-path cause remains unresolved."
+  }
+]

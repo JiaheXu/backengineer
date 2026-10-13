@@ -1,0 +1,78 @@
+Custom operator reconstruction: lib/libsl_ai.so
+Evidence type: static host disassembly and embedded PTX, not CUDA execution.
+Source PTX: backengineer/depth_recovery/evidence/sl_ai.ptx (cuobjdump export).
+Implementation: backengineer/depth_recovery/torch_custom_ops.py
+Tests: python3 -m unittest backengineer.depth_recovery.test_custom_ops -v
+
+GWC (build_gwc_volume)
+  Inputs: two N,C,H,W floating feature tensors.
+  Output: N,G,D,H,W, D=max_disp, G=num_groups.
+  output[n,g,d,y,x] = mean over contiguous channel group g of
+      left[n,c,y,x] * right[n,c,y,x-d], or zero when x<d.
+  Evidence: float kernel starts PTX line 162842. Param 5 at 162869
+  supplies channels/group; reciprocal at 162927-162928 supplies mean.
+  Shared-memory multiply/accumulate uses fma.rn.f32 (e.g. 163313).
+  Plain output layout is derived at 163500-163520 by nesting batch/group,
+  disparity, height, width. Channel iteration concludes at 163337-163342.
+  Kernel initializes accumulation slots to zero (163006 onward) and stages
+  shifted target features with invalid positions left at zero.
+
+Offset (build_offset_volume)
+  Inputs: left/right N,C,H,W; disparity N,1,H,W.
+  Output: N,(D*G),H,W; D=2*max_offset_disp-1.
+  Flattened channel index is offset_index*G + group (offset-major).
+  Offsets are 1-max_offset_disp through max_offset_disp-1 inclusive.
+  For s=disparity[n,0,y,x]+offset, k=floor(s), a=s-k:
+      sampled_right = (1-a)*right[x-k] + a*right[x-k-1].
+  Each invalid tap contributes zero independently, so fractional samples
+  crossing a border retain their in-bounds tap; no whole-sample mask.
+  output = contiguous channel-group mean of left * sampled_right.
+  Evidence: offset_host.asm at 0xbf7fc constructs 2*radius-1;
+  0xbf761-0xbf76c divides C by G; 0xbf91e-0xbf92f constructs reciprocal.
+  FullOffsetVolume<float,128> starts at PTX 167837.
+  167952: r11=1-param4 (minimum offset).
+  168366 onward: disparity+offset, floor, x-floor(s), independent bounds,
+  coefficients k+1-s and s-k, and multiply/accumulate.
+  PTX 169269: r600=offset_index*groups+group is output channel index.
+  Final output multiplies the accumulator by supplied reciprocal.
+  This operation differentiates with respect to both features and disparity
+  away from interpolation knots; PyTorch floor/gather implements that.
+
+CensusXnorCostVolume
+  Inputs: N,C,H,W features; recovered graphs C=census_bits=512, G=32, D=24.
+  Output: N,G,D,H,W.
+  Bits are channel signs (strict feature > 0); zero and NaN both yield false.
+  There is NO spatial Census transform in these kernels.
+  Channels are split into contiguous groups, with B=C/G bits/group.
+  output = 1 - 2 * popcount(left_sign XOR right_sign shifted by d) / B.
+  Output is zero when x<d, rather than evaluating signs of padded features.
+  Thus identical sign groups give +1, completely inverted groups give -1.
+  Evidence: census_bitpack_kernel<float> starts at 175700, compares
+  channel elements to 0 via setp.gt.f32. Hamming kernel at 176431;
+  176624-176629 loads 0x40000000 (=2.0) and divides by group bit count.
+  XOR/popcount at 176686-176688; final 1-minus-scaled-count stores follow.
+  Fused float kernel at 185121 packs 32 contiguous feature channels.
+  185550-185563 computes group bit count, mask and again 2.0/B.
+  185693 onward emits group results separated by D*H*W, confirming NGDHW.
+  Both fused and two-stage kernels agree on scale and strict sign threshold.
+  Host CensusXnorFusedSupported at 0xc14f0 requires C divisible by 32,
+  C/G<32 with group bit count dividing 32, and shared-memory capacity.
+  Two-stage Hamming supports groups spanning whole 32-bit words as well.
+  Reconstruction accepts those observed packing regimes and rejects other
+  group sizes rather than inventing tail-bit semantics. Sign comparison has
+  no autograd derivative; output is deliberately detached.
+
+Limits and confidence
+  High confidence in formulas, dimensions, grouping order and padding from
+  instruction-level static evidence. Tests use manually calculated examples
+  (two channel groups, integer and fractional shifts, partial border taps,
+  multiple packed words, batch indexing) and double-precision gradcheck.
+  No GPU is available, so no comparison against the shipped CUDA execution
+  has been performed. Float32 FMA/reduction ordering and half rounding can
+  differ in their last bits from PyTorch; do not claim bit-identical parity.
+  CPU implementation preserves input dtype, supports float64 for gradient
+  checks, and applies the recovered float formulas. Native half arithmetic
+  and TensorRT physical packed layouts are not reproduced bit-for-bit.
+  Mathematical operations use PyTorch tensor layouts rather than TensorInfo
+  packed memory layouts. Noncontiguous logical NCHW inputs are supported.
+  Shape validation outside recovered model inputs is a reconstruction choice.

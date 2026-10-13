@@ -1,0 +1,1887 @@
+[
+  {
+    "name": "x2b7000129fe46c",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x77848bfb0afe57",
+    "shape": [
+      64,
+      12,
+      7,
+      7
+    ],
+    "dtype": "float16",
+    "elements": 37632,
+    "bytes": 75264
+  },
+  {
+    "name": "x05710dbef8ebd5",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x84c1a7dc4e5568",
+    "shape": [
+      64
+    ],
+    "dtype": "int8",
+    "elements": 64,
+    "bytes": 64
+  },
+  {
+    "name": "x18e1a8916e6b36",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x3f3f8158a1b2c1",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x29cd42555df7e1",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x4d06288128f378",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xd5087389f9a7ef",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x5c45952f0eecf8",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xccac8f8da7ce0b",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "xb7c28a77122cf2",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xa0a7a9298d079e",
+    "shape": [
+      128,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "x5019c6eac4918c",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x1c69d70a762764",
+    "shape": [
+      128
+    ],
+    "dtype": "int8",
+    "elements": 128,
+    "bytes": 128
+  },
+  {
+    "name": "x7f7dd6c81ac37b",
+    "shape": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 147456,
+    "bytes": 294912
+  },
+  {
+    "name": "x02cd74c446a38f",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x08def1d446182f",
+    "shape": [
+      128,
+      64,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 8192,
+    "bytes": 16384
+  },
+  {
+    "name": "xb6a7205db5d5d5",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xf349d3d192fa4c",
+    "shape": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 147456,
+    "bytes": 294912
+  },
+  {
+    "name": "x7629d0b8fe9b09",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x5754b7dc403551",
+    "shape": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 147456,
+    "bytes": 294912
+  },
+  {
+    "name": "x76d92e5441a09b",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xb223975454aece",
+    "shape": [
+      64,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "x6b88feb4495b6b",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x9214d95c5e3788",
+    "shape": [
+      64,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "x4bf7a7fddb14bf",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x9efb26b594973c",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x44f1d69ca19681",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x45919f8b7c93c5",
+    "shape": [
+      64,
+      128,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "x9440115c951efb",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x0778d740f484bd",
+    "shape": [
+      32,
+      64,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 2048,
+    "bytes": 4096
+  },
+  {
+    "name": "x4552fa1e13e1eb",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x27d8b8d436f80f",
+    "shape": [
+      32
+    ],
+    "dtype": "int8",
+    "elements": 32,
+    "bytes": 32
+  },
+  {
+    "name": "xd16dd280ac957c",
+    "shape": [
+      8,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 256,
+    "bytes": 512
+  },
+  {
+    "name": "x521cc276c2c20c",
+    "shape": [
+      8
+    ],
+    "dtype": "float16",
+    "elements": 8,
+    "bytes": 16
+  },
+  {
+    "name": "x01923f87bd99a4",
+    "shape": [
+      8
+    ],
+    "dtype": "int8",
+    "elements": 8,
+    "bytes": 8
+  },
+  {
+    "name": "x4c9df98aedd1f1",
+    "shape": [
+      64,
+      128,
+      7,
+      7
+    ],
+    "dtype": "float16",
+    "elements": 401408,
+    "bytes": 802816
+  },
+  {
+    "name": "xfbf06f71f125e1",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xddaae03f9027cc",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "xea86027245a181",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x4359d352027c66",
+    "shape": [
+      64,
+      128,
+      7,
+      7
+    ],
+    "dtype": "float16",
+    "elements": 401408,
+    "bytes": 802816
+  },
+  {
+    "name": "xb3f1d9feddf488",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x5df11d339dab24",
+    "shape": [
+      5
+    ],
+    "dtype": "int64",
+    "elements": 5,
+    "bytes": 40
+  },
+  {
+    "name": "x8979dc6ad78fbd",
+    "shape": [
+      6
+    ],
+    "dtype": "int64",
+    "elements": 6,
+    "bytes": 48
+  },
+  {
+    "name": "x7a6e7da6946a9d",
+    "shape": [
+      6
+    ],
+    "dtype": "int64",
+    "elements": 6,
+    "bytes": 48
+  },
+  {
+    "name": "x325f4dfc48dba7",
+    "shape": [
+      2
+    ],
+    "dtype": "int64",
+    "elements": 2,
+    "bytes": 16
+  },
+  {
+    "name": "xd911ddf9a41efb",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xe337663ca38ed0",
+    "shape": [],
+    "dtype": "int8",
+    "elements": 1,
+    "bytes": 1
+  },
+  {
+    "name": "xac4e7ab60bbeaf",
+    "shape": [
+      16,
+      12,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 1728,
+    "bytes": 3456
+  },
+  {
+    "name": "x9f7e923127e199",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xe2ed114e076fe8",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xb016ff53e87fef",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x1e51e75b1c5edb",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xb665d5843f6323",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xbe9f2ed4a18023",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x3e52fe44343375",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xe10266445db818",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x50dc9238ec3f80",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x2b0a2174267409",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x9379e2a2695be8",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x0de0dd9efe9e67",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x137201973b60d1",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xb88582e75232e0",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x7a616f596ef34d",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xddc24e6891afea",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x88fa33d93338f9",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xae46e6ae8e785b",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xcaa52c19be5fd5",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xfe951b8bb2411e",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x725b03c5732a7b",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xf01682f49175bf",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xf14bc3f11ac0e1",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xbc8ad158be3e2f",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x9434f85aa92644",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x649c8ab52c61ed",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x2ec49ea7de95ce",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x5d16e6fa956201",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xdaa864954f541c",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xe3eff5fdf535ef",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xccdae2fd979bd1",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x406dcafbfcb0b4",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xc7bb480a16d156",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xfe505fdbdeb452",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x940231990fbc55",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x2beb2720db2f29",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x0ceede3350ae98",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x4ebc6b500cf9f7",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x23152d3e9a6586",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xe360613a2e3968",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xbf0f9b07617a96",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x573efa50d4ebee",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xfca595a36de63b",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xf00e8d30eb9953",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x73449275c4b515",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x7200211bfbe56b",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x2e6556adf83fc1",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xbdc46610fd72e8",
+    "shape": [
+      4
+    ],
+    "dtype": "float32",
+    "elements": 4,
+    "bytes": 16
+  },
+  {
+    "name": "x2126edb781c99a",
+    "shape": [
+      512,
+      128,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 65536,
+    "bytes": 131072
+  },
+  {
+    "name": "xf4933f1c14a30e",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x2d06f5b3c9230e",
+    "shape": [
+      64,
+      32,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 55296,
+    "bytes": 110592
+  },
+  {
+    "name": "xe63bbc6ce17b79",
+    "shape": [
+      64,
+      64,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 110592,
+    "bytes": 221184
+  },
+  {
+    "name": "xaf66c9d0381088",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x1d45f587c2e245",
+    "shape": [
+      128,
+      64,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 221184,
+    "bytes": 442368
+  },
+  {
+    "name": "xa546e95dbae6c4",
+    "shape": [
+      128,
+      128,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 442368,
+    "bytes": 884736
+  },
+  {
+    "name": "xd5b3ee31ec34fd",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xafb363bed383f2",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x101b0d90484b78",
+    "shape": [],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x819087cb97b76b",
+    "shape": [],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x4307a0a72e6eeb",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "xd0e7f8b38a0ac4",
+    "shape": [
+      256,
+      128,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 884736,
+    "bytes": 1769472
+  },
+  {
+    "name": "x68d9a1ffbe3fb1",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x08ca2195149bf8",
+    "shape": [
+      256,
+      256,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 1769472,
+    "bytes": 3538944
+  },
+  {
+    "name": "x1b29c1e026f540",
+    "shape": [
+      256,
+      128,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 884736,
+    "bytes": 1769472
+  },
+  {
+    "name": "x8159d0ca6ede14",
+    "shape": [
+      128,
+      64,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 221184,
+    "bytes": 442368
+  },
+  {
+    "name": "x022b4cab69d082",
+    "shape": [
+      32,
+      64,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 2048,
+    "bytes": 4096
+  },
+  {
+    "name": "x1a1f9a4e5f16ec",
+    "shape": [
+      16,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 9216,
+    "bytes": 18432
+  },
+  {
+    "name": "x1283a05975923b",
+    "shape": [
+      64,
+      32,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 55296,
+    "bytes": 110592
+  },
+  {
+    "name": "xf09171b3fcfb0d",
+    "shape": [
+      8,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 256,
+    "bytes": 512
+  },
+  {
+    "name": "x408eaed8fa683e",
+    "shape": [
+      1,
+      32,
+      3,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 864,
+    "bytes": 1728
+  },
+  {
+    "name": "x0d4e9c1281605f",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xeb52e860764d6b",
+    "shape": [
+      16,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 4608,
+    "bytes": 9216
+  },
+  {
+    "name": "x94ef244c0f3882",
+    "shape": [],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x0498baa63e9544",
+    "shape": [],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x8485f932f5e361",
+    "shape": [
+      8,
+      16,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "xa7acaebdff0cc3",
+    "shape": [
+      8,
+      8,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x010cc30634ac46",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x6b790d8042a282",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "xff07262ea2a010",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x44c7d2e894312f",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xf4514a141b1c0b",
+    "shape": [
+      1,
+      24,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 24,
+    "bytes": 48
+  },
+  {
+    "name": "x7c1557b590ab79",
+    "shape": [
+      1
+    ],
+    "dtype": "int64",
+    "elements": 1,
+    "bytes": 8
+  },
+  {
+    "name": "x6fc07a44173792",
+    "shape": [
+      32,
+      15,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 4320,
+    "bytes": 8640
+  },
+  {
+    "name": "x3a9cb69453b06b",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x8b8a6886522b8f",
+    "shape": [
+      64,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "x7da3d8b88c2162",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x7e5bed4779edc7",
+    "shape": [
+      128,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "xda7ed6b053ea69",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x3d5c5c1fb66ba1",
+    "shape": [
+      64,
+      128,
+      7,
+      7
+    ],
+    "dtype": "float16",
+    "elements": 401408,
+    "bytes": 802816
+  },
+  {
+    "name": "xec797bcff5e43c",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x852e942dcadc83",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x7ba4be4285b5e2",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x4d1d481dc5ece9",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x1031b3895cbffb",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x9edda063e60804",
+    "shape": [
+      32,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "xe84c42fe78c936",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x53b706df4fa517",
+    "shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 9216,
+    "bytes": 18432
+  },
+  {
+    "name": "x1b43c8283761cc",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x684711cecc1a17",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "xf0a9e4d8c461de",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xe1814bc94ad5e6",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x35d271753df7a9",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x6a9a579dde5d5f",
+    "shape": [
+      32,
+      15,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 4320,
+    "bytes": 8640
+  },
+  {
+    "name": "x505f6ed613bb83",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x4cf9527ff44814",
+    "shape": [
+      64,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "x15c2d5948941b7",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x2f780c073d259a",
+    "shape": [
+      128,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "xd5eadec2e020f1",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x0a1221c32e7639",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x4fe0f8094ac04c",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x194250707f850f",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x8219ce5a73107f",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xff9f5fcc4709ea",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xc7cd88a7d582b3",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xdbad7d0f1a469f",
+    "shape": [
+      32,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "x8f97db3f0754d1",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "xb7c0f40b49f241",
+    "shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 9216,
+    "bytes": 18432
+  },
+  {
+    "name": "x303b06d73ab2c8",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x7d9cb75aa6ba2b",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x19c1b62b1ea734",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x416f22aa97f090",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x8cc3d620d600b1",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x9f4a6423f48c0d",
+    "shape": [
+      32,
+      15,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 4320,
+    "bytes": 8640
+  },
+  {
+    "name": "x5016ff91080548",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x7bd3e2a1f2df29",
+    "shape": [
+      64,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "x03c596169720f8",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x73116982156a27",
+    "shape": [
+      128,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 73728,
+    "bytes": 147456
+  },
+  {
+    "name": "x6f88f05dd46a61",
+    "shape": [
+      128
+    ],
+    "dtype": "float16",
+    "elements": 128,
+    "bytes": 256
+  },
+  {
+    "name": "x29ed0ff7c6949d",
+    "shape": [],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "xc2c1438d7a6ff1",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xd92ebbae6203d1",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x1d847734b31f90",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "x2832b7a694de6a",
+    "shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 36864,
+    "bytes": 73728
+  },
+  {
+    "name": "x7a710e87fac66e",
+    "shape": [
+      64
+    ],
+    "dtype": "float16",
+    "elements": 64,
+    "bytes": 128
+  },
+  {
+    "name": "xfca9307320d143",
+    "shape": [
+      32,
+      64,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 18432,
+    "bytes": 36864
+  },
+  {
+    "name": "xa2015e15d9deda",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x6eb9147ae6eee0",
+    "shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "dtype": "float16",
+    "elements": 9216,
+    "bytes": 18432
+  },
+  {
+    "name": "xa450908a67f51b",
+    "shape": [
+      32
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "x4d29ace0c93cd2",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "xaf5830641d7c68",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  },
+  {
+    "name": "x8299574466b998",
+    "shape": [
+      1,
+      32,
+      1,
+      1
+    ],
+    "dtype": "float16",
+    "elements": 32,
+    "bytes": 64
+  },
+  {
+    "name": "xb776038b0715ba",
+    "shape": [
+      1
+    ],
+    "dtype": "float16",
+    "elements": 1,
+    "bytes": 2
+  }
+]

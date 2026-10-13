@@ -1,0 +1,112 @@
+Recovered ZED depth networks in PyTorch
+
+Files
+  torch_network.py      ZedDepthNetwork(torch.nn.Module): the recovered topology.
+  torch_custom_ops.py   GWC, offset and Census operators translated from SDK PTX.
+  neural_depth_*.pt     PyTorch state_dict checkpoints with original tensor names.
+  torch_manifest.json   Checkpoint hashes and parameter counts.
+  evidence/custom_ops_notes.txt  Operator formulas and static evidence locations.
+
+The module loads architecture from the matching recovered ONNX file at
+construction. Forward inference uses torch operations, without ONNX Runtime or
+the proprietary SDK. This is a graph-based reconstruction, not original source.
+Inspect model.nodes for the layer topology and model.named_parameters() for
+convolution and batch-normalization scale/bias weights. Other initializers are
+registered buffers. Layers sharing an initializer share the same parameter.
+Requirements: Python, PyTorch, ONNX and NumPy; already installed here.
+
+Example from /usr/local/zed:
+
+  import torch
+  from backengineer.depth_recovery.torch_network import ZedDepthNetwork
+
+  model = ZedDepthNetwork('backengineer/depth_recovery/neural_depth_5.3.onnx').eval()
+  model.load_state_dict(torch.load('backengineer/depth_recovery/neural_depth_5.3.pt',
+                                   map_location='cpu', weights_only=True))
+  # Synthetic network tensors, not a camera preprocessing recipe.
+  left = torch.rand(1, 3, 128, 256)
+  right = torch.rand_like(left)
+  with torch.no_grad():
+      outputs = model(left, right)
+  print(outputs['disparity'].shape)   # torch.Size([1, 1, 64, 128])
+  print(outputs['confidence'].shape)  # torch.Size([1, 1, 64, 128])
+
+The ONNX file already supplies pretrained weights, so loading .pt is optional.
+Checkpoints contain state_dict tensors, not a pickled executable network.
+Retain the matching ONNX topology for this implementation.
+
+Other recovered models use the same module:
+  neural_depth_light_5.3.onnx / neural_depth_light_5.3.pt
+  neural_depth_5.4.onnx       / neural_depth_5.4.pt
+  neural_depth_5.6.onnx       / neural_depth_5.6.pt
+5.6 expects torch.float16 inputs; the others expect torch.float32. Preserve
+the shipped dtypes; converting whole networks with .half()/.double() is not
+validated. Device transfers via model.to(device) are supported; move both
+inputs to the same device. GPU execution has not been tested here.
+
+Input/output contract
+  Matching floating NCHW stereo tensors [batch,3,height,width].
+  The recovered color kernel uses RGB channel planes scaled by FP32 1/255,
+  then casts to model precision. Camera rectification and SDK resizing are
+  not reconstructed. compare_images.py accepts RGB files and applies this
+  color preparation; see RGB_COMPARISON_USAGE.txt for commands and limits.
+  Use H/W divisible by 128 for the full graphs' down/up-sampling paths.
+  128x256 was tested for all four models, with batches of one and two.
+  Other shapes can have skip-connection size mismatches. Images are not silently
+  resized or padded by this module.
+  Output dictionary: disparity, disparity_right and confidence. In the tested
+  cases, output resolution is half the input height and width.
+  disparity_right is a zero-filled placeholder in the original graphs; this
+  behavior is preserved. Metric depth needs calibration and SDK postprocessing,
+  which have not been reconstructed here.
+
+Autograd and inspection
+  A complete backward pass through FLOAT 5.3 disparity was tested, with finite
+  gradients for both inputs and convolutional parameters. This does not recover
+  training losses, optimizer state, training-only layers or augmentation.
+  Quantized 5.4/5.6 contain nondifferentiable sign and integer quantization
+  operations. They are inference reconstructions, without an invented
+  straight-through gradient estimator or QAT training implementation.
+  For debugging:
+      outputs, tensors = model(left, right, return_intermediates=True)
+  Retaining all intermediate tensors increases memory usage.
+
+Verification
+  PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -q \
+      backengineer/depth_recovery/test_torch_network.py backengineer/depth_recovery/test_custom_ops.py
+  Result: 15 passed. The environment variable avoids an unrelated incompatible
+  ROS launch_testing pytest plugin installed on this host.
+  - Initializers preserve every original NumPy tensor's dtype, shape and bytes.
+  - Checkpoints pass strict loading and bytewise roundtrip verification.
+  - All four complete CPU inference with finite outputs at 128x256.
+  - FLOAT standard intermediate nodes match ONNX Runtime with custom-op and
+    QuantizeLinear outputs injected at their graph boundaries (atol/rtol .003).
+  - FP16 standard nodes match individually on identical inputs (atol/rtol .005),
+    avoiding tolerance inflation for accumulated inter-node rounding.
+  - Every quantizer is checked separately against nearest-even rounding and
+    integer saturation, including FP16 division evaluated in FP32.
+  - Custom ops pass manual numeric border/group/interpolation/sign cases and
+    feature/disparity gradient checks.
+  An independent review found no blockers and repeated all tests successfully.
+
+ONNX Runtime 1.23.2 CPU QuantizeLinear truncates FP16 values (-1.9 -> -1),
+contrary to the installed ONNX op schema's nearest-even rule (-1.9 -> -2).
+This was reproduced on an isolated node. The implementation follows the ONNX
+specification, rather than using ORT's FP16 quantizer as its reference.
+
+Remaining limits
+  No end-to-end numeric parity or accuracy comparison against ZED SDK / TensorRT
+  CUDA execution was possible: no NVIDIA device is exposed here. Custom formulas
+  are grounded in shipped PTX, but CUDA FMA/reduction ordering, half arithmetic
+  and TensorRT fusion can cause different rounding. No speed claim is made; the
+  Python node executor and disparity loops prioritize inspectability.
+  Runtime mapping of artifact versions to NEURAL/NEURAL_PLUS and hardware
+  fallbacks is still unverified. Filename alone does not establish that mapping.
+
+RGB files, conversion and independent reference
+  convert_weights.py converts ONNX/NPZ to verified PyTorch state_dict files.
+  compare_images.py runs both backends independently from two RGB images and
+  writes output tensors, a numeric report and a difference image. The reference
+  uses ONNX Runtime plus independent NumPy custom operators; PyTorch results
+  are not injected. See RGB_COMPARISON_USAGE.txt. Tight full-network parity for
+  FP16 5.6 does not pass on the recorded sample; those differences are retained.

@@ -1,0 +1,117 @@
+Supervised fine-tuning on rectified stereo pairs
+==============================================
+
+Run commands from /usr/local/zed. Python dependencies are torch, onnx, numpy
+and Pillow; these are already installed in the current environment.
+
+1. Prepare separate train.csv and val.csv manifests:
+
+left,right,disparity
+left/000001.png,right/000001.png,disparity/000001.npy
+left/000002.png,right/000002.png,disparity/000002.npy
+
+Paths are relative to each CSV's directory; absolute paths also work. Split
+by scene/sequence so validation does not reuse training views. RGB images
+must already be rectified, and images and labels must have identical sizes.
+The label is LEFT disparity d = x_left - x_right in FULL IMAGE PIXELS.
+Depth in meters and normalized disparity are not accepted as disparity.
+
+Supported labels:
+  .npy: real numeric HxW array, disparity directly in pixels.
+  .pfm: single-channel Pf, bottom-up storage and endian/scale handled.
+  .png: 16-bit grayscale, divided by --png-scale (256 by default, KITTI).
+        For integer pixel disparities use --png-scale 1.
+NaN, infinity and nonpositive labels are invalid. An optional fourth CSV
+column 'valid' supplies a bool HxW NPY or grayscale image (positive=valid).
+
+The train.example.csv and val.example.csv files illustrate manifest syntax;
+replace their paths with your actual data before running.
+
+2. Start training:
+
+python3 backengineer/depth_recovery/finetune.py \
+  --train-csv /path/to/dataset/train.csv \
+  --val-csv /path/to/dataset/val.csv \
+  --output-dir backengineer/depth_recovery/finetune_run \
+  --epochs 10 --batch-size 1 --learning-rate 1e-5
+
+Default architecture and initial weights come directly from the recovered
+neural_depth_5.3.onnx. To initialize from a converted or previously trained
+state_dict add --weights backengineer/depth_recovery/neural_depth_5.3.pt.
+Light 5.3 is also supported: --model backengineer/depth_recovery/neural_depth_light_5.3.onnx.
+Use the matching checkpoint if supplying --weights.
+
+Default --device auto uses CUDA if available, otherwise CPU. --device cuda
+requires a working CUDA host. This environment currently has no usable GPU.
+All training uses FP32. Batch 1 and small crops are sensible starting points;
+GPU memory usage has not been measured here.
+
+The default crop is 256x512. --crop-height and --crop-width must be positive
+multiples of 128. Training chooses a random crop; validation uses a centered
+crop of the same size. There is no resizing or horizontal flipping. Smaller
+images are edge-padded, with padded labels masked out. Left pixels whose
+right correspondence falls outside the crop are also masked out.
+Validation metrics therefore describe centered crops, not entire images.
+
+RGB uses RGB channel order and division by 255, matching the recovered input
+contract. Predictions are at half resolution in output-grid pixel units;
+the trainer upsamples and multiplies by the horizontal resolution ratio
+before computing masked smooth L1 against the full-image labels.
+Metrics: pixel-weighted loss, EPE in pixels, and D1 percentage (error >3px
+AND >5% of target). --max-disparity optionally masks targets at or above
+a specified input-pixel threshold. Empty batches are skipped; an entirely
+invalid epoch raises an error. Nonfinite predictions or gradients stop the run.
+
+3. Outputs and resume:
+
+  best.pt            Pure state_dict with lowest validation EPE.
+  last.pt            Pure state_dict after the latest completed epoch.
+  training_state.pt  Model, AdamW optimizer, epoch, settings and Torch RNG.
+  metrics.jsonl      One training/validation record per epoch.
+  config.json        Architecture hash, settings and dataset manifest hashes.
+
+Checkpoint files are individually replaced atomically. Use a new output
+directory for a new run; existing run directories are protected from overwrite.
+Continue a run in its original directory with the same settings/manifests:
+
+python3 backengineer/depth_recovery/finetune.py \
+  --train-csv /path/to/dataset/train.csv \
+  --val-csv /path/to/dataset/val.csv \
+  --output-dir backengineer/depth_recovery/finetune_run \
+  --resume backengineer/depth_recovery/finetune_run/training_state.pt --epochs 20
+
+--epochs is the total desired count, not additional epochs. Repeat any custom
+training options from the original run. --resume and --weights are exclusive.
+An epoch interrupted before saving training_state.pt must be repeated.
+Resume preserves Torch RNG; bitwise reproducibility across different devices
+or worker counts is not guaranteed. Manifest hashes do not hash every image.
+
+4. Use the trained checkpoint:
+
+from backengineer.depth_recovery.torch_network import ZedDepthNetwork
+import torch
+model = ZedDepthNetwork('backengineer/depth_recovery/neural_depth_5.3.onnx')
+model.load_state_dict(torch.load('backengineer/depth_recovery/finetune_run/best.pt',
+                                map_location='cpu', weights_only=True))
+model.eval()
+# Inputs: float32 [N,3,H,W] RGB / 255; H,W multiples of 128.
+# outputs = model(left, right)
+# Full-image disparity: interpolate outputs['disparity'] to (H,W),
+# then multiply by W / outputs['disparity'].shape[-1].
+
+compare_images.py accepts --weights backengineer/depth_recovery/finetune_run/best.pt and
+saves the trained PyTorch outputs alongside the original ONNX outputs/PDF.
+After training those outputs should differ; parity checks may exit with code 2.
+
+Scope and validation
+--------------------
+This fine-tunes the recovered inference graph, not a reconstruction of the
+vendor's original training pipeline. Exported/folded batch normalization
+retains its inference behavior. Only disparity is supervised; the confidence
+head has no recovered confidence target and its calibration is not validated.
+Quantized/sign-bit 5.4/5.6 graphs are rejected: ordinary backpropagation through
+their recovered operators is not a usable training scheme.
+
+The automated checks exercise real FP32 forward/backward, weight updates,
+validation and optimizer resume using synthetic labeled stereo pairs on CPU.
+No accuracy improvement on your dataset or CUDA performance is claimed.
