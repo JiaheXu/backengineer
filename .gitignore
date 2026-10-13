@@ -1,0 +1,6 @@
+*.pth
+*.onnx
+*.pt
+*.npz
+*.asm
+*.bin
